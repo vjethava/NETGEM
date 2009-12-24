@@ -1,0 +1,33 @@
+
+This is the supplemental software for the ISMB 2010 submission,
+"Network Embedded analysis of Temporal Gene Expression using Mixed
+Models". 
+
+* Abstract 
+
+Microarrays have become a routine tool in many biological labs,
+resulting in large amounts of datasets containing transcription
+information in different mutants grown under many conditions. The data
+from a microarray experiment is a snapshot of the transcription at the
+time of measurement. Therefore, the conventional methods (log-fold
+changes, clustering algorithms, etc) have successfully identified
+transcriptional regulation. Applying these methods to time-series gene
+expression data inherently assumes that the data points are
+independent and therefore, losing the temporal evolution of gene
+expression. Furthermore, many of these methods do not consider the
+underlying interaction network of genes or proteins they encode for,
+that plays a key role in the expression of the genes.
+
+This code is available at http://www.github.com/vjethava/NETGEMM. 
+It can be downloaded in linux by using the command: $ git clone git@github.com:vjethava/NETGEMM.git
+
+* Files
+
+The top-level directory structure is as follows: 
+
+- code: contains the paper specific code.
+- lib: publicly available code which is used.
+- ismb: 
+
+
+
