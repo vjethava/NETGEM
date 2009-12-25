@@ -1,24 +1,30 @@
-%%% exp_mm.m --- 
+function [x] = dirichletrnd(A)
+% DIRICHLETRND generates a random vectors from a dirichlet
+% distribution with parameter A. Uses the gamma RNG from the
+% statistics toolbox. 
+%
+% Usage: [x] = dirichletrnd(A)
+%
+%
+%%% dirichletrnd.m --- 
 %% 
-%% Filename: exp_mm.m
+%% Filename: dirichletrnd.m
 %% Description: 
 %% Author: Vinay Jethava
 %% Maintainer: 
-%% Created: Thu Dec 24 17:45:07 2009 (+0530)
+%% Created: Mon Nov 30 14:16:02 2009 (+0100)
 %% Version: 
-%% Last-Updated: Thu Dec 24 17:48:12 2009 (+0530)
+%% Last-Updated: Mon Nov 30 14:27:29 2009 (+0100)
 %%           By: Vinay Jethava
-%%     Update #: 5
-%% URL: http://www.github.com/vjethava
+%%     Update #: 4
+%% URL: 
 %% Keywords: 
 %% Compatibility: 
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
 %%% Commentary: 
-%%  
-%% This file is the top-level script for comparison of the mixture
-%% model with unmodified HMM. 
+%% 
 %% 
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,31 +49,12 @@
 %% the Free Software Foundation, Inc., 51 Franklin Street, Fifth
 %% Floor, Boston, MA 02110-1301, USA.
 %% 
-%%%%%%%%%%%%%%%% Code:
-
-%% PreSetup 
-warning off; 
-addpath ../lib/HMM;
-addpath ../lib/KPMtools;
-addpath ../lib/KPMstats;
-addpath ../netlab3.3;
-addpath ../code;
-
-%% Initialization 
-N = 10; 
-p = 0.1; 
-H = 6; % total number of classes
-Hav = 2.5; % av number of classes per component
-
-%% Code 
-G = erdosRenyi(N, p); 
-A = rand(N, H) < (Hav)/H; % gene-class membership matrix 
-B = A + rand(N, H)/10;
-D = [];
-for i=1:N %% each gene must have atleast one class.
-   D = [D; dirichletrnd(B(i, :))];    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%% Code:   
+    y = gamrnd(A, 1);
+    sy = sum(y); 
+    x = y/sy; 
 end
-
-
-    
-%%%%%%%%%%%%%%%% exp_mm.m ends here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% dirichletrnd.m ends here
