@@ -1,15 +1,15 @@
 \documentclass{bioinfo}
 \usepackage{appendix}
-
-%\usepackage{hyperref}
+\usepackage{hyperref}
 \copyrightyear{2010}
 \pubyear{2010}
 
 \begin{document}
 \firstpage{1}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\title[DynaMT]{Dynamic expression analysis in mutants with temporal expression data}
+\title[NETGEMM]{NET GEMM: Network Embedded analysis of Temporal Gene Expression using Mixed Models}
 %\title[short Title]{GEMM: Gene evolution using mixture models}
 \author[Sample \textit{et~al}]{Vinay Jethava\,$^{3}$, Torbjorn Karfunkel$^{1}$, Gautham
   Vemuri$^{2}$\footnote{to whom correspondence should be addressed},  Chiranjib Bhattacharyya\,$^{3}$, Devdatt Dubhashi$^{1}$}
@@ -29,14 +29,46 @@ Bangalore, INDIA
 
 \begin{abstract}
 \section{Motivation}
-Microarrays have become a routine tool in many biological labs, resulting in large amounts of datasets containing transcription information in different mutants grown under many conditions. The data from a microarray experiment is a snapshot of the transcription at the time of measurement. Therefore, the conventional methods (log-fold changes, clustering algorithms, etc) have successfully identified transcriptional regulation. Applying these methods to time-series gene expression data inherently assumes that the data points are independent and therefore, losing the temporal evolution of gene expression. Furthermore, many of these methods do not consider the underlying interaction network of genes or proteins they encode for, that plays a key role in the expression of the genes.
+Microarrays have become a routine tool in many biological labs,
+resulting in large amounts of datasets containing transcription
+information in different mutants grown under many conditions. The data
+from a microarray experiment is a snapshot of the transcription at the
+time of measurement. Therefore, the conventional methods (log-fold
+changes, clustering algorithms, etc) have successfully identified
+transcriptional regulation. Applying these methods to time-series gene
+expression data inherently assumes that the data points are
+independent and therefore, losing the temporal evolution of gene
+expression. Furthermore, many of these methods do not consider the
+underlying interaction network of genes or proteins they encode for,
+that plays a key role in the expression of the genes.
+
 
 %Results on: toy-dataset, actual dataset,
 
 \section{Results}
-We present the results on a synthetic dataset
+In this manuscript, we present a graphical model to analyze temporal
+expression  \todo{[describe briefly]}. \todo{[Present statistics of
+  the method, efficiency, characteristics, etc. How it performed on a
+  toy model.]} We used this method to analyze the dynamics of
+interaction between proteins based on the expression of the
+corresponding genes in \emph{Saccharomyces cerevisiae}. We used two
+publicly available time-series datasets for the analysis. The first
+one measures the changes in the expression of genes during the
+transition from carbon-limitation to nitrogen limitation under aerobic
+or anaerobic conditions. We demonstrate the utility of the model in
+capturing environmental perturbations. The second dataset describes
+the transcriptional changes in $sfp1\Delta$ strain of \emph{S. cerevisiae}
+and its reference strain following sudden exposure to glucose. The two
+experiments involve substantial transcriptional programming to adapt
+to environmental conditions or in the ability to assimilate
+environmental signals to coordinate metabolism with cellular
+processes. The method provided interesting insights into \todo{[need
+to be filled up after looking at the results]}.
+ 
+% We present the results on a synthetic dataset
 \section{Availability:}
-Source code and dataset available at: %\url{http://vjethava.github.com/GEMM/}
+The source code for NETGEMM is available from
+\href{http://www.github.com/vjethava/NETGEMM/}{http://www.github.com/vjethava/NETGEMM/}
 
 \section{Contact:} \href{goutham@chalmers.se}{goutham@chalmers.se}
 \end{abstract}

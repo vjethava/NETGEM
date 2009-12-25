@@ -25,9 +25,13 @@ It can be downloaded in linux by using the command: $ git clone git@github.com:v
 
 The top-level directory structure is as follows: 
 
-- code: contains the paper specific code.
+- code: contains the matlab functions specific to the paper.
 - lib: publicly available code which is used.
-- ismb: 
-
+- ismb: conference submission files. 
+- lib: additional libraries (HMM, KPMstats, KPMtools, etc.)
+- tests: the files which run the main experiments. 
+- data: the original data in txt and mat formats
+- scripts: the conversion scripts between txt-mat 
+ 
 
 

@@ -1,5 +1,10 @@
 *.*~
+*.log
 tests/*.*~
 scripts/*.*~
 code/*.*~
 ismb/*.*~
+ismb/*.aux
+ismb/*.out
+ismb/*.log
+ismb/*.blg
