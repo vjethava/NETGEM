@@ -1,4 +1,4 @@
-function xn = getNextGibbsState (xi, w)
+function xn = getNextGibbsState (xi, w, L)
 % getNextGibbsState - returns the next state by gibbs sampling
 %
 % Usage: xn = getNextGibbsState (xi, w)
@@ -37,7 +37,9 @@ function xn = getNextGibbsState (xi, w)
 % The updated gibbs sample for state i is according to
 % $P(x^i = 1 | X_{\i}) = \frac{ 1 }{1 + \exp \{-\sum_{j \in N(i)}  w_{ij} x_j \} }$
 %
-    L = 1; % number of times to loop through
+    if nargin < 3
+        L = 2; % number of times to loop through
+    end
     flipped = 0; 
     if(size(xi, 1) > 1)
         xi = xi';

@@ -9,7 +9,7 @@
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\title[NETGEMM]{NET GEMM: Network Embedded analysis of Temporal Gene Expression using Mixed Models}
+\title[NETGEM]{NET GEM: Network Embedded analysis of Temporal Gene Expression using Mixtures}
 %\title[short Title]{GEMM: Gene evolution using mixture models}
 \author[Sample \textit{et~al}]{Vinay Jethava\,$^{3}$, Torbjorn Karfunkel$^{1}$, Gautham
   Vemuri$^{2}$\footnote{to whom correspondence should be addressed},  Chiranjib Bhattacharyya\,$^{3}$, Devdatt Dubhashi$^{1}$}
@@ -46,10 +46,17 @@ that plays a key role in the expression of the genes.
 %Results on: toy-dataset, actual dataset,
 
 \section{Results}
-In this manuscript, we present a graphical model to analyze temporal
-expression  \todo{[describe briefly]}. \todo{[Present statistics of
-  the method, efficiency, characteristics, etc. How it performed on a
-  toy model.]} We used this method to analyze the dynamics of
+In this manuscript, we present a graphical model to analyze
+temporal evolution in gene expression data. We employ a mixture  model
+to incorporate information about the functional categories of genes in
+the inference procedure and analyzes the effect of functional
+categories in the evolution characterization. One of the contributions
+of this paper is that we present a simple diffusion methodology by
+which one might incorporate the information available from slightly
+perturbed strains of the main experiment. We check the validity
+of the algorithm on a synthetic dataset. 
+
+We used this method to analyze the dynamics of
 interaction between proteins based on the expression of the
 corresponding genes in \emph{Saccharomyces cerevisiae}. We used two
 publicly available time-series datasets for the analysis. The first
@@ -120,16 +127,34 @@ oxidative phosphorylation) [REFS]. The Snf1 kinase is activated by
 phosphorylation by any of the three kinases, Elm1, Sak1 or Tos3 [REFS]
 (Figure 1). The exact role of these three kinases is still a matter of
 debate. 
-\begin{remark}[Gautham: ]
-I will elaborate more in the next round of iteration. The new
-method allowed us to dissect the role of these kinases at the
-transcriptional level.
-\end{remark}
-
 \begin{methods}
 \section{Methods}
 We describe our approach to the problem of inference of the temporally
-evolving interactions in an underlying network. 
+evolving interactions in an underlying network.
+\subsection{Dataset}
+ Temporal gene expression datasets were downloaded from Gene
+ Expression Omnibus using accession numbers XXXXX and XXXXX. The two
+ datasets were obtained using Affymetrix platform. The first dataset
+ contained the expression profiles of the genes in S. cerevisiae
+ during the transition from carbon limitation to nitrogen limitation
+ under aerobic or anaerobic conditions. The transition was achieved by
+ gradual increment of glucose availability in the feed to the cells,
+ while keeping the nitrogen concentration constant in a D-stat
+ (Farzadfard et al., 2010). Beyond a certain concentration of glucose,
+ nitrogen became the limiting nutrient. The cells underwent changes
+ related to growth rate as well as metabolism. Analysis of genes whose
+ expression significantly changed indicated that Sfp1 transcription
+ factor played a dominant role in the bringing out the response to
+ transition. In the interest of coherence, we chose a dataset that
+ contains the temporal gene expression profiles in sfp1 deletion
+ mutant and its isogenic reference at different time points after
+ pulsing steadily growing cells with glucose. The data was measured at
+ six time points after the pulse. These data were analyzed using
+ conventional methods, assuming that all time points are independent.
+\subsection{Construction of the interaction network}
+
+The yeast interaction network was constructed using data from previously published datasets. Interactions between proteins that occurred in at least two independent datasets were considered. These interactions were downloaded from BIND (Bader et al., 2003), MIPS (Mewes et al., 2002), MINT (Zanzoni et al., 2002), DIP (Xenarios et al., 2000) and BioGRID (Reguly et al., 2006) and literature data (5-6 references). The construction of this high-confidence network was described in detail previously (Musigkain et al., 2010). The transcriptional regulatory network (interactions between transcription factors and genes) was downloaded directly from YEASTRACT (Pedro et al., 2008). The two networks were combined and the nature of interactions was not distinguished for the analysis.
+
 \subsection{Known network}
 Assume that the base underlying network of interactions is known as a
 graph $G=(V,E)$. Under different conditions, some of the edges are 
