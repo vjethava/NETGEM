@@ -1,0 +1,4091 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-Stylesheet type="text/xsl" href="orf.xsl"?>
+
+<CATS>
+  <CAT HIR="1" SPACE="" id="01">
+    <CAT_DESCR>METABOLISM</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="01.01">
+      <CAT_DESCR>amino acid metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.01.03">
+        <CAT_DESCR>assimilation of ammonia, metabolism of the glutamate group</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.01.03.01">
+          <CAT_DESCR>metabolism of glutamine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.03.01.01">
+            <CAT_DESCR>biosynthesis of glutamine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.03.01.02">
+            <CAT_DESCR>degradation of glutamine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.03.02">
+          <CAT_DESCR>metabolism of glutamate</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.03.02.01">
+            <CAT_DESCR>biosynthesis of glutamate</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.03.02.02">
+            <CAT_DESCR>degradation of glutamate</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.03.03">
+          <CAT_DESCR>metabolism of proline</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.03.03.01">
+            <CAT_DESCR>biosynthesis of proline</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.03.03.02">
+            <CAT_DESCR>degradation of proline</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.03.04">
+          <CAT_DESCR>metabolism of 4-hydroxyproline</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.03.04.01">
+            <CAT_DESCR>biosynthesis of 4-hydroxyproline</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.03.04.02">
+            <CAT_DESCR>degradation of 4-hydroxyproline</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.03.05">
+          <CAT_DESCR>metabolism of arginine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.03.05.01">
+            <CAT_DESCR>biosynthesis of arginine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.03.05.02">
+            <CAT_DESCR>degradation of arginine</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.01.05">
+        <CAT_DESCR>metabolism of urea cycle, creatine and polyamines</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.01.05.01">
+          <CAT_DESCR>metabolism of polyamines</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.05.01.01">
+            <CAT_DESCR>biosynthesis of polyamines</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.05.01.02">
+            <CAT_DESCR>degradation of polyamines</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.05.02">
+          <CAT_DESCR>metabolism of creatine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.05.02.01">
+            <CAT_DESCR>biosynthesis of creatine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.05.02.02">
+            <CAT_DESCR>degradation of creatine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.05.03">
+          <CAT_DESCR>metabolism of urea (urea cycle)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.01.06">
+        <CAT_DESCR>metabolism of the aspartate family</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.01.06.01">
+          <CAT_DESCR>metabolism of aspartate</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.06.01.01">
+            <CAT_DESCR>biosynthesis of aspartate</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.06.01.02">
+            <CAT_DESCR>degradation of aspartate</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.06.02">
+          <CAT_DESCR>metabolism of asparagine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.06.02.01">
+            <CAT_DESCR>biosynthesis of asparagine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.06.02.02">
+            <CAT_DESCR>degradation of asparagine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.06.04">
+          <CAT_DESCR>metabolism of threonine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.06.04.01">
+            <CAT_DESCR>biosynthesis of threonine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.06.04.02">
+            <CAT_DESCR>degradation of threonine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.06.05">
+          <CAT_DESCR>metabolism of methionine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.06.05.01">
+            <CAT_DESCR>biosynthesis of methionine</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="01.01.06.05.01.01">
+              <CAT_DESCR>biosynthesis of homocysteine</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="01.01.06.05.01.02">
+              <CAT_DESCR>degradation of homocysteine</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.06.05.02">
+            <CAT_DESCR>degradation of methionine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.06.06">
+          <CAT_DESCR>metabolism of lysine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.06.06.01">
+            <CAT_DESCR>biosynthesis of lysine</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="01.01.06.06.01.01">
+              <CAT_DESCR>diaminopimelic acid pathway</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="01.01.06.06.01.03">
+              <CAT_DESCR>aminoadipic acid pathway</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.06.06.02">
+            <CAT_DESCR>degradation of lysine</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.01.09">
+        <CAT_DESCR>metabolism of the cysteine - aromatic group</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.01.09.01">
+          <CAT_DESCR>metabolism of glycine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.01.01">
+            <CAT_DESCR>biosynthesis of glycine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.01.02">
+            <CAT_DESCR>degradation of glycine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.02">
+          <CAT_DESCR>metabolism of serine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.02.01">
+            <CAT_DESCR>biosynthesis of serine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.02.02">
+            <CAT_DESCR>degradation of serine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.03">
+          <CAT_DESCR>metabolism of cysteine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.03.01">
+            <CAT_DESCR>biosynthesis of cysteine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.03.02">
+            <CAT_DESCR>degradation of cysteine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.04">
+          <CAT_DESCR>metabolism of phenylalanine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.04.01">
+            <CAT_DESCR>biosynthesis of phenylalanine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.04.02">
+            <CAT_DESCR>degradation of phenylalanine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.05">
+          <CAT_DESCR>metabolism of tyrosine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.05.01">
+            <CAT_DESCR>biosynthesis of tyrosine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.05.02">
+            <CAT_DESCR>degradation of tyrosine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.06">
+          <CAT_DESCR>metabolism of tryptophan</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.06.01">
+            <CAT_DESCR>biosynthesis of tryptophan</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.06.02">
+            <CAT_DESCR>degradation of tryptophan</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.09.07">
+          <CAT_DESCR>metabolism of histidine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.09.07.01">
+            <CAT_DESCR>biosynthesis of histidine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.09.07.02">
+            <CAT_DESCR>degradation of histidine</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.01.11">
+        <CAT_DESCR>metabolism of the pyruvate family (alanine, isoleucine, leucine, valine) and D-alanine</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.01.11.01">
+          <CAT_DESCR>metabolism of alanine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.11.01.01">
+            <CAT_DESCR>biosynthesis of alanine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.11.01.02">
+            <CAT_DESCR>degradation of alanine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.11.02">
+          <CAT_DESCR>metabolism of isoleucine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.11.02.01">
+            <CAT_DESCR>biosynthesis of isoleucine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.11.02.02">
+            <CAT_DESCR>degradation of isoleucine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.11.03">
+          <CAT_DESCR>metabolism of valine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.11.03.01">
+            <CAT_DESCR>biosynthesis of valine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.11.03.02">
+            <CAT_DESCR>degradation of valine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.11.04">
+          <CAT_DESCR>metabolism of leucine</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.01.11.04.01">
+            <CAT_DESCR>biosynthesis of leucine</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.01.11.04.02">
+            <CAT_DESCR>degradation of leucine</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.11.06">
+          <CAT_DESCR>metabolism of the D-alanine amino acid group</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.01.11.07">
+          <CAT_DESCR>metabolism of the hydroxyamino acid group</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.01.13">
+        <CAT_DESCR>regulation of amino acid metabolism</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.02">
+      <CAT_DESCR>nitrogen, sulfur and selenium metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.02.02">
+        <CAT_DESCR>nitrogen metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.02.02.01">
+          <CAT_DESCR>nitrogen fixation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.02">
+          <CAT_DESCR>nitrate assimilation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.03">
+          <CAT_DESCR>nitrate dissimilation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.05">
+          <CAT_DESCR>ammonium nitrification</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.06">
+          <CAT_DESCR>assimilation of ammonia</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.07">
+          <CAT_DESCR>nitric oxide biosynthesis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.02.09">
+          <CAT_DESCR>catabolism of nitrogenous compounds</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.01">
+            <CAT_DESCR>urea catabolism (not urea cycle)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.03">
+            <CAT_DESCR>urate catabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.05">
+            <CAT_DESCR>cyanate catabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.06">
+            <CAT_DESCR>anthranilate catabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.07">
+            <CAT_DESCR>formamide catabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.02.02.09.08">
+            <CAT_DESCR>nitriles catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.02.03">
+        <CAT_DESCR>sulfur metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.02.03.01">
+          <CAT_DESCR>sulfate assimilation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.03.03">
+          <CAT_DESCR>assimilatory reduction of sulfur</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.03.04">
+          <CAT_DESCR>conjunction of sulfate</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.03.05">
+          <CAT_DESCR>oxidation of sulfur to sulfate, electron as energy source</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.03.06">
+          <CAT_DESCR>sulfate dissimilation, anaerobic respiration, sulfate respiration</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.02.05">
+        <CAT_DESCR>selenium metabolism</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.02.07">
+        <CAT_DESCR>regulation of nitrogen, sulfur and selenium metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.02.07.01">
+          <CAT_DESCR>regulation of nitrogen metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.07.03">
+          <CAT_DESCR>regulation of sulphur metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.02.07.05">
+          <CAT_DESCR>regulation of selenium metabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.03">
+      <CAT_DESCR>nucleotide/nucleoside/nucleobase metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.03.01">
+        <CAT_DESCR>purin nucleotide/nucleoside/nucleobase metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.03.01.01">
+          <CAT_DESCR>purine nucleotide /nucleoside/nucleobase catabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.03.01.01.01">
+            <CAT_DESCR>hypoxanthine catabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.03.01.01.03">
+            <CAT_DESCR>xanthine catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.03.01.03">
+          <CAT_DESCR>purine nucleotide/nucleoside/nucleobase anabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.03.04">
+        <CAT_DESCR>pyrimidine nucleotide/nucleoside/nucleobase metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.03.04.01">
+          <CAT_DESCR>pyrimidine nucleotide/nucleoside/nucleobase catabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.03.04.03">
+          <CAT_DESCR>pyrimidine nucleotide/nucleoside/nucleobase anabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.03.07">
+        <CAT_DESCR>deoxyribonucleotide metabolism</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.03.10">
+        <CAT_DESCR>metabolism of cyclic and unusual nucleotides</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.03.13">
+        <CAT_DESCR>regulation of nucleotide/nucleoside/nucleobase metabolism</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.03.16">
+        <CAT_DESCR>polynucleotide degradation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.03.16.01">
+          <CAT_DESCR>RNA degradation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.03.16.03">
+          <CAT_DESCR>DNA degradation</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.04">
+      <CAT_DESCR>phosphate metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.04.04">
+        <CAT_DESCR>regulation of phosphate metabolism</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.05">
+      <CAT_DESCR>C-compound and carbohydrate metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.05.02">
+        <CAT_DESCR>sugar, glucoside, polyol and carboxylate metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.02.01">
+          <CAT_DESCR>nucleotide-sugar metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.02.04">
+          <CAT_DESCR>sugar, glucoside, polyol and carboxylate anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.02.07">
+          <CAT_DESCR>sugar, glucoside, polyol and carboxylate catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.03">
+        <CAT_DESCR>polysaccharide metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.03.01">
+          <CAT_DESCR>glycogen metabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.03.01.04">
+            <CAT_DESCR>glycogen anabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.03.01.07">
+            <CAT_DESCR>glycogen catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.03.02">
+          <CAT_DESCR>peptidoglycan metabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.03.02.04">
+            <CAT_DESCR>peptidoglycan anabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.03.02.07">
+            <CAT_DESCR>peptidoglycan catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.03.03">
+          <CAT_DESCR>chitin metabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.03.03.04">
+            <CAT_DESCR>chitin anabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.03.03.07">
+            <CAT_DESCR>chitin catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.03.04">
+          <CAT_DESCR>starch metabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.03.04.04">
+            <CAT_DESCR>starch anabolism</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.03.04.07">
+            <CAT_DESCR>starch catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.05">
+        <CAT_DESCR>C-1 compound metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.05.04">
+          <CAT_DESCR>C-1 compound anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.05.07">
+          <CAT_DESCR>C-1 compound catabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.05.07.01">
+            <CAT_DESCR>serine-isocitrate lyase pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.05.07.03">
+            <CAT_DESCR>ribulose-monophosphate cycle</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.06">
+        <CAT_DESCR>C-2 compound and organic acid metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.06.04">
+          <CAT_DESCR>C-2 compound and organic acid anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.06.07">
+          <CAT_DESCR>C-2 compound and organic acid catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.07">
+        <CAT_DESCR>C-3 compound metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.07.04">
+          <CAT_DESCR>C-3 compound anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.07.07">
+          <CAT_DESCR>C-3 compound catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.08">
+        <CAT_DESCR>C-4 compound metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.08.04">
+          <CAT_DESCR>C-4 compound anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.08.07">
+          <CAT_DESCR>C-4 compound catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.09">
+        <CAT_DESCR>aminosaccharide metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.09.04">
+          <CAT_DESCR>aminosaccharide anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.09.07">
+          <CAT_DESCR>aminosaccharide catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.10">
+        <CAT_DESCR>aliphatic hydrocarbon metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.10.04">
+          <CAT_DESCR>aliphatic hydrocarbon anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.10.07">
+          <CAT_DESCR>aliphatic hydrocarbon catabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.11">
+        <CAT_DESCR>aromate metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.11.04">
+          <CAT_DESCR>aromate anabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.11.07">
+          <CAT_DESCR>aromate catabolism</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.05.11.07.01">
+            <CAT_DESCR>aerobic aromate catabolism</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="01.05.11.07.01.01">
+              <CAT_DESCR>ortho-cleavage</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="01.05.11.07.01.03">
+              <CAT_DESCR>meta-cleavage</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.05.11.07.02">
+            <CAT_DESCR>anaerobic aromate catabolism</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.12">
+        <CAT_DESCR>autotrophic CO2-fixation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.12.01">
+          <CAT_DESCR>Calvin cycle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.12.03">
+          <CAT_DESCR>reductive TCA cycle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.12.05">
+          <CAT_DESCR>hydroxypropionate pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.12.07">
+          <CAT_DESCR>acetyl-CoA pathway</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.13">
+        <CAT_DESCR>transfer of activated C-1 groups</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.05.13.01">
+          <CAT_DESCR>S-adenosyl-methionine - homocysteine cycle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.05.13.03">
+          <CAT_DESCR>tetrahydrofolate-dependent C-1-transfer</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.05.25">
+        <CAT_DESCR>regulation of C-compound and carbohydrate metabolism</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.06">
+      <CAT_DESCR>lipid, fatty acid and isoprenoid metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.06.02">
+        <CAT_DESCR>membrane lipid metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.06.02.01">
+          <CAT_DESCR>phospholipid metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.02.02">
+          <CAT_DESCR>glycolipid metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.02.03">
+          <CAT_DESCR>sphingolipid metabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.06.05">
+        <CAT_DESCR>fatty acid metabolism</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.06.06">
+        <CAT_DESCR>isoprenoid metabolism</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.06.06.01">
+          <CAT_DESCR>hemiterpenes metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.03">
+          <CAT_DESCR>monoterpenes metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.05">
+          <CAT_DESCR>sesquiterpenes metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.07">
+          <CAT_DESCR>diterpenes metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.09">
+          <CAT_DESCR>triterpenes metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.11">
+          <CAT_DESCR>tetracyclic and pentacyclic triterpenes (cholesterin, steroids and hopanoids) metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.13">
+          <CAT_DESCR>tetraterpenes (carotinoids) metabolism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.06.06.15">
+          <CAT_DESCR>polyterpenes metabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.06.10">
+        <CAT_DESCR>regulation of lipid, fatty acid and isoprenoid metabolism</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.07">
+      <CAT_DESCR>metabolism of vitamins, cofactors, and prosthetic groups</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.07.01">
+        <CAT_DESCR>biosynthesis of vitamins, cofactors, and prosthetic groups</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.07.03">
+        <CAT_DESCR>catabolism of vitamins, cofactors, and prosthetic groups</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.07.04">
+        <CAT_DESCR>utilization of vitamins, cofactors, and prosthetic groups</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.07.07">
+        <CAT_DESCR>regulation of the metabolism of vitamins, cofactors, and prosthetic groups </CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.08">
+      <CAT_DESCR>metabolism of intercellular mediators</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.08.01">
+        <CAT_DESCR>metabolism of neurotransmitters</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.08.02">
+        <CAT_DESCR>metabolism of hormones</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.08.03">
+        <CAT_DESCR>metabolism of cytokines and growth factors</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.08.04">
+        <CAT_DESCR>regulation of the metabolism of intercellular mediators</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.20">
+      <CAT_DESCR>secondary metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.20.01">
+        <CAT_DESCR>metabolism of primary metabolic sugar derivatives</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.01.01">
+          <CAT_DESCR>metabolism of secondary monosaccharides</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.01.03">
+          <CAT_DESCR>metabolism of sugar carboxylic acids</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.01.05">
+          <CAT_DESCR>metabolism of sugar alcohols</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.01.07">
+          <CAT_DESCR>metabolism of glycosides</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.01.09">
+          <CAT_DESCR>metabolism of aminoglycoside antibiotics</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.03">
+        <CAT_DESCR>metabolism of derivatives of intermediates of glucose degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.05">
+        <CAT_DESCR>metabolism of acetic acid derivatives</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.05.01">
+          <CAT_DESCR>metabolism of acetoacetate, acetone, hydroxybutyric acid</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.05.03">
+          <CAT_DESCR>metabolism of alkanes, alkenes, alkanals, alkanols</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.05.05">
+          <CAT_DESCR>metabolism of fatty acid esters</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.05.07">
+          <CAT_DESCR>metabolism of acetylenes</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.05.09">
+          <CAT_DESCR>metabolism of eicosanoids</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.05.11">
+          <CAT_DESCR>metabolism of polyketides</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.07">
+        <CAT_DESCR>metabolism of propionic acid derivatives</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.09">
+        <CAT_DESCR>metabolism of derivatives of intermediates of the TCA and glyoxylate pathway</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.13">
+        <CAT_DESCR>metabolism of derivatives of homoisopentenyl pyrophosphate</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.15">
+        <CAT_DESCR>metabolism of derivatives of dehydroquinic acid, shikimic acid and chorismic acid</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.15.01">
+          <CAT_DESCR>metabolism of naphthoquinone, anthraquinone</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.15.03">
+          <CAT_DESCR>metabolism of ubiquinone</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.17">
+        <CAT_DESCR>metabolism of secondary products derived from primary amino acids</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.17.01">
+          <CAT_DESCR>metabolism of nonprotein amino acids</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.17.03">
+          <CAT_DESCR>metabolism of amines</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.17.05">
+          <CAT_DESCR>metabolism of cyanogenic glycosides</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.17.07">
+          <CAT_DESCR>metabolism of glycosinolates and derivatives</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.17.09">
+          <CAT_DESCR>metabolism of alkaloids</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.19">
+        <CAT_DESCR>metabolism of secondary products derived from glycine, L-serine and L-alanine</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.19.01">
+          <CAT_DESCR>metabolism of porphyrins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.19.03">
+          <CAT_DESCR>metabolism of open-chain tetrapyrrols</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.19.05">
+          <CAT_DESCR>metabolism of cobalamins</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.21">
+        <CAT_DESCR>metabolism of sulfuric acid and L-cysteine derivatives</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.23">
+        <CAT_DESCR>metabolism of secondary products derived from L-methionine</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.25">
+        <CAT_DESCR>metabolism of secondary products derived from L-valin, L-leucin and L-isoleucin</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.27">
+        <CAT_DESCR>metabolism of secondary products derived from L-aspartic acid and L-threonine</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.29">
+        <CAT_DESCR>metabolism of secondary products derived from L-glutamic acid, L-proline and L-ornithine</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.31">
+        <CAT_DESCR>metabolism of secondary products derived from L-lysine, L-arginine and L-histidine</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.33">
+        <CAT_DESCR>metabolism of secondary products derived from L-tryptophan</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.35">
+        <CAT_DESCR>metabolism of secondary products derived from L-phenylalanine and L-tyrosine</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.35.01">
+          <CAT_DESCR>metabolism of phenylpropanoids</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="01.20.35.01.01">
+            <CAT_DESCR>metabolism of melanins</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.20.35.01.03">
+            <CAT_DESCR>metabolism of lignins</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.20.35.01.05">
+            <CAT_DESCR>metabolism of stilbenes, flavonoids</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.20.35.01.07">
+            <CAT_DESCR>metabolism of coumarins</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="01.20.35.01.09">
+            <CAT_DESCR>metabolism of cinnamic acids</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.35.02">
+          <CAT_DESCR>metabolism of thyroids</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.35.03">
+          <CAT_DESCR>metabolism of catecholamines</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.36">
+        <CAT_DESCR>non-ribosomal peptide synthesis </CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.37">
+        <CAT_DESCR>metabolism of peptide derived compounds</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="01.20.37.01">
+          <CAT_DESCR>metabolism of thioredoxin, glutaredoxin, glutathion</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.37.03">
+          <CAT_DESCR>metabolism of peptide antibiotics</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="01.20.37.05">
+          <CAT_DESCR>metabolism of beta-lactams</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.38">
+        <CAT_DESCR>metabolism of toxins/drugs </CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.20.70">
+        <CAT_DESCR>regulation of secondary metabolism</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="01.25">
+      <CAT_DESCR>extracellular metabolism</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="01.25.01">
+        <CAT_DESCR>extracellular polysaccharide degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.25.03">
+        <CAT_DESCR>extracellular protein degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.25.05">
+        <CAT_DESCR>extracellular polynucleotide degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.25.07">
+        <CAT_DESCR>extracellular ester compound degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.25.09">
+        <CAT_DESCR>extracellular lignin degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="01.25.11">
+        <CAT_DESCR>extracellular aminosaccharide degradation</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="02">
+    <CAT_DESCR>ENERGY</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="02.01">
+      <CAT_DESCR>glycolysis and gluconeogenesis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.01.01">
+        <CAT_DESCR>glycolysis methylglyoxal bypass</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.01.03">
+        <CAT_DESCR>regulation of glycolysis and gluconeogenesis</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.04">
+      <CAT_DESCR>glyoxylate cycle</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.05">
+      <CAT_DESCR>Entner-Doudoroff pathway</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.07">
+      <CAT_DESCR>pentose-phosphate pathway</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.07.01">
+        <CAT_DESCR>pentose-phosphate pathway oxidative branch</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.07.03">
+        <CAT_DESCR>pentose-phosphate pathway non oxidative branch</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.07.05">
+        <CAT_DESCR>regulation of pentose-phosphate pathway</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.08">
+      <CAT_DESCR>pyruvate dehydrogenase complex</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.09">
+      <CAT_DESCR>anaplerotic reactions</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.10">
+      <CAT_DESCR>tricarboxylic-acid pathway (citrate cycle, Krebs cycle, TCA cycle)</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.11">
+      <CAT_DESCR>electron transport and membrane-associated energy conservation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.11.05">
+        <CAT_DESCR>accessory proteins of electron transport and membrane-associated energy conservation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.11.07">
+        <CAT_DESCR>regulation of electron transport and membrane-associated energy conservation</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.13">
+      <CAT_DESCR>respiration</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.13.01">
+        <CAT_DESCR>anaerobic respiration</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.13.03">
+        <CAT_DESCR>aerobic respiration</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.13.05">
+        <CAT_DESCR>regulation of respiration</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.16">
+      <CAT_DESCR>fermentation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.16.01">
+        <CAT_DESCR>alcohol fermentation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="02.16.01.01">
+          <CAT_DESCR>bacterial type ethanol fermentation</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.03">
+        <CAT_DESCR>lactate fermentation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="02.16.03.01">
+          <CAT_DESCR>homofermentative pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.03.03">
+          <CAT_DESCR>heterofermentative pathway and fermentaton of other saccharides</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.03.05">
+          <CAT_DESCR>bifidum pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.03.07">
+          <CAT_DESCR>malo-lactate fermentation</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.05">
+        <CAT_DESCR>butyrate and butanol-acetoine fermentation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.07">
+        <CAT_DESCR>ethanol-acetate fermentation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.09">
+        <CAT_DESCR>mixed acid and butanediol fermentation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.11">
+        <CAT_DESCR>propionate fermentation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="02.16.11.01">
+          <CAT_DESCR>acrylate pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.11.03">
+          <CAT_DESCR>succinate-propionate pathway</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.13">
+        <CAT_DESCR>acetate fermentation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.15">
+        <CAT_DESCR>methane fermentation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.17">
+        <CAT_DESCR>fermentation of nitrogenous compounds</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="02.16.17.01">
+          <CAT_DESCR>single amino acid fermentations</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.17.03">
+          <CAT_DESCR>stickland reactions</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="02.16.17.05">
+          <CAT_DESCR>fermentation of heterocyclic compounds</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.16.20">
+        <CAT_DESCR>regulation of fermentation</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.17">
+      <CAT_DESCR>chemolithotrophy (e.g. sulfide, nitrogenous compounds)</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.19">
+      <CAT_DESCR>metabolism of energy reserves (e.g. glycogen, trehalose)</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.25">
+      <CAT_DESCR>oxidation of fatty acids</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.30">
+      <CAT_DESCR>photosynthesis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.30.01">
+        <CAT_DESCR>anoxygenic photosynthesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.30.03">
+        <CAT_DESCR>oxygenic photosynthesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.30.07">
+        <CAT_DESCR>accessory proteins of photosynthetic electron transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.30.10">
+        <CAT_DESCR>regulation of photosynthesis</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="02.45">
+      <CAT_DESCR>energy conversion and regeneration</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="02.45.01">
+        <CAT_DESCR>bioluminescence</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.45.03">
+        <CAT_DESCR>light absorption</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.45.07">
+        <CAT_DESCR>heat production</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.45.11">
+        <CAT_DESCR>conversion to kinetic energy (e.g. movement)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.45.15">
+        <CAT_DESCR>energy generation (e.g. ATP synthase)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="02.45.20">
+        <CAT_DESCR>regulation of energy conversion / regeneration</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="04">
+    <CAT_DESCR>STORAGE PROTEIN</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="04.01">
+      <CAT_DESCR>storage facilitating proteins</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="04.02">
+      <CAT_DESCR>stored proteins</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="10">
+    <CAT_DESCR>CELL CYCLE AND DNA PROCESSING</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="10.01">
+      <CAT_DESCR>DNA processing</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="10.01.01">
+        <CAT_DESCR>cellular DNA uptake</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.01.01.01">
+          <CAT_DESCR>bacterial competence</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.01.03">
+          <CAT_DESCR>conjugational DNA transfer</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.01.02">
+        <CAT_DESCR>DNA topology</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.01.03">
+        <CAT_DESCR>DNA synthesis and replication</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.01.03.03">
+          <CAT_DESCR>ori recognition and priming complex formation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.03.05">
+          <CAT_DESCR>extension/ polymerization activity</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.01.05">
+        <CAT_DESCR>DNA recombination and DNA repair</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.01.05.01">
+          <CAT_DESCR>DNA repair</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.05.03">
+          <CAT_DESCR>DNA recombination</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="10.01.05.03.01">
+            <CAT_DESCR>meiotic recombination</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.01.05.03.03">
+            <CAT_DESCR>somatic / mitotic recombination</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.01.05.03.05">
+            <CAT_DESCR>DNA integration</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.01.09">
+        <CAT_DESCR>DNA restriction or modification</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.01.09.01">
+          <CAT_DESCR>DNA methylation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.09.03">
+          <CAT_DESCR>DNA restriction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.09.05">
+          <CAT_DESCR>DNA conformation modification (e.g. chromatin)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.01.09.07">
+          <CAT_DESCR>DNA imprinting and other epigenetic effects</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.01.11">
+        <CAT_DESCR>regulation of DNA processing</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="10.03">
+      <CAT_DESCR>cell cycle</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="10.03.01">
+        <CAT_DESCR>mitotic cell cycle and cell cycle control</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.03.01.01">
+          <CAT_DESCR>mitotic cell cycle</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.01">
+            <CAT_DESCR>G1 phase of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.02">
+            <CAT_DESCR>G1/G0 transition, mitotic exit</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.03">
+            <CAT_DESCR>G1/S transition of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.05">
+            <CAT_DESCR>S phase of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.07">
+            <CAT_DESCR>G2 phase of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.09">
+            <CAT_DESCR>G2/M transition of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.11">
+            <CAT_DESCR>M phase</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="10.03.01.01.13">
+            <CAT_DESCR>M/G1 transition of mitotic cell cycle</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.01.02">
+          <CAT_DESCR>cell cycle arrest</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.01.03">
+          <CAT_DESCR>cell cycle checkpoints (checkpoints of morphogenesis, DNA-damage,-replication, mitotic phase and spindle)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.03.02">
+        <CAT_DESCR>meiosis</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.03.02.01">
+          <CAT_DESCR>meiosis I</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.02.03">
+          <CAT_DESCR>meiosis II</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.03.03">
+        <CAT_DESCR>cytokinesis (cell division) /septum formation and hydrolysis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.03.04">
+        <CAT_DESCR>nuclear and chromosomal cycle</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.03.04.01">
+          <CAT_DESCR>centromere/kinetochore complex maturation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.04.03">
+          <CAT_DESCR>chromosome condensation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.04.05">
+          <CAT_DESCR>chromosome segregation/division</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.04.06">
+          <CAT_DESCR>chromosome inactivation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.04.07">
+          <CAT_DESCR>nuclear division</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.04.09">
+          <CAT_DESCR>nuclear migration</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="10.03.05">
+        <CAT_DESCR>cell cycle dependent cytoskeleton reorganization</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="10.03.05.01">
+          <CAT_DESCR>spindle pole body/centrosome and microtubule cycle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="10.03.05.03">
+          <CAT_DESCR>cell cycle dependent actin filament reorganization</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="11">
+    <CAT_DESCR>TRANSCRIPTION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="11.02">
+      <CAT_DESCR>RNA synthesis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="11.02.01">
+        <CAT_DESCR>rRNA synthesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.02.02">
+        <CAT_DESCR>tRNA synthesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.02.03">
+        <CAT_DESCR>mRNA synthesis</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="11.02.03.01">
+          <CAT_DESCR>general transcription activities</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="11.02.03.01.01">
+            <CAT_DESCR>transcription initiation</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="11.02.03.01.04">
+            <CAT_DESCR>transcription elongation</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="11.02.03.01.07">
+            <CAT_DESCR>transcription termination</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="11.02.03.04">
+          <CAT_DESCR>transcriptional control</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="11.02.03.04.01">
+            <CAT_DESCR>transcription activation</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="11.02.03.04.03">
+            <CAT_DESCR>transcription repression</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="11.02.03.04.05">
+            <CAT_DESCR>enhancer/silencer interaction</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="11.02.03.04.07">
+            <CAT_DESCR>posttranscriptional control</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="11.04">
+      <CAT_DESCR>RNA processing</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="11.04.01">
+        <CAT_DESCR>rRNA processing</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.04.02">
+        <CAT_DESCR>tRNA processing</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.04.03">
+        <CAT_DESCR>mRNA processing (splicing, 5'-, 3'-end processing)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="11.04.03.01">
+          <CAT_DESCR>splicing</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="11.04.03.01.10">
+            <CAT_DESCR>regulation of splicing</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="11.04.03.03">
+          <CAT_DESCR>5'-end processing</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="11.04.03.05">
+          <CAT_DESCR>3'-end processing</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="11.04.03.11">
+          <CAT_DESCR>control of mRNA stability</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.04.05">
+        <CAT_DESCR>RNA topology</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="11.06">
+      <CAT_DESCR>RNA modification</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="11.06.01">
+        <CAT_DESCR>rRNA modification</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.06.02">
+        <CAT_DESCR>tRNA modification</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="11.06.03">
+        <CAT_DESCR>mRNA modification</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="11.06.03.01">
+          <CAT_DESCR>mRNA editing</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="12">
+    <CAT_DESCR>PROTEIN SYNTHESIS</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="12.01">
+      <CAT_DESCR>ribosome biogenesis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="12.01.01">
+        <CAT_DESCR>ribosomal proteins</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="12.04">
+      <CAT_DESCR>translation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="12.04.01">
+        <CAT_DESCR>translation initiation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="12.04.02">
+        <CAT_DESCR>translation elongation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="12.04.03">
+        <CAT_DESCR>translation termination</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="12.07">
+      <CAT_DESCR>translational control</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="12.10">
+      <CAT_DESCR>aminoacyl-tRNA-synthetases</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="12.11">
+      <CAT_DESCR>selenocystein biosynthesis and incorporation</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="14">
+    <CAT_DESCR>PROTEIN FATE (folding, modification, destination)</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="14.01">
+      <CAT_DESCR>protein folding and stabilization</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="14.04">
+      <CAT_DESCR>protein targeting, sorting and translocation</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="14.07">
+      <CAT_DESCR>protein modification</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="14.07.01">
+        <CAT_DESCR>modification with fatty acids (e.g. myristylation, palmitylation, farnesylation)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.02">
+        <CAT_DESCR>modification with sugar residues (e.g. glycosylation, deglycosylation)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="14.07.02.01">
+          <CAT_DESCR>O-directed glycosylation, deglycosylation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="14.07.02.02">
+          <CAT_DESCR>N-directed glycosylation, deglycosylation</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.03">
+        <CAT_DESCR>modification by phosphorylation, dephosphorylation, autophosphorylation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.04">
+        <CAT_DESCR>modification by acetylation, deacetylation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.05">
+        <CAT_DESCR>modification by ubiquitination, deubiquitination</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.07">
+        <CAT_DESCR>modification by ubiquitin-related proteins</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.09">
+        <CAT_DESCR>posttranslational modification of amino acids (e.g. hydroxylation, methylation)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.11">
+        <CAT_DESCR>protein processing (proteolytic)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="14.07.11.01">
+          <CAT_DESCR>autoproteolytic processing</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.07.12">
+        <CAT_DESCR>protein processing (non-proteolytic, e.g. iron-incorporation)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="14.10">
+      <CAT_DESCR>assembly of protein complexes</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="14.13">
+      <CAT_DESCR>protein/peptide degradation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="14.13.01">
+        <CAT_DESCR>cytoplasmic and nuclear protein degradation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="14.13.01.01">
+          <CAT_DESCR>proteasomal degradation (ubiquitin/proteasomal pathway)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="14.13.04">
+        <CAT_DESCR>lysosomal and vacuolar protein degradation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="14.13.04.01">
+          <CAT_DESCR>lysosomal protein degradation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="14.13.04.02">
+          <CAT_DESCR>vacuolar protein degradation</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="16">
+    <CAT_DESCR>PROTEIN WITH BINDING FUNCTION OR COFACTOR REQUIREMENT (structural or catalytic)</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="16.01">
+      <CAT_DESCR>protein binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.01.01">
+        <CAT_DESCR>receptor binding</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.02">
+      <CAT_DESCR>peptide binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.03">
+      <CAT_DESCR>nucleic acid binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.03.01">
+        <CAT_DESCR>DNA binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.03.03">
+        <CAT_DESCR>RNA binding</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.05">
+      <CAT_DESCR>polysaccharide binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.06">
+      <CAT_DESCR>motor protein binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.07">
+      <CAT_DESCR>structural protein binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.09">
+      <CAT_DESCR>lipid binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.10">
+      <CAT_DESCR>amine binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.11">
+      <CAT_DESCR>amino acid/amino acid derivatives binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.12">
+      <CAT_DESCR>sulfate binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.13">
+      <CAT_DESCR>C-compound binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.13.01">
+        <CAT_DESCR>sugar binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.13.03">
+        <CAT_DESCR>fatty acid binding (e.g. acyl-carrier protein)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.14">
+      <CAT_DESCR>selen binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.15">
+      <CAT_DESCR>drug/toxin binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.16">
+      <CAT_DESCR>antigen binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.17">
+      <CAT_DESCR>metal binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.17.01">
+        <CAT_DESCR>calcium binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.17.03">
+        <CAT_DESCR>potassium binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.17.05">
+        <CAT_DESCR>sodium binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.17.07">
+        <CAT_DESCR>magnesium binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.17.09">
+        <CAT_DESCR>heavy metal binding (Cu, Fe, Zn)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.18">
+      <CAT_DESCR>virus particle binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.19">
+      <CAT_DESCR>nucleotide/nucleoside/nucleobase binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.19.01">
+        <CAT_DESCR>cyclic nucleotide binding (cAMP, cGMP, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.19.03">
+        <CAT_DESCR>ATP binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.19.05">
+        <CAT_DESCR>GTP binding</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.21">
+      <CAT_DESCR>complex cofactor/cosubstrate/vitamine binding</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="16.21.01">
+        <CAT_DESCR>heme binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.03">
+        <CAT_DESCR>molybdopterin binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.05">
+        <CAT_DESCR>FAD/FMN binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.07">
+        <CAT_DESCR>NAD/NADP binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.08">
+        <CAT_DESCR>Fe/S binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.09">
+        <CAT_DESCR>cobalamine binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.11">
+        <CAT_DESCR>thiamine pyrophosphate binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.13">
+        <CAT_DESCR>lipoamide binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.15">
+        <CAT_DESCR>biotin binding</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="16.21.17">
+        <CAT_DESCR>pyridoxal phosphate binding</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.22">
+      <CAT_DESCR>hormone binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.23">
+      <CAT_DESCR>neurotransmitter binding</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="16.25">
+      <CAT_DESCR>oxygen binding</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="18">
+    <CAT_DESCR>REGULATION OF METABOLISM AND PROTEIN FUNCTION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="18.01">
+      <CAT_DESCR>regulation by </CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="18.01.01">
+        <CAT_DESCR>regulation by modification</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.01.03">
+        <CAT_DESCR>regulation by localization</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.01.05">
+        <CAT_DESCR>regulation by processing</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.01.07">
+        <CAT_DESCR>regulation by binding / dissociation</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="18.02">
+      <CAT_DESCR>regulation of protein activity</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="18.02.01">
+        <CAT_DESCR>enzymatic activity regulation / enzyme regulator</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="18.02.01.01">
+          <CAT_DESCR>enzyme activator</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="18.02.01.01.01">
+            <CAT_DESCR>GTPase activator (GAP)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="18.02.01.01.03">
+            <CAT_DESCR>protease activator</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="18.02.01.01.05">
+            <CAT_DESCR>kinase activator</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="18.02.01.02">
+          <CAT_DESCR>enzyme inhibitor</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="18.02.01.02.01">
+            <CAT_DESCR>GTPase inhibitor (GIP)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="18.02.01.02.03">
+            <CAT_DESCR>protease inhibitor</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="18.02.01.02.05">
+            <CAT_DESCR>kinase inhibitior</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.02.03">
+        <CAT_DESCR>guanyl-nucleotide exchange factor (GEF)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.02.05">
+        <CAT_DESCR>regulator of G-protein signalling</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.02.07">
+        <CAT_DESCR>regulator of receptor activity</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.02.09">
+        <CAT_DESCR>regulator of transcription factor</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="18.02.10">
+        <CAT_DESCR>regulation of channel activity</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="20">
+    <CAT_DESCR>CELLULAR TRANSPORT, TRANSPORT FACILITATION AND TRANSPORT ROUTES</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="20.01">
+      <CAT_DESCR>transported compounds (substrates)</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="20.01.01">
+        <CAT_DESCR>ion transport</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.01.01.01">
+          <CAT_DESCR>cation transport (H+, Na+, K+, Ca2+ , NH4+, etc.)</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.01.01.01.01">
+            <CAT_DESCR>heavy metal ion transport (Cu+, Fe3+, etc.)</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="20.01.01.01.01.01">
+              <CAT_DESCR>siderophore-iron transport</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="20.01.01.01.01.02">
+              <CAT_DESCR>citrate-iron transport</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.01.02">
+            <CAT_DESCR>organic cation transport</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.01.01.07">
+          <CAT_DESCR>anion transport </CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.01">
+            <CAT_DESCR>nitrate transport</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.03">
+            <CAT_DESCR>nitrite transport</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.05">
+            <CAT_DESCR>sulfate/sulfite transport</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.07">
+            <CAT_DESCR>phosphate transport</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.08">
+            <CAT_DESCR>organic anion transport</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.01.01.07.09">
+            <CAT_DESCR>chloride transport</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.03">
+        <CAT_DESCR>C-compound and carbohydrate transport</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.01.03.01">
+          <CAT_DESCR>sugar transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.01.03.03">
+          <CAT_DESCR>C4-dicarboxylate transport (e.g. malate, succinate, fumarate)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.07">
+        <CAT_DESCR>amino acid/amino acid derivatives transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.09">
+        <CAT_DESCR>peptide transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.10">
+        <CAT_DESCR>protein transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.11">
+        <CAT_DESCR>amine / polyamine transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.13">
+        <CAT_DESCR>lipid/fatty acid transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.15">
+        <CAT_DESCR>electron transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.17">
+        <CAT_DESCR>nucleotide/nucleoside/nucleobase transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.21">
+        <CAT_DESCR>RNA transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.23">
+        <CAT_DESCR>allantoin and allantoate transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.25">
+        <CAT_DESCR>vitamine/cofactor transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.26">
+        <CAT_DESCR>neurotransmitter transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.27">
+        <CAT_DESCR>drug/toxin transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.01.28">
+        <CAT_DESCR>hormone transport</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="20.03">
+      <CAT_DESCR>transport facilities</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="20.03.01">
+        <CAT_DESCR>channel / pore class transport</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.03.01.01">
+          <CAT_DESCR>ion channels</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.01.03">
+          <CAT_DESCR>gap-junction forming protein family (e.g. connexin, innexin)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.01.05">
+          <CAT_DESCR>nuclear pore forming protein</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.01.06">
+          <CAT_DESCR>porins of mitochondria or plastids</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.01.07">
+          <CAT_DESCR>general bacterial porin family (e.g. ompf, sugar porin, omf)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.01.09">
+          <CAT_DESCR>pore-forming toxins (e.g. diphteria toxin, hemolysin)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.03.02">
+        <CAT_DESCR>carrier (electrochemical potential-driven transport)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.03.02.01">
+          <CAT_DESCR>uniporter</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.02.02">
+          <CAT_DESCR>symporter</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.03.02.02.01">
+            <CAT_DESCR>proton driven symporter</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.03.02.02.02">
+            <CAT_DESCR>sodium driven symporter</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.03.02.03">
+          <CAT_DESCR>antiporter</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.03.02.03.01">
+            <CAT_DESCR>proton driven antiporter</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.03.02.03.02">
+            <CAT_DESCR>sodium driven antiporter</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.03.09">
+        <CAT_DESCR>phosphotransferase system</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.03.22">
+        <CAT_DESCR>transport ATPases</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.03.25">
+        <CAT_DESCR>ABC transporters</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="20.09">
+      <CAT_DESCR>transport routes</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="20.09.01">
+        <CAT_DESCR>nuclear transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.02">
+        <CAT_DESCR>chloroplast transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.03">
+        <CAT_DESCR>peroxisomal transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.04">
+        <CAT_DESCR>mitochondrial transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.05">
+        <CAT_DESCR>non-vesicular ER transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.07">
+        <CAT_DESCR>vesicular transport (Golgi network, etc.)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.09.07.03">
+          <CAT_DESCR>ER to Golgi transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.05">
+          <CAT_DESCR>intra Golgi transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.06">
+          <CAT_DESCR>post Golgi transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.07">
+          <CAT_DESCR>retrograde transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.25">
+          <CAT_DESCR>vesicle formation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.26">
+          <CAT_DESCR>vesicle docking</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.27">
+          <CAT_DESCR>vesicle fusion</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.07.29">
+          <CAT_DESCR>vesicle recycling</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.13">
+        <CAT_DESCR>vacuolar/lysosomal transport</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.14">
+        <CAT_DESCR>cytoskeleton-dependent transport</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.09.14.01">
+          <CAT_DESCR>tubulin dependent transport</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.14.02">
+          <CAT_DESCR>actin dependent transport</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.16">
+        <CAT_DESCR>cellular export and secretion</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.09.16.01">
+          <CAT_DESCR>Type I protein secretion system (ABC-type transport systems)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.02">
+          <CAT_DESCR>Type II protein secretion system (general secretory pathway, exocytosis)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.03">
+          <CAT_DESCR>Type III protein secretion system (virulence related secretory pathway, Gram- bacteria specific)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.04">
+          <CAT_DESCR>Type IV protein secretion system (conjugal DNA-protein transfer)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.05">
+          <CAT_DESCR>Type V protein secretion system (MttABC or TatABCDE-system)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.07">
+          <CAT_DESCR>non-vesicular cellular export</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.16.09">
+          <CAT_DESCR>vesicular cellular export</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.09.16.09.03">
+            <CAT_DESCR>exocytosis</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="20.09.16.09.05">
+            <CAT_DESCR>synaptic vesicle exocytosis</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="20.09.18">
+        <CAT_DESCR>cellular import</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="20.09.18.07">
+          <CAT_DESCR>non-vesicular cellular import</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="20.09.18.09">
+          <CAT_DESCR>vesicular cellular import</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="20.09.18.09.01">
+            <CAT_DESCR>endocytosis</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="20.09.18.09.01.01">
+              <CAT_DESCR>receptor-mediated endocytosis</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="20.09.18.09.01.03">
+              <CAT_DESCR>constitutive endocytosis</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="20.09.18.09.01.05">
+              <CAT_DESCR>synaptic vesicle endocytosis</CAT_DESCR>
+            </CAT>
+          </CAT>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="30">
+    <CAT_DESCR>CELLULAR COMMUNICATION/SIGNAL TRANSDUCTION MECHANISM</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="30.01">
+      <CAT_DESCR>cellular signalling</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="30.01.05">
+        <CAT_DESCR>enzyme mediated signal transduction</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="30.01.05.01">
+          <CAT_DESCR>protein kinase</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.01">
+            <CAT_DESCR>JAK-STAT cascade</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.02">
+            <CAT_DESCR>JNK cascade</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.03">
+            <CAT_DESCR>MAPKKK cascade</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.04">
+            <CAT_DESCR>NIK-I-kappaB/NF-kappaB cascade</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.05">
+            <CAT_DESCR>tyrosine kinase</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.01.06">
+            <CAT_DESCR>serine/threonine kinase</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.05.03">
+          <CAT_DESCR>protease mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.05.05">
+          <CAT_DESCR>G-protein mediated signal transduction</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="30.01.05.05.01">
+            <CAT_DESCR>small GTPase mediated signal transduction</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.01.05.05.03">
+            <CAT_DESCR>trimeric G-protein mediated signal transduction</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.05.07">
+          <CAT_DESCR>two-component signal transduction system (e.g. phosphorelay)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="30.01.09">
+        <CAT_DESCR>second messenger mediated signal transduction</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="30.01.09.01">
+          <CAT_DESCR>NO mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.09.03">
+          <CAT_DESCR>Ca2+ mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.09.07">
+          <CAT_DESCR>cAMP/cGMP mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.09.08">
+          <CAT_DESCR>hormone mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.09.09">
+          <CAT_DESCR>fatty acid derivatives mediated signal transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.01.09.11">
+          <CAT_DESCR>polyphosphoinositol mediated signal transduction</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="30.01.11">
+        <CAT_DESCR>ligand-dependent nuclear receptors</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="30.05">
+      <CAT_DESCR>transmembrane signal transduction</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="30.05.01">
+        <CAT_DESCR>receptor enzyme mediated signalling</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="30.05.01.05">
+          <CAT_DESCR>interleukine receptor signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.01.10">
+          <CAT_DESCR>two-component signal transduction system (sensor kinase component)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.01.12">
+          <CAT_DESCR>transmembrane receptor protein tyrosine kinase signalling pathways</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="30.05.01.12.01">
+            <CAT_DESCR>EGF-receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.01.12.03">
+            <CAT_DESCR>FGF-receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.01.12.04">
+            <CAT_DESCR>IGF-receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.01.12.05">
+            <CAT_DESCR>insulin receptor signalling pathway</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.01.18">
+          <CAT_DESCR>transmembrane receptor protein serine/threonine kinase signalling pathways</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="30.05.01.18.01">
+            <CAT_DESCR>TGF-beta-receptor signalling pathway</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="30.05.02">
+        <CAT_DESCR>non-enzymatic receptor mediated signalling</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="30.05.02.14">
+          <CAT_DESCR>Notch-receptor signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.16">
+          <CAT_DESCR>hedgehog-dependent signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.20">
+          <CAT_DESCR>Wnt signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.22">
+          <CAT_DESCR>Tl-receptor (LRR proteins) signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.24">
+          <CAT_DESCR>G-protein coupled receptor signalling pathway</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.01">
+            <CAT_DESCR>serotonin receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.02">
+            <CAT_DESCR>acetyl choline receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.03">
+            <CAT_DESCR>dopamine receptor signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.04">
+            <CAT_DESCR>gamma-aminobutyric acid signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.05">
+            <CAT_DESCR>glutamate signalling pathway</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="30.05.02.24.06">
+            <CAT_DESCR>neuropeptide signalling pathway</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.26">
+          <CAT_DESCR>integrin receptor signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.28">
+          <CAT_DESCR>cadherin mediated signalling pathway</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="30.05.02.30">
+          <CAT_DESCR>ion channel mediated signalling pathway</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="30.07">
+      <CAT_DESCR>regulation of signal transduction</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="32">
+    <CAT_DESCR>CELL RESCUE, DEFENSE AND VIRULENCE</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="32.01">
+      <CAT_DESCR>stress response</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="32.01.01">
+        <CAT_DESCR>oxidative stress response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.03">
+        <CAT_DESCR>osmotic and salt stress response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.04">
+        <CAT_DESCR>pH stress response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.05">
+        <CAT_DESCR>heat shock response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.06">
+        <CAT_DESCR>cold shock response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.07">
+        <CAT_DESCR>unfolded protein response (e.g. ER quality control)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.09">
+        <CAT_DESCR>DNA damage response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.11">
+        <CAT_DESCR>nutrient starvation response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.01.13">
+        <CAT_DESCR>electromagnetic waves stress response (e.g. UV, X-ray)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="32.05">
+      <CAT_DESCR>disease, virulence and defense</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="32.05.01">
+        <CAT_DESCR>resistance proteins</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="32.05.01.01">
+          <CAT_DESCR>antibiotic resistance</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.01.03">
+          <CAT_DESCR>chemical agent resistance</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="32.05.01.03.01">
+            <CAT_DESCR>organic chemical agent resistance</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="32.05.01.03.03">
+            <CAT_DESCR>inorganic chemical agent resistance (e.g. heavy metals)</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.01.05">
+          <CAT_DESCR>bacteriocine resistance</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.01.07">
+          <CAT_DESCR>electromagnetic waves resistance (e.g. UV)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.05.03">
+        <CAT_DESCR>defense related proteins</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.05.05">
+        <CAT_DESCR>virulence, disease factors</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="32.05.05.01">
+          <CAT_DESCR>toxins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.02">
+          <CAT_DESCR>antibiotics</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.03">
+          <CAT_DESCR>bacteriocins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.05">
+          <CAT_DESCR>invasins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.06">
+          <CAT_DESCR>internalins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.07">
+          <CAT_DESCR>adhaesins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.08">
+          <CAT_DESCR>cytolysins</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.09">
+          <CAT_DESCR>evasion of host immune system</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.05.05.13">
+          <CAT_DESCR>antigenic determinants</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="32.07">
+      <CAT_DESCR>detoxification</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="32.07.01">
+        <CAT_DESCR>detoxification involving cytochrome P450</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.07.03">
+        <CAT_DESCR>detoxification by modification</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.07.05">
+        <CAT_DESCR>detoxification by export</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.07.07">
+        <CAT_DESCR>oxygen and radical detoxification</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="32.07.07.01">
+          <CAT_DESCR>catalase reaction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.07.07.03">
+          <CAT_DESCR>glutathione conjugation reaction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.07.07.05">
+          <CAT_DESCR>peroxidase reaction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="32.07.07.07">
+          <CAT_DESCR>superoxide metabolism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.07.09">
+        <CAT_DESCR>detoxification by degradation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.07.11">
+        <CAT_DESCR>detoxification by impermeability</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="32.10">
+      <CAT_DESCR>degradation / modification of foreign (exogenous) compounds</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="32.10.03">
+        <CAT_DESCR>degradation / modification of foreign (exogenous) polynucleotides</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.10.05">
+        <CAT_DESCR>degradation / modification of foreign (exogenous) proteins</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.10.07">
+        <CAT_DESCR>degradation / modification of foreign (exogenous) polysaccharides</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="32.10.09">
+        <CAT_DESCR>degradation / modification of foreign (exogenous) ester compounds</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="34">
+    <CAT_DESCR>INTERACTION WITH THE  ENVIRONMENT</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="34.01">
+      <CAT_DESCR>homeostasis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="34.01.01">
+        <CAT_DESCR>homeostasis of cations</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.01.01.01">
+          <CAT_DESCR>homeostasis of metal ions (Na, K, Ca etc.)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.01.01.03">
+          <CAT_DESCR>homeostasis of protons</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.01.03">
+        <CAT_DESCR>homeostasis of anions</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.01.03.01">
+          <CAT_DESCR>homeostasis of sulfate</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.01.03.03">
+          <CAT_DESCR>homeostasis of phosphate</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.01.03.05">
+          <CAT_DESCR>homeostasis of chloride</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.01.04">
+        <CAT_DESCR>glucose homeostasis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.01.05">
+        <CAT_DESCR>water homeostasis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.01.06">
+        <CAT_DESCR>immune cell homeostasis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.01.07">
+        <CAT_DESCR>cholesterol homeostasis</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="34.03">
+      <CAT_DESCR>membrane excitability</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="34.03.01">
+        <CAT_DESCR>synaptic transmission</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.03.03">
+        <CAT_DESCR>regulation, generation and propagation of action potential</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="34.05">
+      <CAT_DESCR>cell motility</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="34.05.01">
+        <CAT_DESCR>cell migration</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.05.02">
+        <CAT_DESCR>motor activity</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.05.07">
+        <CAT_DESCR>ciliary/flagellar motility</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.05.09">
+        <CAT_DESCR>polymerization based motility</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="34.07">
+      <CAT_DESCR>cell adhesion</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="34.07.01">
+        <CAT_DESCR>cell-cell adhesion</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.07.02">
+        <CAT_DESCR>cell-matrix adhesion</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="34.11">
+      <CAT_DESCR>cellular sensing and response to external stimulus</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="34.11.01">
+        <CAT_DESCR>photoperception and response</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.11.01.02">
+          <CAT_DESCR>phototropism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.01.03">
+          <CAT_DESCR>visual transduction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.01.05">
+          <CAT_DESCR>phototaxis</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.03">
+        <CAT_DESCR>chemoperception and response</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.11.03.03">
+          <CAT_DESCR>chemotaxis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.04">
+          <CAT_DESCR>chemotropism</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.07">
+          <CAT_DESCR>pheromone response, mating-type determination, sex-specific proteins</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="34.11.03.07.01">
+            <CAT_DESCR>sexual incompatibility</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.11">
+          <CAT_DESCR>pH response</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.12">
+          <CAT_DESCR>water response</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.13">
+          <CAT_DESCR>osmosensing  and response</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.03.15">
+          <CAT_DESCR>quorum sensing system</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.05">
+        <CAT_DESCR>mechanical stimulus perception and response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.07">
+        <CAT_DESCR>gravity perception and response</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.11.07.01">
+          <CAT_DESCR>gravitropism</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.08">
+        <CAT_DESCR>electromagnetic field perception and response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.09">
+        <CAT_DESCR>temperature perception and response</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.10">
+        <CAT_DESCR>response to biotic stimulus</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.11">
+        <CAT_DESCR>rhythm (e.g. circadian, ultradian)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.12">
+        <CAT_DESCR>perception of nutrients and nutritional adaptation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="34.11.13">
+        <CAT_DESCR>gas and metabolite distribution</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="34.11.13.01">
+          <CAT_DESCR>gas exchange and distribution</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.13.03">
+          <CAT_DESCR>control of respiratory activity</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.13.05">
+          <CAT_DESCR>metabolite distribution</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="34.11.13.07">
+          <CAT_DESCR>circulation (e.g. blood pressure)</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="36">
+    <CAT_DESCR>SYSTEMIC INTERACTION WITH THE ENVIRONMENT</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="36.20">
+      <CAT_DESCR>plant / fungal specific systemic sensing and response </CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="36.20.16">
+        <CAT_DESCR>plant defense response </CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.20.16.01">
+          <CAT_DESCR>disease resistance (R-gene) specific </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.16.03">
+          <CAT_DESCR>jasmonic acid/ethylene dependent systemic resistance</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.16.05">
+          <CAT_DESCR>systemic acquired resistance </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.16.07">
+          <CAT_DESCR>hypersensitive response </CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="36.20.18">
+        <CAT_DESCR>plant hormonal regulation </CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.20.18.01">
+          <CAT_DESCR>auxin response </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.02">
+          <CAT_DESCR>ethylen response </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.03">
+          <CAT_DESCR>gibberellic acid response </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.04">
+          <CAT_DESCR>cytokinin response </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.05">
+          <CAT_DESCR>abscisic acid response</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.06">
+          <CAT_DESCR>brassinosteroid response </CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.20.18.99">
+          <CAT_DESCR>other plant signalling molecules response (jasmonic acid, salicylic acid etc.)</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="36.25">
+      <CAT_DESCR>animal specific systemic sensing and response</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="36.25.01">
+        <CAT_DESCR>animal sensory mechanisms</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.25.01.01">
+          <CAT_DESCR>vision</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.03">
+          <CAT_DESCR>hearing</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.05">
+          <CAT_DESCR>tactile sense (peripheral physical and mechanical stimuli perception)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.07">
+          <CAT_DESCR>sense of balance and equilibrium (vestibular pathways and mechanisms)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.09">
+          <CAT_DESCR>proprioceptive pathways and mechanisms</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.11">
+          <CAT_DESCR>taste</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.13">
+          <CAT_DESCR>olfaction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.01.15">
+          <CAT_DESCR>pain (nociceptive pathways)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="36.25.03">
+        <CAT_DESCR>nervous system physiology</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.25.03.01">
+          <CAT_DESCR>nervous system mediated vegetative activities / neurosecretory activities</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="36.25.03.01.01">
+            <CAT_DESCR>effect on glands / hormones</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.03.01.03">
+            <CAT_DESCR>effect on smooth muscles</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.03.01.05">
+            <CAT_DESCR>effect on heart muscle</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.03.03">
+          <CAT_DESCR>nervous system mediated motor activity</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="36.25.03.03.01">
+            <CAT_DESCR>neuromuscular junction-related activities</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.03.03.03">
+            <CAT_DESCR>movement and posture coordination</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.03.04">
+          <CAT_DESCR>neuronal integrative functions</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="36.25.03.04.01">
+            <CAT_DESCR>learning and memory</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="36.25.07">
+        <CAT_DESCR>animal hormonal regulation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.25.07.01">
+          <CAT_DESCR>effect on kinetics (muscle contraction, pigment, gland secretion)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.07.03">
+          <CAT_DESCR>effect on homeostasis (e.g. metabolism or electrolyte homeostasis)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.07.05">
+          <CAT_DESCR>effect on morphogenesis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.07.07">
+          <CAT_DESCR>effect on behaviour</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="36.25.09">
+        <CAT_DESCR>muscle contraction</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.25.09.01">
+          <CAT_DESCR>smooth muscle contraction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.09.03">
+          <CAT_DESCR>striated muscle contraction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.09.04">
+          <CAT_DESCR>heart muscle contraction</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.09.05">
+          <CAT_DESCR>general muscle contraction regulation</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="36.25.16">
+        <CAT_DESCR>immune response</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="36.25.16.01">
+          <CAT_DESCR>innate immune response (invertebrates and vertebrates)</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="36.25.16.01.01">
+            <CAT_DESCR>complement response</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.01.03">
+            <CAT_DESCR>phagocyte response (e.g. macrophages, dendritic cells, granulocytes)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.01.05">
+            <CAT_DESCR>cytotoxic cell response (e.g. NK)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.01.07">
+            <CAT_DESCR>acute phase response (C-reactive protein)</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.16.03">
+          <CAT_DESCR>adaptive immune response (vertebrates)</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="36.25.16.03.01">
+            <CAT_DESCR>humoral response (B-cells)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.03.03">
+            <CAT_DESCR>adaptive cell mediated response (T-cells)</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.03.05">
+            <CAT_DESCR>antigen presentation / processing</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="36.25.16.03.07">
+            <CAT_DESCR>immunological memory</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.16.07">
+          <CAT_DESCR>inflammatory response</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.16.08">
+          <CAT_DESCR>response to wounding</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="36.25.16.09">
+          <CAT_DESCR>blood coagulation</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="38">
+    <CAT_DESCR>TRANSPOSABLE ELEMENTS, VIRAL AND PLASMID PROTEINS</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="38.01">
+      <CAT_DESCR>LTR retroelements (retroviral)</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="38.02">
+      <CAT_DESCR>non-LTR retroelements</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="38.03">
+      <CAT_DESCR>transposons</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="38.05">
+      <CAT_DESCR>viral proteins</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="38.06">
+      <CAT_DESCR>phage proteins</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="38.07">
+      <CAT_DESCR>proteins necessary for transposon movement</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="40">
+    <CAT_DESCR>CELL FATE </CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="40.01">
+      <CAT_DESCR>cell growth / morphogenesis</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="40.01.01">
+        <CAT_DESCR>non-directional cell growth</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="40.01.03">
+        <CAT_DESCR>directional cell growth (morphogenesis)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="40.01.03.01">
+          <CAT_DESCR>regulation of directional cell growth</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.01.03.03">
+          <CAT_DESCR>guidance of longitudinal cell extension (e.g. pollen tube guidance, axonal pathfinding)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="40.01.05">
+        <CAT_DESCR>growth regulators / regulation of cell size</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="40.01.05.01">
+          <CAT_DESCR>interpretation of external signals that control cell growth</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.01.05.02">
+          <CAT_DESCR>interpretation of nuclear/cytoplasmic ratio to control cell growth</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="40.02.03">
+        <CAT_DESCR>activity of intercellular mediators</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="40.02.03.01">
+          <CAT_DESCR>cytokines (interleukines, colony stimulating factors, etc.)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.02.03.03">
+          <CAT_DESCR>chemokines</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.02.03.05">
+          <CAT_DESCR>growth factors</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.02.03.07">
+          <CAT_DESCR>trophic factors</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="40.05">
+      <CAT_DESCR>dedifferentiation</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="40.10">
+      <CAT_DESCR>cell death</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="40.10.02">
+        <CAT_DESCR>apoptosis (type I programmed cell death)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="40.10.02.01">
+          <CAT_DESCR>anti-apoptosis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.10.02.02">
+          <CAT_DESCR>apoptotic program</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="40.10.02.02.01">
+            <CAT_DESCR>apoptotic mitochondrial changes</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="40.10.02.02.02">
+            <CAT_DESCR>caspase activation</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="40.10.02.02.03">
+            <CAT_DESCR>disassembly of cell structures</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="40.10.02.02.04">
+            <CAT_DESCR>induction of proapoptotic gene products</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="40.10.02.02.05">
+            <CAT_DESCR>repression of survival gene products</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.10.02.03">
+          <CAT_DESCR>induction of apoptosis</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="40.10.02.03.01">
+            <CAT_DESCR>induction of apoptosis by extracellular signals</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="40.10.02.03.02">
+            <CAT_DESCR>induction of apoptosis by intracellular signals</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="40.10.02.04">
+          <CAT_DESCR>regulation of apoptosis</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="40.10.90">
+        <CAT_DESCR>other programmed cell death</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="40.20">
+      <CAT_DESCR>cell aging</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="41">
+    <CAT_DESCR>DEVELOPMENT (Systemic)</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="41.01">
+      <CAT_DESCR>fungal/microorganismic development</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="41.01.01">
+        <CAT_DESCR>mating (fertilization)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.01.03">
+        <CAT_DESCR>tissue pattern formation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.01.03.01">
+          <CAT_DESCR>fruit body development (sexually or asexually derived spores)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.01.03.03">
+          <CAT_DESCR>mycelium development (hyphae, vegetative thallus)</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="41.03">
+      <CAT_DESCR>plant development</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="41.03.01">
+        <CAT_DESCR>gametophyte development</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.03.01.01">
+          <CAT_DESCR>microspore development (male gametophyte)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.03.01.02">
+          <CAT_DESCR>macrospore development (female gametophyte)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.02">
+        <CAT_DESCR>fertilization (pollen hydration, pollen tube guidance, double fertilization of oocyte and endosperm)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.03">
+        <CAT_DESCR>embryonal development</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.03.03.01">
+          <CAT_DESCR>zygote development</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.03.03.02">
+          <CAT_DESCR>early embryo development (Dicotyledone pre-heart stages)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.03.03.03">
+          <CAT_DESCR>mid-stage embryo development (Dicotyledone heart to torpedo)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.03.03.04">
+          <CAT_DESCR>late-stage embryo development (Dicotyledone torpedo and later)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.03.03.05">
+          <CAT_DESCR>mature embryo development</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.04">
+        <CAT_DESCR>endosperm development</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.05">
+        <CAT_DESCR>germination</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.06">
+        <CAT_DESCR>vegetative development</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.07">
+        <CAT_DESCR>flower development</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.08">
+        <CAT_DESCR>fruit development and ripening</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.03.10">
+        <CAT_DESCR>senescence</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="41.05">
+      <CAT_DESCR>animal development</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="41.05.01">
+        <CAT_DESCR>fertilization</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.02">
+        <CAT_DESCR>embryo implantation (mammalia)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.04">
+        <CAT_DESCR>embryogenesis</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.05.04.01">
+          <CAT_DESCR>early embryogenesis</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="41.05.04.01.01">
+            <CAT_DESCR>morula development</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="41.05.04.01.03">
+            <CAT_DESCR>blastocyst development</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="41.05.04.01.03.01">
+              <CAT_DESCR>trophectoderm</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="41.05.04.01.03.03">
+              <CAT_DESCR>inner cell mass</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="41.05.04.01.05">
+            <CAT_DESCR>blastocoel development</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="41.05.04.01.07">
+            <CAT_DESCR>blastulation</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.04.02">
+          <CAT_DESCR>gastrulation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.04.03">
+          <CAT_DESCR>late embryogenesis </CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.11">
+        <CAT_DESCR>extraembryonal tissue development</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.12">
+        <CAT_DESCR>odontogenesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.13">
+        <CAT_DESCR>neurogenesis</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.05.13.01">
+          <CAT_DESCR>synaptogenesis</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.15">
+        <CAT_DESCR>myogenesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.16">
+        <CAT_DESCR>angiogenesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.17">
+        <CAT_DESCR>osteogenesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.18">
+        <CAT_DESCR>hemopoiesis</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.19">
+        <CAT_DESCR>asymmetries and axis determination</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="41.05.19.01">
+          <CAT_DESCR>vegetal pole determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.03">
+          <CAT_DESCR>animal pole determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.05">
+          <CAT_DESCR>anterior-posterior axis determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.07">
+          <CAT_DESCR>dorso-ventral axis determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.08">
+          <CAT_DESCR>proximal-distal axis determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.09">
+          <CAT_DESCR>medio-lateral axis determination</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="41.05.19.11">
+          <CAT_DESCR>segment specification</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.21">
+        <CAT_DESCR>extremities and appendages development</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.23">
+        <CAT_DESCR>sex differentiation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="41.05.25">
+        <CAT_DESCR>gametogenesis</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="42">
+    <CAT_DESCR>BIOGENESIS OF CELLULAR COMPONENTS</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="42.01">
+      <CAT_DESCR>cell wall</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.02">
+      <CAT_DESCR>eukaryotic plasma membrane</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.02.01">
+        <CAT_DESCR>eukaryotic intracellular plasma membrane</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.03">
+      <CAT_DESCR>cytoplasm</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.04">
+      <CAT_DESCR>cytoskeleton/structural proteins</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.04.03">
+        <CAT_DESCR>actin cytoskeleton</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.04.05">
+        <CAT_DESCR>microtubule cytoskeleton</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.04.07">
+        <CAT_DESCR>intermediate filaments</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.05">
+      <CAT_DESCR>centrosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.06">
+      <CAT_DESCR>cell junction</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.06.03">
+        <CAT_DESCR>cell-substrate adherens junction</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.06.04">
+        <CAT_DESCR>intercellular junction (gap junction/adherens junction)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.07">
+      <CAT_DESCR>endoplasmic reticulum</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.08">
+      <CAT_DESCR>Golgi</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.09">
+      <CAT_DESCR>intracellular transport vesicles</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.10">
+      <CAT_DESCR>nucleus</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.10.03">
+        <CAT_DESCR>organization of chromosome structure</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.10.04">
+        <CAT_DESCR>centromere / kinetochore</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.10.05">
+        <CAT_DESCR>nuclear membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.10.06">
+        <CAT_DESCR>nuclear matrix</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.10.07">
+        <CAT_DESCR>nucleolus</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.10.09">
+        <CAT_DESCR>nuclear speckles</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.16">
+      <CAT_DESCR>mitochondrion</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.16.01">
+        <CAT_DESCR>mitochondrion inheritance</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.19">
+      <CAT_DESCR>peroxisome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.22">
+      <CAT_DESCR>endosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.25">
+      <CAT_DESCR>vacuole or lysosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.26">
+      <CAT_DESCR>plastid</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.26.03">
+        <CAT_DESCR>chloroplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.26.05">
+        <CAT_DESCR>amyloplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.26.07">
+        <CAT_DESCR>chromoplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.26.09">
+        <CAT_DESCR>elaioplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.26.11">
+        <CAT_DESCR>etioplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.26.13">
+        <CAT_DESCR>leucoplast</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.27">
+      <CAT_DESCR>extracellular / secretion proteins</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.27.01">
+        <CAT_DESCR>extracellular matrix</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.27.03">
+        <CAT_DESCR>cell membrane or cell wall attached</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.28">
+      <CAT_DESCR>periplasmatic space</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.29">
+      <CAT_DESCR>bud / growth tip</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.30">
+      <CAT_DESCR>prokaryotic cytoplasmic membrane</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.32">
+      <CAT_DESCR>flagellum</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.33">
+      <CAT_DESCR>pilus/fimbria</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.34">
+      <CAT_DESCR>prokaryotic cell envelope structures</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.34.01">
+        <CAT_DESCR>bacterial outer membrane (only in Gram- bacteria)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.34.03">
+        <CAT_DESCR>capsule and slime layer</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.34.05">
+        <CAT_DESCR>S-Layer</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.34.07">
+        <CAT_DESCR>peptidoglycan layer or other prokaryotic cell wall</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.34.09">
+        <CAT_DESCR>spore or cyst coat</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.35">
+      <CAT_DESCR>prokaryotic intracytoplasmic membrane</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="42.35.03">
+        <CAT_DESCR>prokaryotic vesicular intracytoplasmic membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.35.05">
+        <CAT_DESCR>prokaryotic tubular intracytoplasmic membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="42.35.07">
+        <CAT_DESCR>prokaryotic thylakoid-like and thylakoid membrane</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.36">
+      <CAT_DESCR>prokaryotic cell inclusions</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="42.37">
+      <CAT_DESCR>prokaryotic nucleoid</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="43">
+    <CAT_DESCR>CELL TYPE DIFFERENTIATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="43.01">
+      <CAT_DESCR>fungal/microorganismic cell type differentiation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="43.01.02">
+        <CAT_DESCR>prokaryotic cell type differentiation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.01.02.01">
+          <CAT_DESCR>development free living cell or mycelium</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.02">
+          <CAT_DESCR>development of sporangia and cystophore</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.03">
+          <CAT_DESCR>development of heterocyste</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.05">
+          <CAT_DESCR>sporulation and other development of resting stage</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="43.01.02.05.01">
+            <CAT_DESCR>development of endospore</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="43.01.02.05.03">
+            <CAT_DESCR>development of exospore, cyst, akinete or other resting cell</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.07">
+          <CAT_DESCR>germination from resting stage</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.09">
+          <CAT_DESCR>development of stalked or other sessile cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.02.11">
+          <CAT_DESCR>development of swarmer or other mobile cell</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.01.03">
+        <CAT_DESCR>fungal and other eukaryotic cell type differentiation</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.01.03.01">
+          <CAT_DESCR>development of free swimming or amoeboid cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.02">
+          <CAT_DESCR>development of mycelial or yeast-like cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.03">
+          <CAT_DESCR>development of thallic, plasmodial or sporangiophore cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.05">
+          <CAT_DESCR>budding, cell polarity and filament formation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.06">
+          <CAT_DESCR>hyphae formation</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.07">
+          <CAT_DESCR>development of conidia</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.01.03.09">
+          <CAT_DESCR>development of asco- basidio- or zygospore</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.01.06">
+        <CAT_DESCR>protist cell differentiation</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.01.07">
+        <CAT_DESCR>biofilm formation</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="43.02">
+      <CAT_DESCR>plant cell type differentiation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="43.02.01">
+        <CAT_DESCR>stem cell/meristematic cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.05">
+        <CAT_DESCR>epidermal cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.02.05.01">
+          <CAT_DESCR>stomata/guard cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.05.02">
+          <CAT_DESCR>plant hair cell (trichome e.g. cotton)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.05.03">
+          <CAT_DESCR>root hair</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.07">
+        <CAT_DESCR>storage cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.09">
+        <CAT_DESCR>vascular cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.02.09.01">
+          <CAT_DESCR>sieve cell (phloem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.09.02">
+          <CAT_DESCR>companion cell (phloem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.09.03">
+          <CAT_DESCR>vessel element (xylem)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.11">
+        <CAT_DESCR>mesenchymal / parenchymal cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.13">
+        <CAT_DESCR>strengthening cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.02.13.01">
+          <CAT_DESCR>sclerenchyma cell(dead)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.13.02">
+          <CAT_DESCR>collenchyma cell (living)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.17">
+        <CAT_DESCR>gametophytic cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.02.17.01">
+          <CAT_DESCR>male gametophyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="43.02.17.01.01">
+            <CAT_DESCR>generative pollen cell</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.02.17.02">
+          <CAT_DESCR>female gametophyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="43.02.17.02.01">
+            <CAT_DESCR>oocyte</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="43.02.17.02.03">
+            <CAT_DESCR>central cell (2n)</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.02.19">
+        <CAT_DESCR>secretory cell</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="43.03">
+      <CAT_DESCR>animal cell type differentiation</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="43.03.01">
+        <CAT_DESCR>stem cell (toti- or pluripotent)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.02">
+        <CAT_DESCR>germ cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.03">
+        <CAT_DESCR>pigment cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.04">
+        <CAT_DESCR>epidermal cell (e.g. keratinocytes)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.05">
+        <CAT_DESCR>myoblast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.07">
+        <CAT_DESCR>blood cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="43.03.07.01">
+          <CAT_DESCR>erythrocyte</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.03.07.02">
+          <CAT_DESCR>leucocyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="43.03.07.02.01">
+            <CAT_DESCR>lymphocyte</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="43.03.07.02.01.01">
+              <CAT_DESCR>B-cell</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="43.03.07.02.01.02">
+              <CAT_DESCR>T-cell</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="43.03.07.02.01.03">
+              <CAT_DESCR>NK cell</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="43.03.07.02.02">
+            <CAT_DESCR>granulocyte</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="43.03.07.02.03">
+            <CAT_DESCR>monocyte (macrophage, dendritic cell)</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="43.03.07.03">
+          <CAT_DESCR>platelet</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.11">
+        <CAT_DESCR>glia cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.13">
+        <CAT_DESCR>neuron</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.15">
+        <CAT_DESCR>secretory cell (mastcell, endocrine cell, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.17">
+        <CAT_DESCR>structural cell of tissue (fibroblast, osteoblast, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.18">
+        <CAT_DESCR>storage cell (lipocyte, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.19">
+        <CAT_DESCR>extracellular matrix forming cell (fibrocyte, chondrocyte, osteocyte)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.21">
+        <CAT_DESCR>extracellular matrix degrading cell (chondroclast, osteoclast)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="43.03.23">
+        <CAT_DESCR>sensory cell</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="45">
+    <CAT_DESCR>TISSUE DIFFERENTIATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="45.01">
+      <CAT_DESCR>fungal/microorganismic tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="45.01.01">
+        <CAT_DESCR>reproductive tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.01.10">
+        <CAT_DESCR>thallic tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.01.11">
+        <CAT_DESCR>plectenchymatic tissue and tissue of primitive thalli (e.g. higher fungi)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="45.02">
+      <CAT_DESCR>plant tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="45.02.01">
+        <CAT_DESCR>meristematic tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="45.02.01.01">
+          <CAT_DESCR>shoot apical meristem</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.02.01.02">
+          <CAT_DESCR>root meristem</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.02.05">
+        <CAT_DESCR>parenchyma</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.02.09">
+        <CAT_DESCR>dermal tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="45.02.09.01">
+          <CAT_DESCR>epidermis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.02.09.03">
+          <CAT_DESCR>rhizodermis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.02.09.05">
+          <CAT_DESCR>secondary dermal tissue (cork, phellem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.02.09.07">
+          <CAT_DESCR>endodermis (with casparian band)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.02.13">
+        <CAT_DESCR>vascular tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.02.15">
+        <CAT_DESCR>thallus</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="45.03">
+      <CAT_DESCR>animal tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="45.03.03">
+        <CAT_DESCR>proliferative tissue (bone marrow, epidermis, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.05">
+        <CAT_DESCR>connective tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="45.03.05.01">
+          <CAT_DESCR>loose connective tissue / soft tissue</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.05.03">
+          <CAT_DESCR>fibrous connective tissue (tendons, ligaments)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.05.05">
+          <CAT_DESCR>cartilage</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.05.07">
+          <CAT_DESCR>bone</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.05.09">
+          <CAT_DESCR>whole blood and lymph</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.05.11">
+          <CAT_DESCR>adipose tissue</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.09">
+        <CAT_DESCR>epithelium</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.10">
+        <CAT_DESCR>chorion</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.11">
+        <CAT_DESCR>endothelium</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.12">
+        <CAT_DESCR>muscle</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="45.03.12.01">
+          <CAT_DESCR>striated muscle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.12.02">
+          <CAT_DESCR>smooth muscle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="45.03.12.03">
+          <CAT_DESCR>heart muscle</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.15">
+        <CAT_DESCR>reproductive tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.17">
+        <CAT_DESCR>nervous tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="45.03.19">
+        <CAT_DESCR>glandular tissue</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="47">
+    <CAT_DESCR>ORGAN DIFFERENTIATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="47.01">
+      <CAT_DESCR>fungal organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="47.01.01">
+        <CAT_DESCR>hyphe</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.01.03">
+        <CAT_DESCR>reproductive organ</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.01.03.01">
+          <CAT_DESCR>fruit body</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="47.02">
+      <CAT_DESCR>plant organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="47.02.01">
+        <CAT_DESCR>shoot</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.02.01.01">
+          <CAT_DESCR>stem</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.02.01.02">
+          <CAT_DESCR>leaf</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.02.01.03">
+          <CAT_DESCR>flower</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="47.02.01.03.01">
+            <CAT_DESCR>sepal</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.02.01.03.02">
+            <CAT_DESCR>petal</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.02.01.03.03">
+            <CAT_DESCR>anther</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.02.01.03.04">
+            <CAT_DESCR>carpel</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.02.01.04">
+          <CAT_DESCR>fruit</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.02.01.05">
+          <CAT_DESCR>seed</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="47.02.01.05.01">
+            <CAT_DESCR>embryo</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.02.01.05.02">
+            <CAT_DESCR>endosperm</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.02.01.06">
+          <CAT_DESCR>rhizome (potato tuber/onion)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.02.02">
+        <CAT_DESCR>root</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="47.03">
+      <CAT_DESCR>animal organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="47.03.01">
+        <CAT_DESCR>nervous system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.01.01">
+          <CAT_DESCR>central nervous system</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="47.03.01.01.01">
+            <CAT_DESCR>brain</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="47.03.01.01.01.01">
+              <CAT_DESCR>cerebrum</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="47.03.01.01.01.02">
+              <CAT_DESCR>cerebellum</CAT_DESCR>
+            </CAT>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.01.02">
+          <CAT_DESCR>peripheral nervous system</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.02">
+        <CAT_DESCR>sensory organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.02.01">
+          <CAT_DESCR>ear</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.02.02">
+          <CAT_DESCR>eye</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.02.03">
+          <CAT_DESCR>nose</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.02.04">
+          <CAT_DESCR>tongue</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.02.05">
+          <CAT_DESCR>skin</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.03">
+        <CAT_DESCR>vascular organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.03.02">
+          <CAT_DESCR>vessels</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.05">
+        <CAT_DESCR>immune system organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.05.01">
+          <CAT_DESCR>thymus</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.05.02">
+          <CAT_DESCR>spleen</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.05.03">
+          <CAT_DESCR>lymphatic system</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.07">
+        <CAT_DESCR>excretory apparatus</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.07.01">
+          <CAT_DESCR>kidney</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.07.03">
+          <CAT_DESCR>malphigi</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.07.05">
+          <CAT_DESCR>pronephros (sensu Invertebrata)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.07.07">
+          <CAT_DESCR>metanephros (sensu Invertebrata)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.09">
+        <CAT_DESCR>respiratory system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.09.01">
+          <CAT_DESCR>lung</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.09.03">
+          <CAT_DESCR>gill</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.09.05">
+          <CAT_DESCR>trachea (sensu Insecta)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.11">
+        <CAT_DESCR>gastro-intestinal system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.11.01">
+          <CAT_DESCR>tooth</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.02">
+          <CAT_DESCR>oesophagus</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.03">
+          <CAT_DESCR>stomach</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.05">
+          <CAT_DESCR>intestine</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.07">
+          <CAT_DESCR>liver</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.09">
+          <CAT_DESCR>pancreas</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.11.11">
+          <CAT_DESCR>gastro-intestinal system accessory organs</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.13">
+        <CAT_DESCR>dermis/cuticula</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.13.05">
+          <CAT_DESCR>hair / feather follicule</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.15">
+        <CAT_DESCR>reproductive apparatus</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.15.01">
+          <CAT_DESCR>female gonad (ovary)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.15.02">
+          <CAT_DESCR>oviduct</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.15.04">
+          <CAT_DESCR>uterus</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="47.03.15.04.03">
+            <CAT_DESCR>cervix</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.15.05">
+          <CAT_DESCR>placenta</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.15.07">
+          <CAT_DESCR>male gonad (testis)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.17">
+        <CAT_DESCR>skeletal system</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="47.03.21">
+        <CAT_DESCR>secretory organs (glands)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="47.03.21.01">
+          <CAT_DESCR>mammary gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.21.02">
+          <CAT_DESCR>salivary gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.21.03">
+          <CAT_DESCR>endocrine organ</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.01">
+            <CAT_DESCR>adrenal gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.02">
+            <CAT_DESCR>pancreatic islet</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.03">
+            <CAT_DESCR>parathyroid</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.04">
+            <CAT_DESCR>pineal gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.05">
+            <CAT_DESCR>pituitary gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.06">
+            <CAT_DESCR>thyroid gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="47.03.21.03.07">
+            <CAT_DESCR>hypothalamus</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.21.04">
+          <CAT_DESCR>prostate gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="47.03.21.05">
+          <CAT_DESCR>sweat (perspiratory) gland</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="70">
+    <CAT_DESCR>SUBCELLULAR LOCALIZATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="70.01">
+      <CAT_DESCR>cell wall</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.02">
+      <CAT_DESCR>eukaryotic plasma membrane / membrane attached</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.02.01">
+        <CAT_DESCR>eukaryotic intracellular plasma membrane</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.03">
+      <CAT_DESCR>cytoplasm</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.04">
+      <CAT_DESCR>cytoskeleton</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.04.03">
+        <CAT_DESCR>actin cytoskeleton</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.04.05">
+        <CAT_DESCR>microtubule cytoskeleton</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.04.07">
+        <CAT_DESCR>intermediate filaments</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.05">
+      <CAT_DESCR>centrosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.06">
+      <CAT_DESCR>cell junction</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.06.03">
+        <CAT_DESCR>cell-substrate adherens junction</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.06.04">
+        <CAT_DESCR>intercellular junction (gap junction/adherens junction)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.07">
+      <CAT_DESCR>endoplasmic reticulum</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.08">
+      <CAT_DESCR>Golgi</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.09">
+      <CAT_DESCR>intracellular transport vesicles</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.10">
+      <CAT_DESCR>nucleus</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.10.03">
+        <CAT_DESCR>chromosome</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.10.04">
+        <CAT_DESCR>centromere / kinetochore</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.10.05">
+        <CAT_DESCR>nuclear membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.10.06">
+        <CAT_DESCR>nuclear matrix</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.10.07">
+        <CAT_DESCR>nucleolus</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.10.09">
+        <CAT_DESCR>nuclear speckles</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.16">
+      <CAT_DESCR>mitochondrion</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.16.01">
+        <CAT_DESCR>mitochondrial outer membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.16.03">
+        <CAT_DESCR>mitochondrial intermembrane space</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.16.05">
+        <CAT_DESCR>mitochondrial inner membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.16.07">
+        <CAT_DESCR>mitochondrial matrix</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.19">
+      <CAT_DESCR>peroxisome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.22">
+      <CAT_DESCR>endosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.25">
+      <CAT_DESCR>vacuole or lysosome</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.26">
+      <CAT_DESCR>plastid</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.26.03">
+        <CAT_DESCR>chloroplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.26.05">
+        <CAT_DESCR>amyloplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.26.07">
+        <CAT_DESCR>chromoplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.26.09">
+        <CAT_DESCR>elaioplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.26.11">
+        <CAT_DESCR>etioplast</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.26.13">
+        <CAT_DESCR>leucoplast</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.27">
+      <CAT_DESCR>extracellular / secretion proteins</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.27.01">
+        <CAT_DESCR>extracellular matrix component</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.27.03">
+        <CAT_DESCR>cell membrane or cell wall attached</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.28">
+      <CAT_DESCR>periplasmatic space</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.29">
+      <CAT_DESCR>bud / growth tip</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.30">
+      <CAT_DESCR>prokaryotic cytoplasmic membrane</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.32">
+      <CAT_DESCR>flagellum</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.33">
+      <CAT_DESCR>pilus/fimbria</CAT_DESCR>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.34">
+      <CAT_DESCR>prokaryotic cell envelope component</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.34.01">
+        <CAT_DESCR>bacterial outer membrane (only present in Gram- bacteria)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.34.03">
+        <CAT_DESCR>capsule and slime layer</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.34.05">
+        <CAT_DESCR>S-Layer</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.34.07">
+        <CAT_DESCR>peptidoglycan layer or other prokaryotic cell wall</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.34.09">
+        <CAT_DESCR>spore or cyst coat</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.35">
+      <CAT_DESCR>prokaryotic intracytoplasmic membrane</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.35.03">
+        <CAT_DESCR>prokaryotic vesicular intracytoplasmic membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.35.05">
+        <CAT_DESCR>prokaryotic tubular intracytoplasmic membrane</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.35.07">
+        <CAT_DESCR>prokaryotic thylakoid-like and thylakoid membrane</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.36">
+      <CAT_DESCR>prokaryotic cell inclusions</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="70.36.03">
+        <CAT_DESCR>carboxysomes</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.36.05">
+        <CAT_DESCR>gas vesicles</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.36.07">
+        <CAT_DESCR>sulfur globules or magnetosomes</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="70.36.09">
+        <CAT_DESCR>bacteriocins, rhapidosomes and protein crystals</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="70.37">
+      <CAT_DESCR>prokaryotic nucleoid</CAT_DESCR>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="73">
+    <CAT_DESCR>CELL TYPE LOCALIZATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="73.01">
+      <CAT_DESCR>fungal / microorganismic cell type</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="73.01.02">
+        <CAT_DESCR>prokaryotic cell type</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.01.02.01">
+          <CAT_DESCR>free living cell or mycelium</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.02.02">
+          <CAT_DESCR>sporangial or cystophor cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.02.03">
+          <CAT_DESCR>heterocyste</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.02.05">
+          <CAT_DESCR>spores and other resting cell types</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="73.01.02.05.01">
+            <CAT_DESCR>endospore</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="73.01.02.05.03">
+            <CAT_DESCR>exospore, cyst, akinete or other resting cells</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.02.11">
+          <CAT_DESCR>swarmer and other mobile cells</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.01.03">
+        <CAT_DESCR>fungal and other eukaryotic cell types</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.01.03.01">
+          <CAT_DESCR>free swimming or amoeboid cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.03.02">
+          <CAT_DESCR>mycelial or yeast-like cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.03.03">
+          <CAT_DESCR>thallic, plasmodial or sporangiophore cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.03.07">
+          <CAT_DESCR>conidia</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.01.03.09">
+          <CAT_DESCR>asco- basidio- or zygospore</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="73.02">
+      <CAT_DESCR>plant cell type</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="73.02.01">
+        <CAT_DESCR>stem cell/meristematic cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.05">
+        <CAT_DESCR>specialized epidermal cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.02.05.01">
+          <CAT_DESCR>stomata/guard cell</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.05.02">
+          <CAT_DESCR>plant hair cell (trichome e.g. cotton)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.05.03">
+          <CAT_DESCR>root hair</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.07">
+        <CAT_DESCR>storage cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.09">
+        <CAT_DESCR>vascular cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.02.09.01">
+          <CAT_DESCR>sieve cell (phloem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.09.02">
+          <CAT_DESCR>companion cell (phloem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.09.03">
+          <CAT_DESCR>vessel element (xylem)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.13">
+        <CAT_DESCR>strengthening cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.02.13.01">
+          <CAT_DESCR>sclerenchyma cell(dead)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.13.02">
+          <CAT_DESCR>collenchyma cell (living)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.17">
+        <CAT_DESCR>gametophytic cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.02.17.01">
+          <CAT_DESCR>male gametophyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="73.02.17.01.01">
+            <CAT_DESCR>generative pollen cell</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.02.17.02">
+          <CAT_DESCR>female gametophyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="73.02.17.02.01">
+            <CAT_DESCR>oocyte</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="73.02.17.02.03">
+            <CAT_DESCR>central cell (2n)</CAT_DESCR>
+          </CAT>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.02.19">
+        <CAT_DESCR>secretory cell</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="73.03">
+      <CAT_DESCR>animal cell type</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="73.03.01">
+        <CAT_DESCR>stem cell (toti- or pluripotent)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.02">
+        <CAT_DESCR>germ cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.03">
+        <CAT_DESCR>pigment cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.07">
+        <CAT_DESCR>blood cell</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="73.03.07.01">
+          <CAT_DESCR>erythrocyte</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.03.07.02">
+          <CAT_DESCR>leucocyte</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="73.03.07.02.01">
+            <CAT_DESCR>lymphocyte</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="73.03.07.02.01.01">
+              <CAT_DESCR>B-cell</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="73.03.07.02.01.02">
+              <CAT_DESCR>T-cell</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="73.03.07.02.01.03">
+              <CAT_DESCR>NK cell</CAT_DESCR>
+            </CAT>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="73.03.07.02.02">
+            <CAT_DESCR>granulocyte</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="73.03.07.02.03">
+            <CAT_DESCR>monocyte (macrophage, dendritic cell)</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="73.03.07.03">
+          <CAT_DESCR>platelet</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.11">
+        <CAT_DESCR>glia cell</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.13">
+        <CAT_DESCR>neuron</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.15">
+        <CAT_DESCR>secretory cell (mastcell, endocrine cell, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.17">
+        <CAT_DESCR>structural cell of tissue (fibroblast, osteoblast, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.18">
+        <CAT_DESCR>storage cell (lipocyte, etc.)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.19">
+        <CAT_DESCR>extracellular matrix forming cell (fibrocyte, chondrocyte, osteocyte)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.21">
+        <CAT_DESCR>extracellular matrix degrading cell (chondroclast, osteoclast)</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="73.03.23">
+        <CAT_DESCR>sensory cell</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="75">
+    <CAT_DESCR>TISSUE LOCALIZATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="75.01">
+      <CAT_DESCR>fungal/microorganismic tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="75.01.01">
+        <CAT_DESCR>reproductive tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.01.10">
+        <CAT_DESCR>thallic tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.01.11">
+        <CAT_DESCR>plectenchymatic tissue and tissue of primitive thalli (e.g. higher fungi)</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="75.02">
+      <CAT_DESCR>plant tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="75.02.01">
+        <CAT_DESCR>meristematic tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="75.02.01.01">
+          <CAT_DESCR>shoot apical meristem</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.02.01.02">
+          <CAT_DESCR>root meristem</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.02.05">
+        <CAT_DESCR>parenchyma</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.02.09">
+        <CAT_DESCR>dermal tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="75.02.09.01">
+          <CAT_DESCR>epidermis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.02.09.03">
+          <CAT_DESCR>rhizodermis</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.02.09.05">
+          <CAT_DESCR>secondary dermal tissue (cork, phellem)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.02.09.07">
+          <CAT_DESCR>endodermis (with casparian band)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.02.13">
+        <CAT_DESCR>vascular tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.02.15">
+        <CAT_DESCR>thallus</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="75.03">
+      <CAT_DESCR>animal tissue</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="75.03.03">
+        <CAT_DESCR>proliferative tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="75.03.03.01">
+          <CAT_DESCR>bone marrow</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.04">
+        <CAT_DESCR>adipose tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.05">
+        <CAT_DESCR>connective tissue</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="75.03.05.01">
+          <CAT_DESCR>loose connective tissue / soft tissue</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.03.05.03">
+          <CAT_DESCR>fibrous connective tissue (tendons, ligaments)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.06">
+        <CAT_DESCR>cartilage</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.07">
+        <CAT_DESCR>bone</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.08">
+        <CAT_DESCR>whole blood and lymph</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.09">
+        <CAT_DESCR>epithelium</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.12">
+        <CAT_DESCR>muscle</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="75.03.12.01">
+          <CAT_DESCR>striated muscle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.03.12.02">
+          <CAT_DESCR>smooth muscle</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="75.03.12.03">
+          <CAT_DESCR>heart muscle</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.15">
+        <CAT_DESCR>reproductive tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.17">
+        <CAT_DESCR>nervous tissue</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="75.03.19">
+        <CAT_DESCR>glandular tissue</CAT_DESCR>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="77">
+    <CAT_DESCR>ORGAN LOCALIZATION</CAT_DESCR>
+    <CAT HIR="2" SPACE=".." id="77.01">
+      <CAT_DESCR>fungal organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="77.01.01">
+        <CAT_DESCR>hyphe</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.01.03">
+        <CAT_DESCR>reproductive organ</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.01.03.01">
+          <CAT_DESCR>fruit body</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="77.02">
+      <CAT_DESCR>plant organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="77.02.01">
+        <CAT_DESCR>shoot</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.02.01.01">
+          <CAT_DESCR>stem</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.02.01.02">
+          <CAT_DESCR>leaf</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.02.01.03">
+          <CAT_DESCR>flower</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="77.02.01.03.01">
+            <CAT_DESCR>sepal</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.02.01.03.02">
+            <CAT_DESCR>petal</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.02.01.03.03">
+            <CAT_DESCR>anther</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.02.01.03.04">
+            <CAT_DESCR>carpel</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.02.01.04">
+          <CAT_DESCR>fruit</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.02.01.05">
+          <CAT_DESCR>seed</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="77.02.01.05.01">
+            <CAT_DESCR>embryo</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.02.01.05.02">
+            <CAT_DESCR>endosperm</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.02.01.06">
+          <CAT_DESCR>rhizome (potato tuber/onion)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.02.02">
+        <CAT_DESCR>root</CAT_DESCR>
+      </CAT>
+    </CAT>
+    <CAT HIR="2" SPACE=".." id="77.03">
+      <CAT_DESCR>animal organ</CAT_DESCR>
+      <CAT HIR="3" SPACE="...." id="77.03.01">
+        <CAT_DESCR>nervous system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.01.01">
+          <CAT_DESCR>central nervous system</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="77.03.01.01.01">
+            <CAT_DESCR>brain</CAT_DESCR>
+            <CAT HIR="6" SPACE=".........." id="77.03.01.01.01.01">
+              <CAT_DESCR>cerebrum</CAT_DESCR>
+            </CAT>
+            <CAT HIR="6" SPACE=".........." id="77.03.01.01.01.02">
+              <CAT_DESCR>cerebellum</CAT_DESCR>
+            </CAT>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.01.02">
+          <CAT_DESCR>peripheral nervous system</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.02">
+        <CAT_DESCR>sensory organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.02.01">
+          <CAT_DESCR>ear</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.02.02">
+          <CAT_DESCR>eye</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.02.03">
+          <CAT_DESCR>nose</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.02.04">
+          <CAT_DESCR>tongue</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.02.05">
+          <CAT_DESCR>skin</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.03">
+        <CAT_DESCR>vascular organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.03.02">
+          <CAT_DESCR>vessels</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.05">
+        <CAT_DESCR>immune system organs</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.05.01">
+          <CAT_DESCR>thymus</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.05.02">
+          <CAT_DESCR>spleen</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.05.03">
+          <CAT_DESCR>lymphatic system</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.07">
+        <CAT_DESCR>excretory apparatus</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.07.01">
+          <CAT_DESCR>kidney</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.07.03">
+          <CAT_DESCR>malphigi</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.07.05">
+          <CAT_DESCR>pronephros (sensu Invertebrata)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.07.07">
+          <CAT_DESCR>metanephros (sensu Invertebrata)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.09">
+        <CAT_DESCR>respiratory system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.09.01">
+          <CAT_DESCR>lung</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.09.03">
+          <CAT_DESCR>gill</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.09.05">
+          <CAT_DESCR>trachea (sensu Insecta)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.11">
+        <CAT_DESCR>gastro-intestinal system</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.11.01">
+          <CAT_DESCR>teeth</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.02">
+          <CAT_DESCR>oesophagus</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.03">
+          <CAT_DESCR>stomach</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.05">
+          <CAT_DESCR>intestine</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.07">
+          <CAT_DESCR>liver</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.09">
+          <CAT_DESCR>pancreas</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.11.11">
+          <CAT_DESCR>gastro-intestinal system accessory organs</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.13">
+        <CAT_DESCR>dermis/cuticula</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.13.05">
+          <CAT_DESCR>hair / feather follicule</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.15">
+        <CAT_DESCR>reproductive apparatus</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.15.01">
+          <CAT_DESCR>female gonad (ovary)</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.15.02">
+          <CAT_DESCR>oviduct</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.15.04">
+          <CAT_DESCR>uterus</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="77.03.15.04.03">
+            <CAT_DESCR>cervix</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.15.05">
+          <CAT_DESCR>placenta</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.15.07">
+          <CAT_DESCR>male gonad (testis)</CAT_DESCR>
+        </CAT>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.17">
+        <CAT_DESCR>skeletal system</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.19">
+        <CAT_DESCR>non organ cavities and their linings</CAT_DESCR>
+      </CAT>
+      <CAT HIR="3" SPACE="...." id="77.03.21">
+        <CAT_DESCR>secretory organs (glands)</CAT_DESCR>
+        <CAT HIR="4" SPACE="......" id="77.03.21.01">
+          <CAT_DESCR>mammary gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.21.02">
+          <CAT_DESCR>salivary gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.21.03">
+          <CAT_DESCR>endocrine organ</CAT_DESCR>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.01">
+            <CAT_DESCR>adrenal gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.02">
+            <CAT_DESCR>pancreatic islet</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.03">
+            <CAT_DESCR>parathyroid</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.04">
+            <CAT_DESCR>pineal gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.05">
+            <CAT_DESCR>pituitary gland</CAT_DESCR>
+          </CAT>
+          <CAT HIR="5" SPACE="........" id="77.03.21.03.06">
+            <CAT_DESCR>thyroid gland</CAT_DESCR>
+          </CAT>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.21.04">
+          <CAT_DESCR>prostate gland</CAT_DESCR>
+        </CAT>
+        <CAT HIR="4" SPACE="......" id="77.03.21.05">
+          <CAT_DESCR>sweat (perspiratory) gland</CAT_DESCR>
+        </CAT>
+      </CAT>
+    </CAT>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="98">
+    <CAT_DESCR>CLASSIFICATION NOT YET CLEAR-CUT</CAT_DESCR>
+  </CAT>
+  <CAT HIR="1" SPACE="" id="99">
+    <CAT_DESCR>UNCLASSIFIED PROTEINS</CAT_DESCR>
+  </CAT>
+</CATS>

@@ -6,9 +6,9 @@
 # Maintainer: 
 # Created: Thu Nov 19 11:15:43 2009 (+0100)
 # Version: 
-# Last-Updated: Tue Dec  1 15:07:39 2009 (+0100)
+# Last-Updated: Wed Dec 30 10:19:55 2009 (+0530)
 #           By: Vinay Jethava
-#     Update #: 8
+#     Update #: 19
 # URL: 
 # Keywords: 
 # Compatibility: 
@@ -51,23 +51,28 @@ counter = 0
 numE = 0
 genes = dict()
 # the original p-p interactions file.
-f = open('../unixfile.txt', 'r')
+f = open('../data/unixfile.txt', 'r')
 # the list of genes present.
 g = open('./gene_names.txt', 'w')
 # the interactions graph in edge adjacency format.
-h = open('./gene_graph.txt', 'w')  
+h = open('./gene_graph.txt', 'w')
+lines = f.read().split('\r')  
 for line in lines:
+    print line
     n = []
     numE = numE + 1
-    cedge = line.strip().split('\t')
-    for i in range(2):
-        if not genes.has_key(cedge[i]):
-            counter = counter + 1
-            genes[ cedge[i] ] = counter
-            g.write("%s %d\n" % (cedge[i], counter)) 
-        print genes.get(cedge[i])
-        n.append(genes.get(cedge[i]))
-    h.write('%d %d\n' % (n[0], n[1]))
+    if(len(line.strip()) > 0): 
+        cedge = line.strip().split('\t')
+        print cedge
+        for i in range(3):
+            if not i==1:
+                if not genes.has_key(cedge[i]):
+                    counter = counter + 1
+                    genes[ cedge[i] ] = counter
+                    g.write("%s %d\n" % (cedge[i], counter)) 
+            #   print genes.get(cedge[i])
+                n.append(genes.get(cedge[i]))
+        h.write('%d %d\n' % (n[0], n[1]))
 print 'numE: %d numG: %d\n' % (numE, counter) 
 f.close()
 g.close()

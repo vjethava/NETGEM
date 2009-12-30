@@ -8,7 +8,7 @@ function [M, z] = normalise(A, dim)
 % otherwise we normalise the whole array.
 
 if nargin < 2
-  z = sum(A);
+  z = sum(sum(A));
   % Set any zeros to one before dividing
   % This is valid, since c=0 => all i. A(i)=0 => the answer should be 0/1=0
   s = z + (z==0);

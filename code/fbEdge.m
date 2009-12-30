@@ -1,4 +1,4 @@
-function [F, B, Xi, LL] = fbEdge(X, E, D, W, Q, Pw0)
+function [F, B, Xi, LL, Wml] = fbEdge(X, E, D, W, Q, Pw0)
 % FBEDGE computes the Forward Backward iterates for the 
 % specified edge, E=(i,j), given observed data, X, damping, D, and
 % estimate for transition probability Q:W x W -> R+
@@ -150,4 +150,13 @@ for e=1:nE
     Xi(:, :, e) = normalise(Xi(:, :, e)); 
 end
 %% log likelihood computation
+Q = max(Q, 0.0001); % to avoid infinity case 
 LL = sum(sum(sum(Xi.*log(Q))));
+pW = F.*B; 
+Wml = zeros(nE, T); 
+for e=1:nE
+    pe = pW(:, :, e); 
+    [cv, ci] = max(pe, [], 1);
+    Wml(e, :) = reshape(W(ci), 1, T); 
+end
+% keyboard;

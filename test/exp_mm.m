@@ -6,9 +6,9 @@
 %% Maintainer: 
 %% Created: Thu Dec 24 17:45:07 2009 (+0530)
 %% Version: 
-%% Last-Updated: Thu Dec 24 17:48:12 2009 (+0530)
+%% Last-Updated: Tue Dec 29 20:02:42 2009 (+0530)
 %%           By: Vinay Jethava
-%%     Update #: 5
+%%     Update #: 13
 %% URL: http://www.github.com/vjethava
 %% Keywords: 
 %% Compatibility: 
@@ -64,7 +64,7 @@ nHav = 2.0; % av number of classes per component
 gp = 1.0;
 gn = 0.10; 
 nT = 60; 
-S = [0 0 0 0]; % number of genes to knock out randomly per strain 
+S = [0 1]; % number of genes to knock out randomly per strain 
 nS = length(S); % number of iid samples
 
 %%% Generate graph, class evolution data
@@ -172,7 +172,7 @@ for i=1:nS
     seq{i} = largeX(:, i);    
 end
 [logLik0, priorEst0, lQest0, lEest0, nIter0] = dhmm_em(seq, largeW_Prior, ...
-    largeQguess, largeE,  'adj_obs', 0, 'max_iter', 50, 'adj_prior', 0);
+    largeQguess, largeE,  'adj_obs', 0, 'max_iter', 10, 'adj_prior', 0);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -183,7 +183,7 @@ small_w_prior = 1/nW * ones(nW, nE);
 %%% run the edge f-b algorithm 
 Qinit = Qguess;
 LL  = []; 
-for i=1:30
+for i=1:10
     [F, B, Xi, cL] = fbEdge(X, E, DF, W', Qguess, small_w_prior);
     Qguess = 0.5 * Qinit + 0.5 * Xi; 
     LL = [LL; cL]; 
@@ -192,5 +192,12 @@ for i=1:30
     end
 end
 disp(LL);  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Try out the mixture model approach to the problem 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+fbEdgeMM(X, E, DF, W, Hguess, Dguess);  
 
 %%%%%%%%%%%%%%%% exp_mm.m ends here
