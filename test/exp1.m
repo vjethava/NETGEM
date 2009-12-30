@@ -196,9 +196,10 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %     end
 
 %%% Put out the output
-    G = struct('E', [], 'wML', [], 'isAnaerobic', [], 'genes', []); 
+    G = struct('E', [], 'wML', [], 'isAnaerobic', [], 'genes', [], 'cluster', []);
     H = struct('A', [], 'Qest', [], 'classes', []);  
     FB = struct('nIters', [], 'LL', []);
+    G.cluster = tCluster; 
     G.E = c2_E; G.wML = wML; G.isAnaerobic = isAnaerobic; G.genes = c2_names; 
     H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 
     FB.nIters = nIter; FB.LL = LL; 
