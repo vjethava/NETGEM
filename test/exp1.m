@@ -24,7 +24,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %
 % G:    `       Structure containing following items:
 %                 * genes: the list of genes in cluster
-%                 * graph: the adjacency graph
+%                 * cluster: the cluster that was analyzed
 %                 * isAnaerobic: whether aerobic or not 
 %                 * E: The edge list (adjacency graph)
 %                 * wML: the most probable assignment
