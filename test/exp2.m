@@ -1,19 +1,16 @@
-function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
-%% EXP1 Runs experiment with fixed mixture proportions for  
-%% the target cluster in {1,...,8} (8 clusters identified)
+function [G, H, FB, S] = exp2(sparsityFactor)
+% EXP2 runs the experiment on the second dataset ( REF/MUT ) with 6 time
+% points at different time intervals. We consider both the model with
+% single Q over time period as well as Q(t) for each time point. 
 % 
-% 
-%  Usage: [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
+% Usage: [G, H, FB, S] = exp2(sparsityFactor)
 %
-%  Expects:
-% -------------
-%  tCluster: The identity of the cluster 
-%  isAnaerobic:  If isAnaerobic = 1 => Do analysis for anaerobic
-%                               = 0 => Do analysis for aerobic  
-%  sparsityFactor: controls how likely the weight are to be off >= 1 
+% Expects:
+% ------------
 % 
-%  Returns:
-% -------------
+%
+% Returns:
+% ------------
 % H:            Structure containing the following
 %                   * H.A:     The mixing proportions 
 %                   * H.Qest:  The estimated evolution characteristics
@@ -24,43 +21,48 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %
 % G:    `       Structure containing following items:
 %                 * genes: the list of genes in cluster
-%                 * cluster: the cluster that was analyzed
-%                 * isAnaerobic: whether aerobic or not 
 %                 * E: The edge list (adjacency graph)
 %                 * wML: the most probable assignment
 % 
 % FB:           Algorithm run details
 %                 * FB.nIter: number of iterations
-%                 * FB.LL: log likelihood
+%                 * FB.LL: log likelihood 
+% S:            Sorted result of analyze1()
+%                 * S.E: list of named edges
+%                 * S.W: the list of interaction strengths
+%                 * S.var: the variance of change in weights 
+%                          (descending sort order)
+% 
 
-%%% PreSetup 
+    if nargin < 1
+        sparsityFactor = 5; 
+    end
+    interClassNoise = 0.1; 
+    fbIters = 40;
     
+    
+    %%% PreSetup 
     warning off; 
     addpath ../lib/HMM;
     addpath ../lib/KPMtools;
     addpath ../lib/KPMstats;
     addpath ../netlab3.3;
     addpath ../code;
-    addpath ../data/dataset8; 
-   
-%%% Initialization
-    interClassNoise = 0.1; 
-    fbIters = 40; 
-    if nargin < 3
-        isAnaerobic = 0; 
-    end
+    addpath ../data/exp2; 
+    
     disp(sprintf('\n**********************************************************************************************'));
-    disp(sprintf('* exp1(): cluster: %d sparsityFactor: %g, isAnaerobic: %d', tCluster, sparsityFactor, isAnaerobic));
-     disp(sprintf('**********************************************************************************************\n'));
-    load expr.mat;
-    load graph.mat;
-    if isAnaerobic
-        load an_cluster.mat;
-    else
-        load cluster.mat;
-    end
-    assert((tCluster >= 1) && (tCluster <= 8), 'tCluster should be between 1 and 8 inclusive'); 
-    load cats.mat; 
+    disp(sprintf('* exp2(): sparsityFactor: %g', sparsityFactor));
+    disp(sprintf('**********************************************************************************************\n'));
+    
+    %%% load the dataset
+    load cats.mat;
+    load graph.mat; 
+    load dataExp2.mat
+    deleted = ['YLR403W'];
+    nT = 6; 
+    nS = 2; 
+    W = [-1 0 1];
+    nW = length(W);  
     
     %%% correct the graph valuation ?
     [i,j,s] = find(gene_graph);
@@ -73,44 +75,55 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     gc_graph2 = sparse(gc_adj(:, 1), gc_adj(:, 2), ones(length(gc_adj), 1), 4715, 260);   
     gc_graph3 = gc_graph2(gc_gid_v, gc_cid_v);
     
-
-    %%% find genes for which we have expression data
-    disp(sprintf('\nC0: Select genes present in the interaction network for which expression data is present')); 
-    [i0, m0, p0] = remapGeneKeys(expr_genes, gene_names); 
-    c0_graph = gene_graph(p0, p0); 
-    c0_names = expr_genes(i0); 
-
-    %%% find graph over genes in cluster 
-    disp(sprintf('\nC1: Select genes in cluster %d present in C0', tCluster)); 
-    [i1, m1, p1]  = remapGeneKeys(c0_names, clusters{tCluster}');
-    % [gene_names(i1)  clusters{1}(p1)'] %% these must be the same
-    c1_graph = c0_graph(i1, i1);
-    c1_names = c0_names(i1);
-
-    %%% find genes in cluster that have a classification
-    disp(sprintf('\nC2: Select genes in C1 that have a functional category')); 
-    [i2, m2, p2] = remapGeneKeys(c1_names, gc_gid_k); 
-    % [c1_names(i2)  gc_gid_k(p2)] %% these must be the same
-    c2_graph = c1_graph(i2, i2); 
-    c2_names = c1_names(i2); 
-    %% MODIFICATION i2->p2
-    c2_classes = gc_graph3(p2, :);
-    if(isAnaerobic)
-        dtype = sprintf('anaerobic');
-    else
-        dtype = sprintf('aerobic');
-    end
-    disp(sprintf('\nC3: Select %s scenario gene expression data for genes in C2', dtype));  
-    [i3, m3, p3] = remapGeneKeys(expr_genes, c2_names);
-    c2_data = expr_data(i3, :, :); 
+    %%% find sub graph for sig_genes
+    disp(sprintf('\nC0: Select subgraph for sig_genes'));
+    disp(sprintf('*********************************************************')); 
+    [i0, m0, p0] = remapGeneKeys(gene_names, sig_genes); 
+    c0_graph = gene_graph(i0, i0); 
+    c0_names = sig_genes(p0); 
     
-    [I, J, S] = find(c2_graph); 
-    c2_E = [I J];
-    %%% Initialize local variables
-    W = [-1 0 +1];
+    %%% find genes which have expression data. 
+    disp(sprintf('\nC1: Select C0 genes with expr_data'));
+    disp(sprintf('*********************************************************')); 
+    [i1, m1, p1]  = remapGeneKeys(expr_genes, c0_names);
+    c1_graph = c0_graph(p1, p1);
+    c1_names = c0_names(p1);
+    c1_data = expr_data(i1, :); 
+    
+    %%% find genes in cluster that have a classification
+    disp(sprintf('\nC2: Select C1 genes with functional category'));
+    disp(sprintf('*********************************************************')); 
+    [i2, m2, p2] = remapGeneKeys(gc_gid_k, c1_names); 
+    % [c1_names(i2)  gc_gid_k(p2)] %% these must be the same
+    c2_graph = c1_graph(p2, p2); 
+    c2_names = c1_names(p2);
+    c2_data = c1_data(p2, :); 
+    c2_classes = gc_graph3(i2, :);
+    
+    %%% find the diffusion factor.
+    disp(sprintf('\nCompute the diffusion factor for %s', deleted));
+    disp(sprintf('*********************************************************')); 
+    [i3, m3, p3] = remapGeneKeys(c2_names, deleted); 
+    nV = length(c2_names); 
+    DF = zeros(nV, 2); % two strains - REF and MUT
+    DF(:, 2) = knockout2(c2_graph, i3);
+    [I, J, S1] = find(c2_graph);
     nE = length(I); 
-    class_names = gc_cid_k; 
-    %% Remove irrelevant names 
+    class_names = gc_cid_k;
+    %%% prior for class transition probabilities 
+    
+    X =zeros(nV, nT, nS); 
+    X(:, :, 1) = c2_data(:, 1:nT); 
+    X(:, :, 2) = c2_data(:, (nT+1):(2*nT));
+    %%% normalize in life else all -1's
+    for s=1:nS
+        X(:, :, s) = X(:, :, s) - mean(mean(X(:, :, s)));
+    end
+    
+    c2_E = [I J];
+    c2_edges = c2_classes(I, :) + c2_classes(J, :);
+    nH = size(c2_classes, 2); 
+    %%% remove irrelevant classes
     c2_c = [];
     c2_i = [];
     for h=1:size(c2_classes, 2) 
@@ -121,25 +134,9 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     end
     c2_classes = c2_c; 
     class_names = gc_cid_k(gc_cid_v(c2_i) );
-%    keyboard;
+
+    %    keyboard;
     nH = size(c2_classes, 2); 
-    nV = length(c2_names); 
-    nT = 8; 
-    nW = length(W); 
-
-    data_ae = c2_data(:, 1:nT); 
-    data_an = c2_data(:, (nT+1):(2*nT)); 
-    
-    %%% normalize the data so that [-1 0 1] starts making sense
-    if isAnaerobic
-        X = data_an - mean(mean(data_an));
-    else
-        X = data_ae - mean(mean(data_ae));
-    end
-    
-    % data_ae = 2*data_ae/max(range(data_ae)); 
-
-    c2_edges = c2_classes(I, :) + c2_classes(J, :);  
     c2e = [];
     for h=1:nH
         if(nnz(c2_edges(:, h)) > 0)
@@ -150,9 +147,6 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     nH = size(c2_edges, 2); 
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 
-%     save run2.mat;
-%     keyboard; 
-%    load run2.mat;
     
     Qprior = (1/nW)*ones(nW, nW);
     Qprior(:, 2) = sparsityFactor*Qprior(:, 2);  
@@ -165,8 +159,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
             % QclassGuess(j, :, i) = Qprior(j, :) ;   
         end
     end
-    QedgeGuess = getEdgeQfromClassQ(QclassGuess, c2_edges, Qprior); 
-    DF = zeros(nV, 1); 
+    QedgeGuess = getEdgeQfromClassQ(QclassGuess, c2_edges, Qprior);
     pW0 = 1/nW*ones(nW, nE); % prior at time t=0
     xiClass = QclassGuess;
     xi0  = QedgeGuess;
@@ -201,13 +194,16 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %     end
 
 %%% Put out the output
-    G = struct('E', [], 'wML', [], 'isAnaerobic', [], 'genes', [], 'cluster', []);
+    G = struct('E', [], 'wML', [], 'genes', []);
     H = struct('A', [], 'Qest', [], 'classes', []);  
     FB = struct('nIters', [], 'LL', []);
-    G.cluster = tCluster; 
-    G.E = c2_E; G.wML = wML; G.isAnaerobic = isAnaerobic; G.genes = c2_names; 
+    G.E = c2_E; G.wML = wML; G.genes = c2_names; 
     H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 
-    FB.nIters = nIter; FB.LL = LL; 
-    
+    FB.nIters = nIter; FB.LL = LL;
+    S = analyze1(G, H, FB); 
 %    keyboard; 
 end
+    
+
+    
+    

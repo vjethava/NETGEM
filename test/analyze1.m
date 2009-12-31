@@ -7,7 +7,7 @@ function [A]=analyze1(G, H, B)
 % -----------
 %  See exp1() for details of the input
 %
-    A = struct('varW', [], 'W', [], 'E', []); 
+    A = struct('vW', [], 'W', [], 'E', []); 
 %%% Measure the degree of change in W. 
     W = [-1 0 1]; 
     nW = length(W); 
