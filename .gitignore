@@ -9,3 +9,4 @@ ismb/*.out
 ismb/*.log
 ismb/*.blg
 *tmp*
+*.aux*
