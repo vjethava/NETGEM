@@ -34,6 +34,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %                 * FB.LL: log likelihood
 
 %%% PreSetup 
+    
     warning off; 
     addpath ../lib/HMM;
     addpath ../lib/KPMtools;
@@ -48,7 +49,10 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     if nargin < 3
         isAnaerobic = 0; 
     end
-    load expr.mat; 
+    disp(sprintf('\n**********************************************************************************************'));
+    disp(sprintf('* exp1(): cluster: %d sparsityFactor: %g, isAnaerobic: %d', tCluster, sparsityFactor, isAnaerobic));
+     disp(sprintf('**********************************************************************************************\n'));
+    load expr.mat;
     load graph.mat;
     if isAnaerobic
         load an_cluster.mat;
