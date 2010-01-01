@@ -72,10 +72,10 @@ T = size(Xe, 2);
 nH = length(H); 
 nS = size(Xe, 3); 
 f = zeros(nW, nH, T); 
-b = ones(nW, nH, T); 
+b = zeros(nW, nH, T); 
 f(:, :, 1) = Pw0e * ones(1, nH); 
+b(:, :, T) = ones(nW, nH); 
 obs = zeros(nW, T); % the p(w^t | x^t) matrix 
-obs2 = [];  
 % observation matrix 
 for t=1:T
     % xsum = 0.0; 
@@ -93,15 +93,31 @@ end
 keyboard;
 % forward beliefs: f = zeros(nW, nH, T);  
 for t=2:T
-    for ws=1:nW
-        for hs=1:nH
-            for ss=1:nS
-                ct = o(ws, t)*
-                f(ws, hs, t) =  f(ws, hs, t)+  ct 
+    for m=1:nW
+        for h=1:nH
+            ct = obs(m, t)*A(h);
+            for l=1:nW % the next state  
+                fterm = reshape(f(l, : ,t-1), nH, 1); 
+                qterm = reshape(H(m, l, :), 1, nH); 
+                f(m , h, t) =  f(m, h, t) +  fterm*qterm; 
+            end
+            f(m, h, t) = ct*f(m, h, t); 
+        end
+    end
+end
+% bakcward beliefs 
+for t=(T-1):-1:1
+    for m=1:nW
+        for h=1:nH
+            for l=1:nW  
+                ct = obs(l, t+1);
+                be = reshape(b( l, :, t+1), nH, 1);
+                b(m, h, t) = b(m, h, t) + ct*(be*A')*H(m, l, h);
             end
         end
     end
 end
+
 
 keyboard; 
 

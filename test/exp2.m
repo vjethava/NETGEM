@@ -41,7 +41,7 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
         sparsityFactor = 1.0; 
     end
     interClassNoise = 0.1; 
-    fbIters = 40;
+    fbIters = 15;
     
     
     %%% PreSetup 

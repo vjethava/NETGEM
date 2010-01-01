@@ -7,6 +7,9 @@ function [A]=analyze1(G, H, B)
 % -----------
 %  See exp1() for details of the input
 %
+    load ../data/orf.mat; 
+    addpath ../code/; 
+    
     A = struct('vW', [], 'W', [], 'E', []); 
 %%% Measure the degree of change in W. 
     W = H.W; 
@@ -21,7 +24,12 @@ function [A]=analyze1(G, H, B)
    
     [vi,ii] = sort(varChangeInW, 'descend'); 
     A.vW = vi; 
-    A.E = G.genes(G.E(ii, :));
+    G2 = G.genes;
     A.W = G.wML(ii, :); 
+    [ci, cm, cp] = remapGeneKeys(orf_systematic, G2); 
+    for j=1:length(ci)
+        G2(cp(j)) = orf_common(ci(j));
+    end
+    A.E = G2(G.E(ii, :)); 
 %    keyboard; 
 end

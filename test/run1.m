@@ -16,3 +16,7 @@ for j=0:1
         c = c + 1;  
     end
 end
+save ../results/exp1ws5c.mat S; 
+clear; 
+S2 = exp(5.0);
+save ../results/exp2ws5c.mat S2; 
