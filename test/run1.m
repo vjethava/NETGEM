@@ -1,8 +1,9 @@
 S = struct('G', [], 'H', [] ,'B', [], 'E', [], 'W', [], 'var', [], 'cluster', [], 'isAnaerobic', []); 
 c = 1;
+sparsityFactor = 5.0; 
 for j=0:1
     for i=1:8
-        [G, H, B] = exp1(i, 10, j); 
+        [G, H, B] = exp1(i, sparsityFactor, j); 
         S(c).G = G; 
         S(c).H = H; 
         S(c).B = B; 

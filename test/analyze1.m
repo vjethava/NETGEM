@@ -9,7 +9,7 @@ function [A]=analyze1(G, H, B)
 %
     A = struct('vW', [], 'W', [], 'E', []); 
 %%% Measure the degree of change in W. 
-    W = [-1 0 1]; 
+    W = H.W; 
     nW = length(W); 
     nE = size(G.wML, 1);
     nT = size(G.wML, 2);

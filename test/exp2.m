@@ -1,4 +1,4 @@
-function [G, H, FB, S] = exp2(sparsityFactor)
+function [G, H, FB, S] = exp2(sparsityFactor, W)
 % EXP2 runs the experiment on the second dataset ( REF/MUT ) with 6 time
 % points at different time intervals. We consider both the model with
 % single Q over time period as well as Q(t) for each time point. 
@@ -33,9 +33,12 @@ function [G, H, FB, S] = exp2(sparsityFactor)
 %                 * S.var: the variance of change in weights 
 %                          (descending sort order)
 % 
-
+    if nargin < 2
+        W = [-2 -1 0 1 2];
+    end
+    
     if nargin < 1
-        sparsityFactor = 5; 
+        sparsityFactor = 1.0; 
     end
     interClassNoise = 0.1; 
     fbIters = 40;
@@ -61,7 +64,7 @@ function [G, H, FB, S] = exp2(sparsityFactor)
     deleted = ['YLR403W'];
     nT = 6; 
     nS = 2; 
-    W = [-1 0 1];
+  
     nW = length(W);  
     
     %%% correct the graph valuation ?
@@ -147,9 +150,8 @@ function [G, H, FB, S] = exp2(sparsityFactor)
     nH = size(c2_edges, 2); 
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 
-    
-    Qprior = (1/nW)*ones(nW, nW);
-    Qprior(:, 2) = sparsityFactor*Qprior(:, 2);  
+  
+    Qprior = ones(nW, 1)*exp(-3.*abs(W).^sparsityFactor).*ones(nW, nW);
     Qprior = mk_stochastic(Qprior); 
     QclassGuess = zeros(nW, nW, nH); 
 
@@ -178,7 +180,7 @@ function [G, H, FB, S] = exp2(sparsityFactor)
         xi0 = QedgeGuess; 
         QclassGuess = xiClass;
         nIter = nIter + 1;
-        if(abs(ll - ll0) > 1e-3)
+        if(abs(ll - ll0) > 1e-2)
             ll0 = ll;
             beliefsChanged = true; 
         end
@@ -195,7 +197,7 @@ function [G, H, FB, S] = exp2(sparsityFactor)
 
 %%% Put out the output
     G = struct('E', [], 'wML', [], 'genes', []);
-    H = struct('A', [], 'Qest', [], 'classes', []);  
+    H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
     FB = struct('nIters', [], 'LL', []);
     G.E = c2_E; G.wML = wML; G.genes = c2_names; 
     H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 

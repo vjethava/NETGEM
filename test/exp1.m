@@ -1,4 +1,4 @@
-function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
+function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
 %% EXP1 Runs experiment with fixed mixture proportions for  
 %% the target cluster in {1,...,8} (8 clusters identified)
 % 
@@ -49,9 +49,13 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     if nargin < 3
         isAnaerobic = 0; 
     end
+    
+    if nargin < 4 
+        W = [-2 -1 0 1 2]; 
+    end
     disp(sprintf('\n**********************************************************************************************'));
     disp(sprintf('* exp1(): cluster: %d sparsityFactor: %g, isAnaerobic: %d', tCluster, sparsityFactor, isAnaerobic));
-     disp(sprintf('**********************************************************************************************\n'));
+    disp(sprintf('**********************************************************************************************\n'));
     load expr.mat;
     load graph.mat;
     if isAnaerobic
@@ -107,7 +111,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
     [I, J, S] = find(c2_graph); 
     c2_E = [I J];
     %%% Initialize local variables
-    W = [-1 0 +1];
+    
     nE = length(I); 
     class_names = gc_cid_k; 
     %% Remove irrelevant names 
@@ -154,8 +158,11 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %     keyboard; 
 %    load run2.mat;
     
-    Qprior = (1/nW)*ones(nW, nW);
-    Qprior(:, 2) = sparsityFactor*Qprior(:, 2);  
+  
+    %%% MODIFICATION: sparsityFactor
+    %Qprior(:, 2) = onessparsityFactor*Qprior(:, 2);  
+    % Qprior = ones(nW, 1)*(1./((abs(W)+1).^sparsityFactor)).*ones(nW, nW);
+    Qprior = ones(nW, 1)*exp(-3.*abs(W).^sparsityFactor).*ones(nW, nW);
     Qprior = mk_stochastic(Qprior); 
     QclassGuess = zeros(nW, nW, nH); 
 
@@ -185,7 +192,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
         xi0 = QedgeGuess; 
         QclassGuess = xiClass;
         nIter = nIter + 1;
-        if(abs(ll - ll0) > 1e-3)
+        if(abs(ll - ll0) > 1e-2)
             ll0 = ll;
             beliefsChanged = true; 
         end
@@ -201,12 +208,14 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic)
 %     end
 
 %%% Put out the output
+    
     G = struct('E', [], 'wML', [], 'isAnaerobic', [], 'genes', [], 'cluster', []);
-    H = struct('A', [], 'Qest', [], 'classes', []);  
+    H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
     FB = struct('nIters', [], 'LL', []);
     G.cluster = tCluster; 
     G.E = c2_E; G.wML = wML; G.isAnaerobic = isAnaerobic; G.genes = c2_names; 
     H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 
+    H.W = W; 
     FB.nIters = nIter; FB.LL = LL; 
     
 %    keyboard; 
