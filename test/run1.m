@@ -18,5 +18,5 @@ for j=0:1
 end
 save ../results/exp1ws5c.mat S; 
 clear; 
-S2 = exp(5.0);
-save ../results/exp2ws5c.mat S2; 
+[G2, H2, B2, S2] = exp2(5.0);
+save ../results/exp2ws5c.mat S2, G2, H2, B2; 

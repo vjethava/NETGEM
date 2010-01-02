@@ -10,3 +10,4 @@ ismb/*.log
 ismb/*.blg
 *tmp*
 *.aux*
+*.zip

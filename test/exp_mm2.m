@@ -1,4 +1,4 @@
-function [R] = exp_mm(nT, S)
+function [R, A2] = exp_mm(nT, S)
 %%% exp_mm.m --- 
 %% 
 %% Filename: exp_mm.m
@@ -132,18 +132,20 @@ for s=1:nS
         largeX(t, s) = getLargeW(xt, qX); 
     end
 end
+
 %%% compute the emission probabilities
-largeE = zeros(nW^nE, nqX^N);
-for wl=1:(nW^nE)
-    ws = getSmallW(wl, W, nE);
-    wg = sparse(E(:, 1), E(:, 2), ws, N, N); 
-    for xl = 1:(nqX^N)    
-        xs = getSmallW(xl, qX, N); 
-        hs = exp(-xs*wg*xs');
-        largeE(wl, xl) = hs; 
-    end
+% largeE = zeros(nW^nE, nqX^N);
+% for wl=1:(nW^nE)
+%     ws = getSmallW(wl, W, nE);
+%     wg = sparse(E(:, 1), E(:, 2), ws, N, N); 
+%     for xl = 1:(nqX^N)    
+%         xs = getSmallW(xl, qX, N); 
+%         hs = exp(-xs*wg*xs');
+%         largeE(wl, xl) = hs; 
+%     end
 end
-largeE = mk_stochastic(largeE); 
+% largeE = mk_stochastic(largeE); 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Data generation complete. Here we have generated the 
 %%% following: We, E, X, DF, G, Q based on strains S,
@@ -168,7 +170,7 @@ for i=1:nE
     end
     Qguess(:, :, i) = mk_stochastic(Qguess(:, :, i));
 end
-largeQguess = getLargeQ(Qguess);
+% largeQguess = getLargeQ(Qguess);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Try out the basic large state space HMM
@@ -250,6 +252,7 @@ maxIters2 = 40;
 F2 = [];
 D2 = []; 
 L2 = [];
+A2 = []; 
 while(notStable2 && (nIters2 < maxIters2))
     nIters2 = nIters2 + 1;
     notStable2 = false; 
@@ -270,6 +273,7 @@ while(notStable2 && (nIters2 < maxIters2))
             Qe2(:, :, e) = Qe2(:, :, e) + Dguess(e, h) * Hguess(:, :, h); 
         end
     end
+    adiff2 = norm(Dguess - D, 'fro'); 
     lQ2guess  = getLargeQ(Qe2); 
     p2 = nnz(wML2.*We == 1)/nnz(We);
     r2 = nnz(wML2.*We == 1)/nnz(wML2);
@@ -277,6 +281,7 @@ while(notStable2 && (nIters2 < maxIters2))
     fdiff2 = norm(largeQ - lQ2guess, 'fro');
     F2 = [F2 fscore2]; 
     D2 = [D2 fdiff2]; 
+    A2 = [A2 adiff2]; 
 end
 R(3).fdiff = D2;
 R(3).fscore = F2; 

@@ -1,4 +1,4 @@
-function []=fbEdgeMM(X, E, D, W, H, A, Pw0)
+function [Qnext, Anext, Wml, LL]=fbEdgeMM(X, E, D, W, H, A, Pw0)
 % FBEDGEMM computes the Forward Backward iterates for the 
 % specified edge, E=(i,j), given observed data, X, damping, D, and
 % estimate for transition probability Q:W x W -> R+
@@ -55,6 +55,10 @@ T = size(X, 2);
 % F = zeros(nW, nH, T, nE);
 % B = zeros(nW, nH, T, nE); 
 % O = zeros(nW, T, nE); 
+Anext = zeros(nE, nH);
+Qnext = zeros(nW, nW, nH); 
+LL = 0.0;
+Wml = []; 
 for e=1:nE; 
     ci = E(e, 1); 
     cj = E(e, 2); 
@@ -62,20 +66,32 @@ for e=1:nE;
     de = D([ci cj], :);
     p0e = Pw0(:, e); 
     ae = A(e, :); 
-    
-    [fe, be, xi_e, we, lle] = fbSingleEdgeMM(xe, de, W, H, ae, p0e);  
+    [Qest, Aest, we, ll, p] = fbSingleEdgeMM(xe, de, W, H, ae, p0e);  
+    LL = LL + ll;
+    Wml = [Wml; we]; 
+    Anext(e, :) = Aest; 
+    Qnext = Qnext + Qest;
 end
+for h=1:nH
+    Qnext(:, :, h) = mk_stochastic(Qnext(:, :, h));
+end
+% keyboard; 
 
-function [f, b, xi, w_ml, ll]=fbSingleEdgeMM(Xe, De, W, H, A, Pw0e)
+function [Qest, Aest, we, ll, p]=fbSingleEdgeMM(Xe, De, W, H, A, Pw0e)
 nW = length(W); 
 T = size(Xe, 2); 
-nH = length(H); 
+nH = size(H, 3); 
 nS = size(Xe, 3); 
 f = zeros(nW, nH, T); 
 b = zeros(nW, nH, T); 
 f(:, :, 1) = Pw0e * ones(1, nH); 
 b(:, :, T) = ones(nW, nH); 
 obs = zeros(nW, T); % the p(w^t | x^t) matrix 
+my_qe = zeros(nW, nW);
+for h=1:nH
+    my_qe = my_qe + A(h)* H(:, :, h);
+end
+my_qe = mk_stochastic(my_qe);
 % observation matrix 
 for t=1:T
     % xsum = 0.0; 
@@ -90,8 +106,8 @@ for t=1:T
     obs(:, t) = normalize(wsum);
     %    obs2 = [obs2; normalize(exp(-W*xsum2))]; 
 end
-keyboard;
-% forward beliefs: f = zeros(nW, nH, T);  
+% keyboard; 
+%%% forward beliefs: f = zeros(nW, nH, T);  
 for t=2:T
     for m=1:nW
         for h=1:nH
@@ -99,25 +115,64 @@ for t=2:T
             for l=1:nW % the next state  
                 fterm = reshape(f(l, : ,t-1), nH, 1); 
                 qterm = reshape(H(m, l, :), 1, nH); 
-                f(m , h, t) =  f(m, h, t) +  fterm*qterm; 
+                f(m , h, t) =  f(m, h, t) +  qterm*fterm; 
             end
             f(m, h, t) = ct*f(m, h, t); 
         end
     end
+    f(:, :, t) = normalise(f(:, :, t)); 
 end
-% bakcward beliefs 
+%%% backward beliefs 
 for t=(T-1):-1:1
     for m=1:nW
         for h=1:nH
             for l=1:nW  
                 ct = obs(l, t+1);
                 be = reshape(b( l, :, t+1), nH, 1);
-                b(m, h, t) = b(m, h, t) + ct*(be*A')*H(m, l, h);
+                b(m, h, t) = b(m, h, t) + ct*(be'*A')*H(m, l, h);
             end
         end
     end
+    b(:, :, t) = normalise(b(:, :, t)); 
 end
+% xi = zeros(nW, nW, nH, nH, T-1);
+Aest = zeros(1, nH); 
+Qest = zeros(nW, nW, nH); 
+ll = 0.0;
+for t=1:(T-1)
+    xi_sum = 0; 
+    for l=1:nW
+        for m=1:nW
+            p_sum = 0.0;
+            for h=1:nH
+                for h1=1:nH % h' in the paper
+%                     ct = 1;
+%                     ct = ct * f(l, h , t);
+%                     ct = ct * A(h1);
+%                     ct = ct * H(l, m, h);
+%                     ct = ct * obs(m, t+1);
+%                     ct = ct * b(m, h1, t+1); 
+                    ct = f(l, h , t) * A(h1) *  H(l, m, h) * obs(m, t+1) * b(m, h1, t+1);
+%                    xi(l, m, h, h1, t) = ct; 
+%                    xi_sum = xi_sum + ct; 
+                    Aest(h1) = Aest(h1) + ct; 
+                    Qest(l, m, h) = Qest(l, m, h) + ct;
+                    p_sum = p_sum + ct;
+                end
+            end
+            ll = ll + p_sum.*log(max(my_qe(l,m), 1e-4));
+        end
+    end
+    for h=1:nH
+        Qest(:, :, h) = mk_stochastic(Qest(:,:, h));
+    end
+    Aest = mk_stochastic(Aest); 
+%    xi(:, :, :, :, t) = xi(:,:,:,:,t)/max((xi_sum == 0), xi_sum);\
+end
+p = f.* b; 
+pW = mk_stochastic(reshape(sum(p, 2), nW, T)')'; 
+[mi, pi]=  max(pW, [], 1);
+we = W(pi)'; 
 
 
-keyboard; 
 

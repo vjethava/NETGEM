@@ -71,7 +71,7 @@ LDFLAGS = $(EXEOPT) $(LPATH)
 # Basic Compile Instructions #
 ##############################
 
-all: document.pdf clean
+all: clean document.pdf clean
 $(NAME): $(OBJS) $(SRC) $(INCL)  
 	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME) 
 #	$(STRIP) ./$(NAME) # if you debug ,don't strip ...
