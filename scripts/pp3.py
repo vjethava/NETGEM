@@ -1,14 +1,15 @@
-# pp_graph_clean.py --- 
+#! /usr/bin/env python
+# pp3.py --- 
 # 
-# Filename: pp_graph_clean.py
+# Filename: pp3.py
 # Description: 
 # Author: Vinay Jethava
 # Maintainer: 
 # Created: Thu Nov 19 11:15:43 2009 (+0100)
 # Version: 
-# Last-Updated: Wed Dec 30 10:19:55 2009 (+0530)
+# Last-Updated: Sat Jan  2 11:41:46 2010 (+0530)
 #           By: Vinay Jethava
-#     Update #: 19
+#     Update #: 31
 # URL: 
 # Keywords: 
 # Compatibility: 
@@ -51,28 +52,30 @@ counter = 0
 numE = 0
 genes = dict()
 # the original p-p interactions file.
-f = open('../data/unixfile.txt', 'r')
+f = open('../data/pp_interaction_network.txt', 'r')
 # the list of genes present.
-g = open('./gene_names.txt', 'w')
+g = open('./gene_names_pp.txt', 'w')
 # the interactions graph in edge adjacency format.
-h = open('./gene_graph.txt', 'w')
+h = open('./gene_graph_pp.txt', 'w')
 lines = f.read().split('\r')  
 for line in lines:
-    print line
+    # print line
     n = []
-    numE = numE + 1
     if(len(line.strip()) > 0): 
         cedge = line.strip().split('\t')
-        print cedge
-        for i in range(3):
-            if not i==1:
-                if not genes.has_key(cedge[i]):
-                    counter = counter + 1
-                    genes[ cedge[i] ] = counter
-                    g.write("%s %d\n" % (cedge[i], counter)) 
+        # print cedge
+        if(cedge[1] == 'pp'):
+         #   print '\tadding edge'
+            numE = numE + 1    
+            for i in range(3):
+                if not i==1:
+                    if not genes.has_key(cedge[i]):
+                        counter = counter + 1
+                        genes[ cedge[i] ] = counter
+                        g.write("%s %d\n" % (cedge[i], counter)) 
             #   print genes.get(cedge[i])
-                n.append(genes.get(cedge[i]))
-        h.write('%d %d\n' % (n[0], n[1]))
+                    n.append(genes.get(cedge[i]))
+            h.write('%d %d\n' % (n[0], n[1]))
 print 'numE: %d numG: %d\n' % (numE, counter) 
 f.close()
 g.close()

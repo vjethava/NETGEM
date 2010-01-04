@@ -3,7 +3,7 @@ function [Qnext, Anext, Wml, LL]=fbEdgeMM(X, E, D, W, H, A, Pw0)
 % specified edge, E=(i,j), given observed data, X, damping, D, and
 % estimate for transition probability Q:W x W -> R+
 %  
-% Usage:  [F, B, Xi] = fbEdge(X,E, D, W, Q [, Pw0])f
+% Usage:  [Qnext, Anext, Wml, LL] = fbEdge(X,E, D, W, H, A [, Pw0])
 %
 % Expects:
 % --------
@@ -24,10 +24,12 @@ function [Qnext, Anext, Wml, LL]=fbEdgeMM(X, E, D, W, H, A, Pw0)
 %
 % Returns: 
 % --------
-% F - forward iterates F(i, t, e) - P(W_e(t) = i, X^{1:t} | Q)
-% B - backward iterates B(i, t, e) - P(X^{t+1:T} | W_e(t) = i, Q)
-% Xi - Aggregate Xi(i, j, e) - \sum_t P(W_e(t) = w_i, W_e(t+1) = w_j | X, Q) 
+% Qnext = the ML estimate for class evolution probabilities
+% Anext = the ML estimate for mixing proportions
+% Wml   = the most likely weight sequence for the edges
+% LL    = the aggregate (over edges) log likelihood for algorithm iterations
 % 
+
 
 %% Initial Checks
 assert(size(E, 2) == 2); 
@@ -59,9 +61,11 @@ Anext = zeros(nE, nH);
 Qnext = zeros(nW, nW, nH); 
 LL = 0.0;
 Wml = []; 
-for e=1:nE; 
+for e=1:nE;
+    
     ci = E(e, 1); 
     cj = E(e, 2); 
+    disp(sprintf(' Computing f-b for edge (%d, %d) number: %d of %d', ci, cj, e, nE));
     xe = X([ci cj], :, :);
     de = D([ci cj], :);
     p0e = Pw0(:, e); 
@@ -99,7 +103,7 @@ for t=1:T
     %     xvertex = Xe(:, t, s).*(1-De(:, s));
     %     xsum = xsum + xvertex(1)*xvertex(2); 
     % end
-    xv2 = reshape(Xe(:, t, :), nW, nS).*(1-De); 
+    xv2 = reshape(Xe(:, t, :), 2, nS).*(1-De); % consider for the edge
     xsum2 = sum(xv2(1, :).*xv2(2, :)); 
     %    assert(xsum2 == xsum); 
     wsum = exp(-W*xsum2); 

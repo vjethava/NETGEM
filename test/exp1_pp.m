@@ -1,4 +1,4 @@
-function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
+function [G, H, FB]=exp1_pp(tCluster, sparsityFactor, isAnaerobic, W)
 %% EXP1 Runs experiment with fixed mixture proportions for  
 %% the target cluster in {1,...,8} (8 clusters identified)
 % 
@@ -162,7 +162,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
     %%% MODIFICATION: sparsityFactor
     %Qprior(:, 2) = onessparsityFactor*Qprior(:, 2);  
     % Qprior = ones(nW, 1)*(1./((abs(W)+1).^sparsityFactor)).*ones(nW, nW);
-    Qprior = ones(nW, 1)*exp(-3.*abs(W).^sparsityFactor).*ones(nW, nW);
+    Qprior = ones(nW, 1)*exp(-abs(W).^sparsityFactor).*ones(nW, nW);
     Qprior = mk_stochastic(Qprior); 
     QclassGuess = zeros(nW, nW, nH); 
 
@@ -183,12 +183,27 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
     nIter = 1; 
     LL= [];
     disp(sprintf('\nStarting forward backward iterations\n'));
+    disp(sprintf('**************************************\n'));
+    Aguess = c2_edgesNoisy;
+    Aprior = c2_edges2; 
     while ((beliefsChanged) && (nIter < fbIters))
         beliefsChanged = false; 
-        [f, b, xi, ll, wML] = fbEdge(X, c2_E, DF, W, xi0, pW0);
-        disp(sprintf('fb-iteration: %d log likelihood: %g' , nIter,ll)); 
-        xiClass = getClassQfromEdgeQ(xi, c2_edges, Qprior, QclassGuess); 
-        QedgeGuess = getEdgeQfromClassQ(xiClass, c2_edges, Qprior, QedgeGuess); 
+        % [f, b, xi, ll, wML] = fbEdge(X, c2_E, DF, W, xi0, pW0);
+        [Qnext, Anext , wML, ll] = fbEdgeMM(X, c2_E, DF, W, xiClass, Aguess, pW0);
+        disp(sprintf('fb-iteration: %d log likelihood: %g' , nIter, ll)); 
+        disp(sprintf('***********************************************\n'));
+        % xiClass = getClassQfromEdgeQ(xi, c2_edges, Qprior, QclassGuess); 
+        
+        %%% update the map estimate for Q
+        for h=1:nH 
+            xiClass(:, :, h) = Qnext(:, :, h) + Qprior;       
+            xiClass(:, :, h) = mk_stochastic(xiClass(:, :, h));
+        end
+        %%% update the map estimate for edge mixtures 
+        Aguess = Anext + Aprior;
+        Aguess = mk_stochastic(Aguess); 
+       
+        QedgeGuess = getEdgeQfromClassQ(xiClass, Aguess, Qprior, QedgeGuess); 
         xi0 = QedgeGuess; 
         QclassGuess = xiClass;
         nIter = nIter + 1;

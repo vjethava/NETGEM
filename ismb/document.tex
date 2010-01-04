@@ -6,11 +6,22 @@
 
 \begin{document}
 \firstpage{1}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
 \newcommand{\update}[1]{\textcolor{blue}{#1}}
+\newcommand{\old}[1]{\textcolor{green}{#1}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\title[NETGEM]{NET GEM: Network Embedded analysis of Temporal Gene Expression using Mixtures}
+\title[NETGEM]{NETGEM: Network Embedded analysis of Temporal Gene Expression using Mixtures}
 %\title[short Title]{Analysis of temporal gene expression using mixture models}
 \author[Sample \textit{et~al}]{Vinay Jethava\,$^{1}$, Torbjorn Karfunkel$^{2}$, Chiranjib Bhattacharyya\,$^{1}$, Devdatt Dubhashi$^{2}$,Goutham N.
   Vemuri$^{3}$\footnote{to whom correspondence should be addressed}}
@@ -23,130 +34,172 @@ Technology, G\"oteborg, SWEDEN\\
 }
 
 \history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
-
 \editor{Associate Editor: XXXXXXX}
 
 \maketitle
 
 \begin{abstract}
 \section{Motivation}
-Microarrays have become a routine tool in biological enquiry, geared
-to measure global gene expression in response to genetic or
-environmental perturbations. The outcome is a vast amount of data, for
-which many statistical methods have been developed. These methods
-identify condition-dependent transcriptional regulation, but are not
-suited to analyze time-series data. Furthermore, these methods ignore
-the effect of the underlying interaction network of genes or
-proteins. Substantial amount of additional information on the
-interaction dynamics could be obtained if time were to be treated
-appropriately in the context of the interaction network. 
 
 \section{Results}
-We present NET GEM, an algorithm that models temporal gene expression
-data using Hidden Markov Models, within the constraints of an
-underlying network. We used NET GEM to identify the dynamics of
-interactions in wild-type Saccharomyces cerevisiae or its isogenic
-mutant during continuously changing nutritional environment. NET GEM
-identified significant changes in the interactions between
-\textcolor{red}{[to be filled]} 
 
 \section{Availability:}
-The source code for NET GEMM is available from http://www.website
-\textcolor{red}{[will fill in before submission. The website mentions
-  having a permanent website. I propose http://129.16.106.142/ where
-  we collect all the tools. We should include a readme.txt that should
-  have info on input files needed, their formatting, choosing
-  parameters, output file description and their interpretation]} 
+The source code for NETGEM is available from http://129.16.106.142/
 
-\section{Contact:} goutham@chalmers.se %\href{goutham@chalmers.se}{goutham@chalmers.se}
+\section{Contact:} goutham@chalmers.se 
 \end{abstract}
 
 \section{Introduction}
-%To be filled. Ideas - strains, time important, relate to KELLER VERY GENTLY!
-%focus on special techniques.
+% This paper studies problem of the temporal rewiring in a genetic
+% network based on the observed microarray expression data. 
 
-Microarrays have become a routine tool in the biological inquiry of
-transcriptional regulation. Gene expression microarrays present a
+Microarrays have become a routine tool in biological enquiry, geared to measure 
+global gene expression in response to genetic or 
+environmental perturbations. Gene expression microarrays present a
 snapshot of the transcriptional profile of all the genes at the time
-of measurement, resulting in a vast amount of data. Current methods to
-analyze the data are geared to identify genes that have differential
-expression in response to genetic or environmental perturbations
-\textcolor{red}{[REFS]}. There are numerous statistical methods to
-cluster genes, and all of them have been enjoyed varying degree of
-success in discovering new mechanisms of transcriptional
-regulation. \textcolor{red}{[(Torbjorn needs to write brief intro to
-  the different methods to cluster genes and theor drawbacks, keeping
-  in mind this is not a review of the methods. I can think of PCA,
-  k-means, Self Organized Maps, supervised learning methods such as
-  Support Vector Machines, anything else I missed. All this needs to
-  be less than 100 words]}  All these methods have been able to
-identify the condition-specific gene expression and map the
-transcription regulatory network by identifying binding sites of the
-promoters \textcolor{red}{[REFS]}. The general idea of all these
-methods is to cluster genes that have similar expression profile,
-based on the assumption that co-expressed genes are likely to be
-co-regulated. 
-An inherent drawback with the presently available methods is that they
-are not well suited to analyze temporal gene expression data. Time
-course data on gene expression provides substantial insight into the
-dynamics of transcriptional regulation, such as sequential events in
-invoking transcriptional response, any time lag in the process and
-relate the amplitude of the signal to different perturbations
-\textcolor{red}{[general REF on time series]}. Since time series data
-have a natural temporal ordering, using conventional methods to
-analyze time series data will fail to capture the internal structure
-of the data. Moreover, these methods also fail to consider that
-observations closer in time are likely to be closer than temporally
-distant observations\textcolor{red}{[ - this is why it is important to
-  include timepoints into the analysis]}. Unfortunately, the
-traditional framework of time series analysis cannot be used to
-analyze temporal gene expression data due to the small number of
-observations (time points), owing to cost and/or biological
-limitations. Recognizing these drawbacks, there has been a growing
-interest to develop dedicated algorithms that address these drawbacks
-\textcolor{red}{[REFS]}.  
-\textcolor{red}{[Torbjorn to review (less than 100 words) EDGE, STEM,
-  KELLER, TARM, and others that I included in another document. This
-  can also go into the intro of Manuscript 3]} 
+of measurement. The outcome is a
+vast amount of data, which has been analyzed using several statistical
+methods including hierarchical clustering~\citep{Eisen98}, $k$-means
+clustering~\citep{Tavazoie99}, self organizing
+maps~\citep{Tomoya99som}, singular value decomposition~\citep{DBLP:journals/bioinformatics/RifkinK02}.  The key focus of the methods has 
+been clustering of genes that have similar expression profile, based
+on the assumption that co-expressed genes are likely to be regulated. 
+An inherent drawback of the clustering approaches is their
+unsuitability in the analysis of temporal expression data.  
 
-Hidden markov models (HMMs) capture the one-way ordering of time such
-that observations at any time point are dependent on the previous
-values \textcolor{red}{[REFS]}. HMMs were used to analyze temporal
-gene expression data  
-\textcolor{red}{[Vinay to review (less than 50 words) previous
-  analysis of microarray data using HMM, only some of the references
-  are provided]}. These algorithms do not consider the underlying
-network topology of regulation. In this article, we present
-network-embedded analysis of temporal gene expression using mixture
-models (NET GEM). This method takes into account the functional
-catogories of the interacting genes during the inference procedure. 
+% Time
+% course data on gene expression provides substantial insight into the
+% dynamics of transcriptional regulation, such as sequential events in
+% invoking transcriptional response, any time lag in the process and
+% relate the amplitude of the signal to different perturbations
+% \textcolor{red}{[general REF on time series]}. Since time series data
+% have a natural temporal ordering, using conventional methods to
+% analyze time series data will fail to capture the internal structure
+% of the data. Moreover, these methods also fail to consider that
+% observations closer in time are likely to be closer than temporally
+% distant observations. Unfortunately, the traditional framework of time
+% series analysis cannot be used to analyze temporal gene expression
+% data due to the small number of observations (time points), owing to
+% cost and/or biological limitations. 
 
-\textcolor{red}{[Vinay to complete the sentence]} 
+This has led to growing interest towards development of dedicated
+algorithms to handle the temporal data. One of the key challenges
+is the small number of observations~(time points), owing to cost
+and/or biological limitations.  Several methods have been
+investigated including significance
+analysis~\citep{Tusher01sam,Leek06EDGE}, autoregressive curves based
+model~\citep{Ramoni02cluster}, 
+hidden markov models (HMM)~\citep{DBLP:conf/ismb/SchliepSS03,citeulike:1069055}, mixture 
+models~\citep{DBLP:conf/ismb/SchliepSS04,DBLP:journals/bioinformatics/CostaSS05},
+clustering methods~\citep{Ernst06STEM}, association
+rules~\citep{Nam2009}. A review of the methods is available in
+\cite{Androulakis2007}. However, the previous methods 
+assume an time-invariant network topology, such as the protein-protein
+interaction network or the genetic network inferred from microarray
+data. 
 
-We applied NET GEM to publicly available time-series gene expression
+\cite{Song09KELLER} first investigated the problem of learning the
+temporally-varying interaction networks based on local neighbourhood selection
+with $l1$-regularization to obtain sparse networks. The analysis assumes a
+smooth variation in the network interactions strengths to overcome the
+unreliability of results due to the small number of observations
+available in most biological experiments. 
+
+This paper investigates a markovian model for analyzing the rewiring
+problem when the underlying interactions network is known with a
+certain confidence. In other words, the observed expression levels are
+controlled by a known network but  the interaction strengths are
+varying with time. The dynamics of temporal evolution in a rewiring
+network is a matter of study, and is hypothesized to be stochastic in
+nature. In this work, we postulate that the evolution of the
+interaction strengths are markovian in nature. This means that the temporal evolution of
+the interactions strengths can be characterized in terms of a
+transition probability matrix.  Thus, the problem is one of learning
+the transition probability matrix characterizing for the temporal
+evolution of interaction strengths defined on edges in the network based on the observed
+expression data. Hidden markov models (HMM)~\citep{Rabiner89hmm,Cappe07hmm}
+provide a natural method for the study of such systems. However, a
+naive HMM implementation for this inference problem would have an
+exponentially large state space and is NP-hard. 
+
+One of the contributions of this paper is a principled approach that
+performs approximate inference to estimate the transition probability
+matrix that best characterizates of the temporal evolution of the hidden
+interaction strengths. The main assumption is that the interaction
+strengths evolve \emph{independently} of each other. The analysis is closely
+related to the Factorial HMM~\citep{DBLP:journals/ml/GhahramaniJ97}
+and allows us to model the evolution characteristics of each
+interaction (edge) in the known network independently. Then, the
+problem is the learning of the transition probability matrix for each
+edge based on the observed gene expression levels. We employ a bayesian
+approach~\citep{Gelman03bayesian,Beal03},  which have often been used to
+solve inference problem where there are few observation samples
+available, to solve the problem  of learning the transition
+probability matrices for each interaction (edge) in the known network.
+
+There has been considerable effort in establishing a
+hierarchy of genes based on their 
+functionality~\citep{Bader:2003:Nucleic-Acids-Res:12519993, MIPS,
+  citeulike:814974, citeulike:226627, citeulike:3733950}. This poses 
+the natural question of the relationship between the functional classification of
+the genes and the temporal evolution of the interaction. Further, can
+we distill some observations about evolution characteristics of a
+group of functionally similar genes.  The second
+contribution of this paper is a novel method for incorporating the
+functional classifications in the analysis of temporal expression data. We
+  model the evolution of interaction strength for a gene pair as a
+  mixture of evolution characteristics of the functional
+  categories. The problem then becomes the learning of the evolution
+  characteristics for the functional categories as well as the mixing
+  proportions for each interaction edge in the known network. 
+
+\todo{BIO-REF NEEDED}
+Often, gene expression level measurements are available for multiple
+strains which are slightly different perturbed versions of the
+original version. For example, a couple of genes might be knocked out
+of the network. Traditional methods have treated each of the
+slightly perturbed strains separately. However, it might be expected
+that in the case that the perturbed strain only slightly varies from
+the original strain (i.e. only a few genes are knocked out), the
+interactions (edges) near the knocked out genes will show a
+significant change in their evolution characteristics 
+while interactions (edges) far from the knocked out genes would have
+the same evolution characteristics as in the reference strain. The
+third contribution of this paper is a simple damping model which
+allows systematic incorporation of the microarray data available across
+several slightly perturbed strains in the inference algorithm. 
+
+This leads to the approximate inference algorithm, NETGEM, which models the gene
+  interactions for a known network in terms of the functional
+  hierarchy of the genes using the expression data over multiple
+  strains. 
+We applied the algorithm to publicly available time-series gene expression
 data in Saccharomyces cerevisiae. The available of a highly curated
 interaction network for this organism makes it an ideal platform for
 testing the method. We selected two time-series datasets in which the
 nutritional environment changed with time, one without any genetic
-perturbations and one with a deletion in the SFP1 transcription
+perturbations and one with a deletion in the $Sfp1$ transcription
 factor. The first dataset consists of expression of genes during the
 gradual transition from carbon starvation to nitrogen starvation in a
 D-stat under aerobic or anaerobic conditions \todo{(Farzadfard et al.,
 2010)}. Almost a fourth of the genome underwent transcriptional changes
 in response to the transition. The dominant transcription factor that
-brought about these changes was Sfp1, which is known to assimilate
+brought about these changes was $Sfp1$, which is known to assimilate
 signals from the environment and coordinates growth with metabolism
 \todo{(Marion et al., 2004)}. The second dataset measures the temporal
 changes in gene expression upon sudden exposure of a strain of
-S. cerevisiae in which Sfp1 was deleted to glucose \todo{(Cipollina et al.,
-2009)}. Using these datasets, NET GEM identified
-\textcolor{red}{[dynamics of interactions between genes, functional
-  categories, etc  - Vinay to complete the sentence]} 
- 
+$S. cerevisiae$ in which $Sfp1$ was deleted to glucose \todo{(Cipollina et al.,
+2009)}.
+
+The remainder of this manuscript is organized as follows:
+Section~\ref{sec:known-network} discusses the construction of the high
+confidence network, Section~\ref{factorial-model} presents the
+factorial approximation, Section~\ref{sec:mixture-model} presents the
+mixture model and Section~\ref{sec:strain-damping-model} presents the
+strain damping model.  
 \begin{methods}
 \section{Methods}
-We describe our approach to the problem of inference of the temporally
-evolving interactions in an underlying network.
+\label{sec:methods}
 \subsection{Dataset}
  Temporal gene expression datasets were downloaded from Gene
  Expression Omnibus using accession numbers XXXXX and XXXXX. The two
@@ -169,7 +222,7 @@ evolving interactions in an underlying network.
  conventional methods, assuming that all time points are independent.
 
 \subsection{Construction of the interaction network}
-
+\label{sec:known-network}
 The yeast interaction network was constructed using data from
 previously published datasets. Interactions between proteins that
 occurred in at least two independent datasets were considered. These
@@ -185,9 +238,10 @@ YEASTRACT~\cite{citeulike:473096}. The two networks were combined and
 the nature of  interactions was not distinguished for the analysis.
 
 
-\subsection{Known network}
+\subsection{Factorial model}
+\label{factorial-model}
 We assume that the base underlying network of interactions is known as a
-graph $G=(V,E)$. Under different conditions, some of the edges are 
+graph $G=(V,E)$ as described in the previous section. Under different conditions, some of the edges are 
 switched on or off, or, more generally set at various levels of
 activation, $\mathcal W$. Also, the same edge may be active in one
 strain and not in others at any given time point. Thus, we model the
@@ -232,7 +286,9 @@ $x^{1:S}_{e_{far}}(t)$, should be like i.i.d. samples, generated with
 the same activation strength, $w_{e_{far}}(t)$. In the following discussion, 
 we present a heuristic method which incorporates the ideas mentioned
 above into the inference problem. 
-\subsubsection{Strain Damping Heuristic } 
+\subsection{Strain Damping Model }
+\label{sec:strain-damping-model} 
+
 We assume that the weights corresponding to the reference strain
 $\mathbf{w}(t)$ evolve according to a Markov law given by a matrix $Q$,
 where $Q(l, m) = P(\mathbf{w}(t+1) = \mathbf{w}_{m} | {\mathbf w}(t)
@@ -257,10 +313,11 @@ implies that all strains evolve similarly, i.e., $Q^{s} = Q\;
 expression levels in the different strains while learning the temporal
 evolution characteristics. 
 
-There is a tradeoff between using more sophisticated conditional
+\update{There is a tradeoff between using more sophisticated conditional
 probability models $p(\mathbf{w}^{s}(t) |\mathbf{w}^{0}(t))$ involving more
 parameters to be learnt and the limited amount of experimental
-data.\todo{EXPAND FURTHER?} 
+data. 
+}
 
 We compute the damping factor, $\gamma^s_i$, for the genes
 as follows: If the gene, $i$, is knocked out in strain $s$, then we
@@ -331,7 +388,35 @@ approximation~\cite{DBLP:journals/ml/GhahramaniJ97,Mclachlan97embook} for weight
   \hat{P}({\mathbf w}^{t}) &=& \prod_{e\in E} P_{e}(w_{e}^{t}) \\
   \hat{P}(w_{e}^{t+1} = w_{l} | w_{e}^{t} = w_{m}) &=& q_{e}(l, m)
 \end{eqnarray}
-Now, the parameter to be learnt is the transition matrix $Q_{e}$ for
+\update{
+\begin{lemma}
+The factorial weights assumption gives a rank-1 tensor approximation~\cite{Horn90}  to the global weight
+transition probability.  
+\end{lemma}
+For example, if the interaction network consists of two edges having transition
+probabilities $A = \{a_{ij}\}$
+ %$Q_{a}= \left\{\begin{array}{cc}   a_{11} & a_{12} \\     a_{21} &
+ %a_{22} \end{array}\right\}$ 
+and $B$ respectively, the approximation to
+the original matrix, $\hat{Q}$ is given as the kronecker product
+\[ \hat{Q} = A \otimes B = \left[
+  \begin{array}{cc}
+    a_{11} B & a_{12} B \\
+    a_{21} B & a_{22} B
+  \end{array}
+\right]
+\]
+In general, if there are $E$ edges with associated transition
+probability matrices, $Q_{1}, \ldots, Q_{E}$, we obtain the approximation, $\hat{Q}$
+\[
+\hat{Q} = Q_{1} \otimes Q_{2} \otimes \ldots \otimes Q_{E}
+\]
+We discuss the quality of approximation in case the original
+probability matrix $Q$ is a higher order tensor elsewhere. 
+}
+
+
+We use the factorial approximation where the parameter to be learnt is the transition matrix $Q_{e}$ for
 each edge, $e = (i, j) \in E$.  We solve the Expectation
 Maximization~(EM)\cite{Dempster77em} for MAP problem for each edge,
 $e$,\footnote{The quality of the factorial approximation is discussed in the appendix} 
@@ -636,14 +721,19 @@ the evolution characteristic for the system jointly in
 \subsection{\update{Validation}}
 \label{sec:validation}
 We choose a synthetic graph with $N=5$ nodes (genes) and $H=10$ functional
-classes. The genes are randomly assigned classes  such that each
+classes. \update{The small value of $N$ allows direct estimation of the
+transition probability matrix, $Q$,  of size ${\mathcal W}^{N} \times {\mathcal W}^{N}$,
+using an standard implementation of
+HMM\footnote{http://people.cs.ubc.ca/~murphyk/Software/HMM/hmm.html}.}
+
+The genes are randomly assigned classes  such that each
 node is a member of $N_{av}=1.5$ classes on average. The weights take
-possible values in $\{-1, 1\}$, and the evolution characteristic, $Q_{e}$ for
-each weight is a mixture based on the interacting genes.  We compare our methods to
-estimate the overall transition probability matrix, $Q_{large}$, with
-the results obtained from an standard implementation of 
-HMM\footnote{http://people.cs.ubc.ca/~murphyk/Software/HMM/hmm.html}
-for $N=20$ random trials. 
+possible values in ${\mathcal W} = \{-1, 1\}$, and the evolution characteristic, $Q_{e}$ for
+each weight is a mixture based on the interacting genes.  We compare
+the rank-1 approximations to the transition probability matrix of the
+original HMM, $\hat{Q}_{large}$,  obtained by our methods to the
+estimated transition probability matrix obtained from standard implementation of 
+HMM for $N=20$ random trials. 
 
 Figure~\ref{fig:validation-t} shows the comparison between different
 methods with increasing length of the sequence, $T$. We note that the
@@ -710,7 +800,7 @@ experiments done with multiple number of strains.
      information about the activation strengths in the original
      network, which is visible in the slight increase in the
      F1-scores. However, since genes are being knocked out in each of
-     the strains, the resulting is not equivalent to i.i.d. samples.  
+     the strains, the expression levels over multiple strains  are not equivalent to i.i.d. samples.  
    }
    \label{fig:exp1_fig}
  \end{figure}
@@ -721,7 +811,6 @@ experiments done with multiple number of strains.
 % Figure~\ref{fig:hmm} shows the results by employing the factorial
 % assumption compared against the results obtained using the standard
 % HMM.
-
  
 % \subsection{}
 %\subsection{Known networks}
@@ -729,8 +818,7 @@ experiments done with multiple number of strains.
 %participate in the 
 
 \section{Conclusion}
-% \bibliographystyle{bioinformatics}
-\bibliographystyle{plain}
+\bibliographystyle{bioinformatics}
 \bibliography{default}
 \appendix
 % \section{Appendix}
@@ -781,4 +869,8 @@ experiments done with multiple number of strains.
 %     \sum_{l, m} f_{e}^{t}(l) q_{e}^{(n)}(l, m)
 %     o_{e}^{t+1}(m) b^{t+1}(m) }
 % \end{eqnarray}
+\appendix
+\section{Factorial model derivation}
+
+\section{Mixture model derivation}
 \end{document}

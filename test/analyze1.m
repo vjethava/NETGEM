@@ -24,12 +24,14 @@ function [A]=analyze1(G, H, B)
    
     [vi,ii] = sort(varChangeInW, 'descend'); 
     A.vW = vi; 
+    % keyboard; 
     G2 = G.genes;
-    A.W = G.wML(ii, :); 
+    A.W = G.wML(ii, :);
+    disp(sprintf('\n find the common names and update')); 
     [ci, cm, cp] = remapGeneKeys(orf_systematic, G2); 
     for j=1:length(ci)
         G2(cp(j)) = orf_common(ci(j));
     end
     A.E = G2(G.E(ii, :)); 
-%    keyboard; 
+     %    keyboard; 
 end

@@ -12,6 +12,7 @@
 @STRING{JACM = "{Journal of the ACM}"}
 @STRING{AISTATS = "{International Conference on Artificial Intelligence and Statistics}"}
 @STRING{PTPL = "{Progr.Theor.Phy.Suppl.}"}
+@STRING{PNAS = "{Proceedings of the National Academy of Sciences of the United States of America}"}
 
 @misc{citeulike:1856555,
     abstract = {Previous work on understanding user web search behavior has
@@ -1894,10 +1895,6 @@ H.-A. },
 	address = {Washington, DC, USA}
 }
 
-@misc{MNIST,
-	howpublished = {\url{http://yann.lecun.com/exdb/mnist/}}
-}
-
 @book{Mackay2003,
 	author = {David J. C. MacKay},
 	editor = {},
@@ -2426,7 +2423,7 @@ H.-A. },
 	title = "Nonparametric Belief Propagation",
 	author = {E. Sudderth and A. Ihler and W. Freeman and A. Willsky},
 	booktitle = {CVPR},
-	month = June,
+	month = {June},
 	year = 2003
 }
 
@@ -2485,7 +2482,7 @@ H.-A. },
 }
 
 @inproceedings{Toreyin2005,
-	author = {Toreyin, B.U., and Dedeoglu, Y., and Cetin, A.E.,},
+	author = {Toreyin, B.U. and Dedeoglu, Y. and Cetin, A.E.},
 	title = "{Flame detection in video using hidden Markov
                   models}",
 	booktitle = {IEEE International Conference on Image Processing},
@@ -2989,6 +2986,16 @@ H.-A. },
 	crossref = "conf/cvpr/2007",
 	url = "http://dx.doi.org/10.1109/CVPR.2007.383177"
 }
+@proceedings{conf/cvpr/2007,
+  title     = {2007 IEEE Computer Society Conference on Computer Vision
+               and Pattern Recognition (CVPR 2007), 18-23 June 2007, Minneapolis,
+               Minnesota, USA},
+  booktitle = {CVPR},
+  publisher = {IEEE Computer Society},
+  year      = {2007},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
 
 @inproceedings{conf/cvpr/Yang06,
 	author = {Qyngxiong Yang and Liang Wang and Ruigang Yang and
@@ -3105,7 +3112,7 @@ H.-A. },
 @TECHREPORT{Bilmes98agentle,
     author = {Jeff Bilmes},
     title = {A Gentle Tutorial of the EM Algorithm and its Application to Parameter Estimation for Gaussian Mixture and Hidden Markov Models},
-    institution = {},
+    institution = {University of Washington},
     year = {1998}
 }
 
@@ -3249,4 +3256,452 @@ H.-A. },
     year = {2006}
 }
 
+
+@article{citeulike:5209494,
+    abstract = {Motivation: Cellular processes cause changes over time. Observing and measuring those changes over time allows insights into the how and why of regulation. The experimental platform for doing the appropriate large-scale experiments to obtain time-courses of expression levels is provided by microarray technology. However, the proper way of analyzing the resulting time course data is still very much an issue under investigation. The inherent time dependencies in the data suggest that clustering techniques which reflect those dependencies yield improved performance.  Results: We propose to use Hidden Markov Models (HMMs) to account for the horizontal dependencies along the time axis in time course data and to cope with the prevalent errors and missing values. The HMMs are used within a model-based clustering framework.  We are given a number of clusters, each represented by one Hidden Markov Model from a finite collection encompassing typical qualitative behavior. Then, our method finds in an iterative procedure cluster models and an assignment of data points to these models that maximizes the joint likelihood of clustering and models.  Partially supervised learning--adding groups of labeled data to the initial collection of clusters--is supported. A graphical user interface allows quering an expression profile dataset for time course similar to a prototype graphically defined as a sequence of levels and durations. We also propose a heuristic approach to automate determination of the number of clusters.  We evaluate the method on published yeast cell cycle and fibroblasts serum response datasets, and compare them, with favorable results, to the autoregressive curves method.  Availability: The software is freely available at http://algorithmics.molgen.mpg.de/ghmm  Contact: schliep@molgen.mpg.de  Keywords: Gene Expression, time course, model-based clustering, Hidden Markov Models 10.1093/bioinformatics/btg1036},
+    author = {Schliep, Alexander and Schonhuth, Alexander and Steinhoff, Christine},
+    citeulike-article-id = {5209494},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1093/bioinformatics/btg1036},
+    citeulike-linkout-1 = {http://bioinformatics.oxfordjournals.org/cgi/content/abstract/19/suppl_1/i255},
+    citeulike-linkout-2 = {http://view.ncbi.nlm.nih.gov/pubmed/12855468},
+    citeulike-linkout-3 = {http://www.hubmed.org/display.cgi?uids=12855468},
+    day = {3},
+    doi = {10.1093/bioinformatics/btg1036},
+    journal = {Bioinformatics},
+    keywords = {clustering, gene\_expression, hmms, timeseries},
+    month = {July},
+    number = {suppl\_1},
+    pages = {i255--263},
+    posted-at = {2009-07-20 19:09:52},
+    priority = {2},
+    title = {Using hidden Markov models to analyze gene expression time course data},
+    url = {http://dx.doi.org/10.1093/bioinformatics/btg1036},
+    volume = {19},
+    year = {2003}
+}
+
+@article{citeulike:1069055,
+    abstract = {MOTIVATION: Time series experiments of cDNA microarray have been commonly used in various biological studies and conducted under a lot of experimental factors. A popular approach of time series microarray analysis is to compare one gene with another in their expression profiles, and clustering expression sequences is a typical example. On the other hand, a practically important issue in gene expression is to identify a general timing difference which is caused by experimental factors. This type of difference can be extracted by comparing a set of time series expression profiles under a factor with that under another factor, and so it would be difficult to tackle this issue by using only a current approach for time series microarray analysis. RESULTS: We have developed a systematic method to capture the timing difference in gene expression under different experimental factors, based on hidden Markov models. Our model outputs a real-valued vector at each state and has an unique state transition diagram. The parameters of our model are trained from a given set of pairwise (generally multiplewise) expression sequences. We evaluated our model using synthetic as well as real microarray datasets. The results of our experiment indicate that our method worked favourably to identify a timing ordering under different experimental factors, such as that gene expression under Heat shock tended to start earlier than that under Oxidative stress.},
+    address = {Bioinformatics Center, Kyoto University, Gokasho Uji, 611-0011, Japan, Pharmaceutical Research Laboratories, Pharmaceutical Division, Kirin Brewery Co. Ltd, 3 Miyahara, Takasaki, Gunma 370-1295, Japan.},
+    author = {Yoneya, Takashi and Mamitsuka, Hiroshi},
+    citeulike-article-id = {1069055},
+    citeulike-linkout-0 = {http://view.ncbi.nlm.nih.gov/pubmed/17237042},
+    citeulike-linkout-1 = {http://www.hubmed.org/display.cgi?uids=17237042},
+    day = {19},
+    issn = {1460-2059},
+    journal = {Bioinformatics},
+    keywords = {differential},
+    month = {January},
+    posted-at = {2007-01-26 10:23:44},
+    priority = {2},
+    title = {A hidden Markov model-based approach for identifying timing differences in gene expression under different experimental factors.},
+    volume={23},
+    number={7},
+    url = {http://view.ncbi.nlm.nih.gov/pubmed/17237042},
+    year = {2007}
+}
+
+@article{Angelini2008BATS,
+    abstract = {BACKGROUND: Gene expression levels in a given cell can be influenced by different factors, namely pharmacological or medical treatments. The response to a given stimulus is usually different for different genes and may depend on time. One of the goals of modern molecular biology is the high-throughput identification of genes associated with a particular treatment or a biological process of interest. From methodological and computational point of view, analyzing high-dimensional time course microarray data requires very specific set of tools which are usually not included in standard software packages. Recently, the authors of this paper developed a fully Bayesian approach which allows one to identify differentially expressed genes in a 'one-sample' time-course microarray experiment, to rank them and to estimate their expression profiles. The method is based on explicit expressions for calculations and, hence, very computationally efficient. RESULTS: The software package BATS (Bayesian Analysis of Time Series) presented here implements the methodology described above. It allows an user to automatically identify and rank differentially expressed genes and to estimate their expression profiles when at least 5-6 time points are available. The package has a user-friendly interface. BATS successfully manages various technical difficulties which arise in time-course microarray experiments, such as a small number of observations, non-uniform sampling intervals and replicated or missing data. CONCLUSION: BATS is a free user-friendly software for the analysis of both simulated and real microarray time course experiments. The software, the user manual and a brief illustrative example are freely available online at the BATS website: http://www.na.iac.cnr.it/bats.},
+    author = {Angelini, Claudia and Cutillo, Luisa and De Canditiis, Daniela and Mutarelli, Margherita and Pensky, Marianna},
+    citeulike-article-id = {3378941},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1186/1471-2105-9-415},
+    citeulike-linkout-1 = {http://view.ncbi.nlm.nih.gov/pubmed/18837969},
+    citeulike-linkout-2 = {http://www.hubmed.org/display.cgi?uids=18837969},
+    day = {06},
+    doi = {10.1186/1471-2105-9-415},
+    issn = {1471-2105},
+    journal = {BMC bioinformatics},
+    keywords = {bioinformatics},
+    month = {October},
+    pages = {415+},
+    posted-at = {2010-01-03 10:09:47},
+    priority = {3},
+    title = {BATS: a Bayesian user-friendly software for analyzing time series microarray experiments.},
+    url = {http://dx.doi.org/10.1186/1471-2105-9-415},
+    volume = {9},
+    year = {2008}
+}
+
 	
+@article{citeulike:4920174,
+    abstract = {A truly functional Bayesian method for detecting temporally differentially expressed genes between two experimental conditions is presented. The method distinguishes between two biologically different set ups, one in which the two samples are interchangeable, and one in which the second sample is a modification of the first, i.e. the two samples are non-interchangeable. This distinction leads to two different Bayesian models, which allow more flexibility in modeling gene expression profiles. The method allows one to identify differentially expressed genes, to rank them and to estimate their expression profiles. The proposed procedure successfully deals with various technical difficulties which arise in microarray time-course experiments, such as small number of observations, non-uniform sampling intervals and presence of missing data or repeated measurements. The procedure allows one to account for various types of error, thus offering a good compromise between nonparametric and normality assumption based techniques. In addition, all evaluations are carried out using analytic expressions, hence the entire procedure requires very little computational effort. The performance of the procedure is studied using simulated and real data.},
+    author = {Angelini, Claudia and De Canditiis, Daniela and Pensky, Marianna},
+    citeulike-article-id = {4920174},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1016/j.csda.2008.07.015},
+    citeulike-linkout-1 = {http://linkinghub.elsevier.com/retrieve/pii/S0167947308003496},
+    day = {15},
+    doi = {10.1016/j.csda.2008.07.015},
+    issn = {01679473},
+    journal = {Computational Statistics \& Data Analysis},
+    keywords = {bayes, bayesian, differential-expression, functional-data-analysis, multivariate, time-course},
+    month = {March},
+    number = {5},
+    pages = {1547--1565},
+    posted-at = {2009-06-21 19:22:51},
+    priority = {2},
+    title = {Bayesian models for two-sample time-course microarray experiments},
+    url = {http://dx.doi.org/10.1016/j.csda.2008.07.015},
+    volume = {53},
+    year = {2009}
+}
+
+@article{Nam2009,
+    abstract = {BACKGROUND:One of the most challenging problems in mining gene expression data is to identify how the expression of any particular gene affects the expression of other genes. To elucidate the relationships between genes, an association rule mining (ARM) method has been applied to microarray gene expression data. However, a conventional ARM method has a limit on extracting temporal dependencies between gene expressions, though the temporal information is indispensable to discover underlying regulation mechanisms in biological pathways. In this paper, we propose a novel method, referred to as temporal association rule mining (TARM), which can extract temporal dependencies among related genes. A temporal association rule has the form [gene A[arrow up], gene B[arrow down]] -> (7 min) [gene C[arrow up]], which represents that high expression level of gene A and significant repression of gene B followed by significant expression of gene C after 7 minutes. The proposed TARM method is tested with Saccharomyces cerevisiae cell cycle time-series microarray gene expression data set.RESULTS:In the parameter fitting phase of TARM, the fitted parameter set [threshold = +/- 0.8, support [greater than or equal to] 3 transactions, confidence [greater than or equal to] 90\%] with the best precision score for KEGG cell cycle pathway has been chosen for rule mining phase. With the fitted parameter set, numbers of temporal association rules with five transcriptional time delays (0, 7, 14, 21, 28 minutes) are extracted from gene expression data of 799 genes, which are pre-identified cell cycle relevant genes. From the extracted temporal association rules, associated genes, which play same role of biological processes within short transcriptional time delay and some temporal dependencies between genes with specific biological processes are identified.CONCLUSION:In this work, we proposed TARM, which is an applied form of conventional ARM. TARM showed higher precision score than Dynamic Bayesian network and Bayesian network. Advantages of TARM are that it tells us the size of transcriptional time delay between associated genes, activation and inhibition relationship between genes, and sets of co-regulators.},
+    author = {Nam, Hojung and Lee, Kiyoung and Lee, Doheon},
+    citeulike-article-id = {4216593},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1186/1471-2105-10-S3-S6},
+    doi = {10.1186/1471-2105-10-S3-S6},
+    issn = {1471-2105},
+    journal = {BMC Bioinformatics},
+    keywords = {bioinf},
+    number = {Suppl 3},
+    pages = {S6+},
+    posted-at = {2010-01-03 10:42:47},
+    priority = {2},
+    title = {Identification of temporal association rules from time-series microarray data sets},
+    url = {http://dx.doi.org/10.1186/1471-2105-10-S3-S6},
+    volume = {10},
+    year = {2009}
+}
+
+@article{Kim2003,
+    abstract = {Dynamic Bayesian networks (DBNs) are considered as a promising model for inferring gene networks from time series microarray data. DBNs have overtaken Bayesian networks (BNs) as DBNs can construct cyclic regulations using time delay information. In this paper, a general framework for DBN modelling is outlined. Both discrete and continuous DBN models are constructed systematically and criteria for learning network structures are introduced from a Bayesian statistical viewpoint. This paper reviews the applications of DBNs over the past years. Real data applications for Saccharomyces cerevisiae time series gene expression data are also shown.},
+    address = {Laboratory of DNA analysis, Human Genome Centre, Institute of Medical Science, University of Tokyo, Japan. sunk@ims.u-tokyo.ac.jp},
+    author = {Kim, S. Y. and Imoto, S. and Miyano, S.},
+    citeulike-article-id = {452913},
+    citeulike-linkout-0 = {http://view.ncbi.nlm.nih.gov/pubmed/14582517},
+    citeulike-linkout-1 = {http://www.hubmed.org/display.cgi?uids=14582517},
+    issn = {1467-5463},
+    journal = {Brief Bioinform},
+    month = {September},
+    number = {3},
+    pages = {228--235},
+    posted-at = {2010-01-03 10:41:03},
+    priority = {2},
+    title = {Inferring gene networks from time series microarray data using dynamic Bayesian networks.},
+    url = {http://view.ncbi.nlm.nih.gov/pubmed/14582517},
+    volume = {4},
+    year = {2003}
+}
+
+	@article{Androulakis2007,
+    abstract = {Abstract Monitoring the change in expression patterns over time provides the distinct possibility of unraveling the mechanistic drivers characterizing cellular responses. Gene arrays measuring the level of mRNA expression of thousands of genes simultaneously provide a method of high-throughput data collection necessary for obtaining the scope of data required for understanding the complexities of living organisms. Unraveling the coherent complex structures of transcriptional dynamics is the goal of a large family of computational methods aiming at upgrading the information content of time-course gene expression data. In this review, we summarize the qualitative characteristics of these approaches, discuss the main challenges that this type of complex data present, and, finally, explore the opportunities in the context of developing mechanistic models of cellular response.},
+    author = {Androulakis, I. P. and Yang, E. and Almon, R. R.},
+    citeulike-article-id = {5286298},
+    citeulike-linkout-0 = {http://arjournals.annualreviews.org/doi/abs/10.1146/annurev.bioeng.9.060906.151904},
+    citeulike-linkout-1 = {http://dx.doi.org/10.1146/annurev.bioeng.9.060906.151904},
+    doi = {10.1146/annurev.bioeng.9.060906.151904},
+    journal = {Annual Review of Biomedical Engineering},
+    keywords = {bioinformatics},
+    number = {1},
+    pages = {205--228},
+    posted-at = {2010-01-03 11:10:25},
+    priority = {2},
+    title = {Analysis of Time-Series Gene Expression Data: Methods, Challenges, and Opportunities},
+    url = {http://dx.doi.org/10.1146/annurev.bioeng.9.060906.151904},
+    volume = {9},
+    year = {2007}
+}
+
+
+@misc{citeulike:1429681,
+    abstract = {Introduction to Linear Algebra, Dover Publications,
+New York, 1965 (republished 1988).
+383. Muller, C., Spherical Harmonics, Springer Lecture Notes in Mathematics, Vol.
+17, 1966.
+384. Riesz, F. and B. Sz.-Nagy, Functional Analysis, Dover Publications, New York,
+1955 (republished 1990).
+385. Stein, E. M. and G. Weiss, Introduction to Fourier Analysis in Euclidean
+Spaces, Princeton University Press, Princeton, 1971.
+386. Szego, G., Orthogonal Polynomials, Amer. Math. Soc. Coll. Publ. Vol. XXIII,...},
+    author = {Computations, Matrix},
+    citeulike-article-id = {1429681},
+    citeulike-linkout-0 = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9808},
+    posted-at = {2007-07-03 02:03:40},
+    title = {. Golub, G. H. and C. F. Van Loan,},
+    url = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9808}
+}
+
+	
+	@book{Horn90,
+    abstract = {{Linear algebra and matrix theory have long been fundamental tools in mathematical disciplines as well as fertile fields for research. In this book the authors present classical and recent results of matrix analysis that have proved to be important to applied mathematics. Facts about matrices, beyond those found in an elementary linear algebra course, are needed to understand virtually any area of mathematical science, but the necessary material has appeared only sporadically in the literature and in university curricula. As interest in applied mathematics has grown, the need for a text and reference offering a broad selection of topics in matrix theory has become apparent, and this book meets that need.    This volume reflects two concurrent views of matrix analysis. First, it encompasses topics in linear algebra that have arisen out of the needs of mathematical analysis. Second, it is an approach to real and complex linear algebraic problems that does not hesitate to use notions from analysis. Both views are reflected in its choice and treatment of topics.}},
+    author = {Horn, Roger A. and Johnson, Charles R.},
+    citeulike-article-id = {669570},
+    citeulike-linkout-0 = {http://www.amazon.ca/exec/obidos/redirect?tag=citeulike09-20&amp;path=ASIN/0521386322},
+    citeulike-linkout-1 = {http://www.amazon.de/exec/obidos/redirect?tag=citeulike01-21&amp;path=ASIN/0521386322},
+    citeulike-linkout-2 = {http://www.amazon.fr/exec/obidos/redirect?tag=citeulike06-21&amp;path=ASIN/0521386322},
+    citeulike-linkout-3 = {http://www.amazon.jp/exec/obidos/ASIN/0521386322},
+    citeulike-linkout-4 = {http://www.amazon.co.uk/exec/obidos/ASIN/0521386322/citeulike00-21},
+    citeulike-linkout-5 = {http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&path=ASIN/0521386322},
+    citeulike-linkout-6 = {http://www.worldcat.org/isbn/0521386322},
+    citeulike-linkout-7 = {http://books.google.com/books?vid=ISBN0521386322},
+    citeulike-linkout-8 = {http://www.amazon.com/gp/search?keywords=0521386322&index=books&linkCode=qs},
+    citeulike-linkout-9 = {http://www.librarything.com/isbn/0521386322},
+    day = {23},
+    howpublished = {Paperback},
+    isbn = {0521386322},
+    keywords = {matrix\_analysis},
+    month = {February},
+    posted-at = {2010-01-03 13:06:34},
+    priority = {2},
+    publisher = {{Cambridge University Press}},
+    title = {Matrix Analysis},
+    url = {http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&path=ASIN/0521386322},
+    year = {1990}
+}
+
+@inproceedings{DBLP:conf/ismb/SchliepSS04,
+  author    = {Alexander Schliep and
+               Christine Steinhoff and
+               Alexander Sch{\"o}nhuth},
+  title     = {Robust inference of groups in gene expression time-courses
+               using mixtures of HMMs},
+  booktitle = {ISMB/ECCB (Supplement of Bioinformatics)},
+  year      = {2004},
+  pages     = {283-289},
+  ee        = {http://dx.doi.org/10.1093/bioinformatics/bth937},
+  crossref  = {DBLP:conf/ismb/2004},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+@proceedings{DBLP:conf/ismb/2004,
+  title     = {Proceedings Twelfth International Conference on Intelligent
+               Systems for Molecular Biology/Third European Conference
+               on Computational Biology 2004, Glasgow, UK, July 31-August
+               4, 2004},
+  booktitle = {ISMB/ECCB (Supplement of Bioinformatics)},
+  year      = {2004},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@inproceedings{DBLP:conf/ismb/SchliepSS03,
+  author    = {Alexander Schliep and
+               Alexander Sch{\"o}nhuth and
+               Christine Steinhoff},
+  title     = {Using hidden Markov models to analyze gene expression time
+               course data},
+  booktitle = {ISMB (Supplement of Bioinformatics)},
+  year      = {2003},
+  pages     = {255-263},
+  ee        = {http://bioinformatics.oupjournals.org/cgi/content/abstract/19/suppl_1/i255?etoc},
+  crossref  = {DBLP:conf/ismb/2003},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@proceedings{DBLP:conf/ismb/2003,
+  title     = {Proceedings of the Eleventh International Conference on
+               Intelligent Systems for Molecular Biology, June 29 - July
+               3, 2003, Brisbane, Australia},
+  booktitle = {ISMB (Supplement of Bioinformatics)},
+  year      = {2003},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{storey03,
+    abstract = {10.1073/pnas.1530509100 With the increase in genomewide experiments and the sequencing of multiple genomes, the analysis of large data sets has become commonplace in biology. It is often the case that thousands of features in a genomewide data set are tested against some null hypothesis, where a number of features are expected to be significant. Here we propose an approach to measuring statistical significance in these genomewide studies based on the concept of the false discovery rate. This approach offers a sensible balance between the number of true and false positives that is automatically calibrated and easily interpreted. In doing so, a measure of statistical significance called the value is associated with each tested feature. The  value is similar to the well known  value, except it is a measure of significance in terms of the false discovery rate rather than the false positive rate. Our approach avoids a flood of false positive results, while offering a more liberal criterion than what has been used in genome scans for linkage.},
+    address = {Department of Biostatistics, University of Washington, Seattle, WA 98195, USA. jstorey@u.washington.edu},
+    author = {Storey, J. D. and Tibshirani, R.},
+    citeulike-article-id = {241030},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1073/pnas.1530509100},
+    citeulike-linkout-1 = {http://www.pnas.org/content/100/16/9440.abstract},
+    citeulike-linkout-2 = {http://www.pnas.org/content/100/16/9440.full.pdf},
+    citeulike-linkout-3 = {http://www.pnas.org/cgi/content/abstract/100/16/9440},
+    citeulike-linkout-4 = {http://view.ncbi.nlm.nih.gov/pubmed/12883005},
+    citeulike-linkout-5 = {http://www.hubmed.org/display.cgi?uids=12883005},
+    day = {5},
+    doi = {10.1073/pnas.1530509100},
+    issn = {0027-8424},
+    journal = {Proceedings of the National Academy of Sciences of the United States of America},
+    keywords = {bioinformatics},
+    month = {August},
+    number = {16},
+    pages = {9440--9445},
+    posted-at = {2010-01-04 15:57:06},
+    priority = {2},
+    title = {Statistical significance for genomewide studies},
+    url = {http://dx.doi.org/10.1073/pnas.1530509100},
+    volume = {100},
+    year = {2003}
+}
+
+
+@article{Eisen98,
+    abstract = {A system of cluster analysis for genome-wide expression data from DNA microarray hybridization is described that uses standard statistical algorithms to arrange genes according to similarity in pattern of gene expression. The output is displayed graphically, conveying the clustering and the underlying expression data simultaneously in a form intuitive for biologists. We have found in the budding yeast  that clustering gene expression data groups together efficiently genes of known similar function, and we find a similar tendency in human data. Thus patterns seen in genome-wide expression experiments can be interpreted as indications of the status of cellular processes. Also, coexpression of genes of known function with poorly characterized or novel genes may provide a simple means of gaining leads to the functions of many genes for which information is not available currently.},
+    address = {Department of Genetics, Stanford University School of Medicine, 300 Pasteur Avenue, Stanford, CA 94305, USA.},
+    author = {Eisen, Michael B. and Spellman, Paul T. and Brown, Patrick O. and Botstein, David},
+    citeulike-article-id = {141840},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1073/pnas.95.25.14863},
+    citeulike-linkout-1 = {http://www.pnas.org/content/95/25/14863.abstract},
+    citeulike-linkout-2 = {http://www.pnas.org/content/95/25/14863.full.pdf},
+    citeulike-linkout-3 = {http://www.pnas.org/cgi/content/abstract/95/25/14863},
+    citeulike-linkout-4 = {http://view.ncbi.nlm.nih.gov/pubmed/9843981},
+    citeulike-linkout-5 = {http://www.hubmed.org/display.cgi?uids=9843981},
+    day = {8},
+    doi = {10.1073/pnas.95.25.14863},
+    issn = {0027-8424},
+    journal = {Proceedings of the National Academy of Sciences of the United States of America},
+    keywords = {bioinformatics},
+    month = {December},
+    number = {25},
+    pages = {14863--14868},
+    posted-at = {2010-01-04 16:02:08},
+    priority = {2},
+    title = {Cluster analysis and display of genome-wide expression patterns},
+    url = {http://dx.doi.org/10.1073/pnas.95.25.14863},
+    volume = {95},
+    year = {1998}
+}
+
+@article{Tavazoie99,
+    abstract = {Technologies to measure whole-genome mRNA abundances and methods to organize and display such data are emerging as valuable tools for systems-level exploration of transcriptional regulatory networks. For instance, it has been shown that mRNA data from 118 genes, measured at several time points in the developing hindbrain of mice, can be hierarchically clustered into various patterns (or 'waves') whose members tend to participate in common processes. We have previously shown that hierarchical clustering can group together genes whose cis-regulatory elements are bound by the same proteins in vivo. Hierarchical clustering has also been used to organize genes into hierarchical dendograms on the basis of their expression across multiple growth conditions. The application of Fourier analysis to synchronized yeast mRNA expression data has identified cell-cycle periodic genes, many of which have expected cis-regulatory elements. Here we apply a systematic set of statistical algorithms, based on whole-genome mRNA data, partitional clustering and motif discovery, to identify transcriptional regulatory sub-networks in yeast-without any a priori knowledge of their structure or any assumptions about their dynamics. This approach uncovered new regulons (sets of co-regulated genes) and their putative cis-regulatory elements. We used statistical characterization of known regulons and motifs to derive criteria by which we infer the biological significance of newly discovered regulons and motifs. Our approach holds promise for the rapid elucidation of genetic network architecture in sequenced organisms in which little biology is known.},
+    address = {Department of Genetics, Harvard Medical School, Boston, Massachusetts 02115, USA.},
+    author = {Tavazoie, S. and Hughes, J. D. and Campbell, M. J. and Cho, R. J. and Church, G. M.},
+    citeulike-article-id = {679608},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1038/10343},
+    citeulike-linkout-1 = {http://dx.doi.org/10.1038/ng0799_281},
+    citeulike-linkout-2 = {http://view.ncbi.nlm.nih.gov/pubmed/10391217},
+    citeulike-linkout-3 = {http://www.hubmed.org/display.cgi?uids=10391217},
+    doi = {10.1038/10343},
+    issn = {1061-4036},
+    journal = {Nature genetics},
+    keywords = {bioinformatics},
+    month = {July},
+    number = {3},
+    pages = {281--285},
+    posted-at = {2010-01-04 16:04:14},
+    priority = {2},
+    title = {Systematic determination of genetic network architecture.},
+    url = {http://dx.doi.org/10.1038/10343},
+    volume = {22},
+    year = {1999}
+}
+
+@article{Ernst06STEM,
+    abstract = {BACKGROUND:Time series microarray experiments are widely used to study dynamical biological processes. Due to the cost of microarray experiments, and also in some cases the limited availability of biological material, about 80\% of microarray time series experiments are short (3-8 time points). Previously short time series gene expression data has been mainly analyzed using more general gene expression analysis tools not designed for the unique challenges and opportunities inherent in short time series gene expression data.RESULTS:We introduce the Short Time-series Expression Miner (STEM) the first software program specifically designed for the analysis of short time series microarray gene expression data. STEM implements unique methods to cluster, compare, and visualize such data. STEM also supports efficient and statistically rigorous biological interpretations of short time series data through its integration with the Gene Ontology.CONCLUSION:The unique algorithms STEM implements to cluster and compare short time series gene expression data combined with its visualization capabilities and integration with the Gene Ontology should make STEM useful in the analysis of data from a significant portion of all microarray studies. STEM is available for download for free to academic and non-profit users at http://www.cs.cmu.edu/\~{}jernst/stem.},
+    author = {Ernst, Jason and Joseph, Ziv B.},
+    citeulike-article-id = {984928},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1186/1471-2105-7-191},
+    citeulike-linkout-1 = {http://view.ncbi.nlm.nih.gov/pubmed/16597342},
+    citeulike-linkout-2 = {http://www.hubmed.org/display.cgi?uids=16597342},
+    doi = {10.1186/1471-2105-7-191},
+    journal = {BMC Bioinformatics},
+    keywords = {bioinformatics},
+    number = {1},
+    posted-at = {2010-01-04 16:29:30},
+    priority = {2},
+    title = {STEM: a tool for the analysis of short time series gene expression data},
+    url = {http://dx.doi.org/10.1186/1471-2105-7-191},
+    volume = {7},
+    year = {2006}
+}
+
+
+@Article{Tomoya99som,
+  author = 	 {Pablo Tamayo and Donna Slonim and Jill Mesirov and Qing Zhu and Sutisak Kitareewanand  Ethan Dmitrovsky and  Eric S. Lander and Todd R. Golub},
+  title = 	 {Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation},
+  journal = 	 PNAS,
+  year = 	 {1999},
+  OPTkey = 	 {},
+  volume = 	 {96},
+  number = 	 {6},
+  pages = 	 {2907-2912},
+  month = 	 {March},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@article{DBLP:journals/bioinformatics/CostaSS05,
+  author    = {Ivan G. Costa and
+               Alexander Sch{\"o}nhuth and
+               Alexander Schliep},
+  title     = {The Graphical Query Language: a tool for analysis of gene
+               expression time-courses},
+  journal   = {Bioinformatics},
+  volume    = {21},
+  number    = {10},
+  year      = {2005},
+  pages     = {2544-2545},
+  ee        = {http://dx.doi.org/10.1093/bioinformatics/bti311},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@article{Tusher01sam,
+    abstract = {Microarrays can measure the expression of thousands of genes to identify changes in expression between different biological states. Methods are needed to determine the significance of these changes while accounting for the enormous number of genes. We describe a method, Significance Analysis of Microarrays (SAM), that assigns a score to each gene on the basis of change in gene expression relative to the standard deviation of repeated measurements. For genes with scores greater than an adjustable threshold, SAM uses permutations of the repeated measurements to estimate the percentage of genes identified by chance, the false discovery rate (FDR). When the transcriptional response of human cells to ionizing radiation was measured by microarrays, SAM identified 34 genes that changed at least 1.5-fold with an estimated FDR of 12\%, compared with FDRs of 60 and 84\% by using conventional methods of analysis. Of the 34 genes, 19 were involved in cell cycle regulation and 3 in apoptosis. Surprisingly, four nucleotide excision repair genes were induced, suggesting that this repair pathway for UV-damaged DNA might play a previously unrecognized role in repairing DNA damaged by ionizing radiation.},
+    address = {Departments of Medicine and Biochemistry, Stanford University, 269 Campus Drive, Center for Clinical Sciences Research 1115, Stanford, CA 94305-5151, USA.},
+    author = {Tusher, V. G. and Tibshirani, R. and Chu, G.},
+    citeulike-article-id = {209851},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1073/pnas.091062498},
+    citeulike-linkout-1 = {http://www.pnas.org/content/98/9/5116.abstract},
+    citeulike-linkout-2 = {http://www.pnas.org/content/98/9/5116.full.pdf},
+    citeulike-linkout-3 = {http://www.pnas.org/cgi/content/abstract/98/9/5116},
+    citeulike-linkout-4 = {http://view.ncbi.nlm.nih.gov/pubmed/11309499},
+    citeulike-linkout-5 = {http://www.hubmed.org/display.cgi?uids=11309499},
+    day = {24},
+    doi = {10.1073/pnas.091062498},
+    issn = {0027-8424},
+    journal = {Proceedings of the National Academy of Sciences of the United States of America},
+    keywords = {bioinformatics},
+    month = {April},
+    number = {9},
+    pages = {5116--5121},
+    posted-at = {2010-01-04 16:48:08},
+    priority = {2},
+    title = {Significance analysis of microarrays applied to the ionizing radiation response.},
+    url = {http://dx.doi.org/10.1073/pnas.091062498},
+    volume = {98},
+    year = {2001}
+}
+
+@article{Ramoni02cluster,
+    abstract = {This article presents a Bayesian method for model-based clustering of gene expression dynamics. The method represents gene-expression dynamics as autoregressive equations and uses an agglomerative procedure to search for the most probable set of clusters given the available data. The main contributions of this approach are the ability to take into account the dynamic nature of gene expression time series during clustering and a principled way to identify the number of distinct clusters. As the number of possible clustering models grows exponentially with the number of observed time series, we have devised a distance-based heuristic search procedure able to render the search process feasible. In this way, the method retains the important visualization capability of traditional distance-based clustering and acquires an independent, principled measure to decide when two series are different enough to belong to different clusters. The reliance of this method on an explicit statistical representation of gene expression dynamics makes it possible to use standard statistical techniques to assess the goodness of fit of the resulting model and validate the underlying assumptions. A set of gene-expression time series, collected to study the response of human fibroblasts to serum, is used to identify the properties of the method.},
+    address = {Children's Hospital Informatics Program, Harvard Medical School, 300 Longwood Avenue, Boston, MA 02115, USA.},
+    author = {Ramoni, M. F. and Sebastiani, P. and Kohane, I. S.},
+    citeulike-article-id = {1374645},
+    citeulike-linkout-0 = {http://dx.doi.org/10.1073/pnas.132656399},
+    citeulike-linkout-1 = {http://www.pnas.org/content/99/14/9121.full.abstract},
+    citeulike-linkout-2 = {http://www.pnas.org/content/99/14/9121.full.full.pdf},
+    citeulike-linkout-3 = {http://www.pnas.org/cgi/content/abstract/99/14/9121},
+    citeulike-linkout-4 = {http://view.ncbi.nlm.nih.gov/pubmed/12082179},
+    citeulike-linkout-5 = {http://www.hubmed.org/display.cgi?uids=12082179},
+    day = {9},
+    doi = {10.1073/pnas.132656399},
+    issn = {0027-8424},
+    journal = {Proc Natl Acad Sci U S A},
+    keywords = {bioinformatics},
+    month = {July},
+    number = {14},
+    pages = {9121--9126},
+    posted-at = {2010-01-04 16:55:52},
+    priority = {2},
+    title = {Cluster analysis of gene expression dynamics.},
+    url = {http://dx.doi.org/10.1073/pnas.132656399},
+    volume = {99},
+    year = {2002}
+}
+
+@Article{Leek06EDGE,
+  author = 	 {Jeffrey T. Leek and Eva Monsen and Alan R. Dabney and John D. Storey},
+  title = 	 {{EDGE: extraction and analysis of differential gene expression}},
+  journal = 	 {Bioinformatics},
+  year = 	 {2006},
+  OPTkey = 	 {},
+  volume = 	 {22},
+  number = 	 {4},
+  pages = 	 {507-508},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+
+@article{DBLP:journals/bioinformatics/RifkinK02,
+  author    = {S. A. Rifkin and
+               J. Kim},
+  title     = {Geometry of gene expression dynamics},
+  journal   = {Bioinformatics},
+  volume    = {18},
+  number    = {9},
+  year      = {2002},
+  pages     = {1176-1183},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

@@ -1,7 +1,7 @@
-function [G, H, FB, S] = exp2(sparsityFactor, W)
-% EXP2 runs the experiment on the second dataset ( REF/MUT ) with 6 time
-% points at different time intervals. We consider both the model with
-% single Q over time period as well as Q(t) for each time point. 
+function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
+% EXP2_DIFFSTRAINS runs the experiment on the second dataset ( REF/MUT ) with 6 time
+% points at different time intervals with both the strains taken
+% individually. We consider both the model with single Q over time period as well as Q(t) for each time point. 
 % 
 % Usage: [G, H, FB, S] = exp2(sparsityFactor)
 %
@@ -161,51 +161,68 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
             % QclassGuess(j, :, i) = Qprior(j, :) ;   
         end
     end
-    QedgeGuess = getEdgeQfromClassQ(QclassGuess, c2_edges, Qprior);
-    pW0 = 1/nW*ones(nW, nE); % prior at time t=0
-    xiClass = QclassGuess;
-    xi0  = QedgeGuess;
-    %%% Run the forward-backward algorithm 
-    ll0 = 0.0;
-    beliefsChanged = true;
-    nIter = 1; 
-    LL= [];
-    disp(sprintf('\nStarting forward backward iterations\n'));
-    while ((beliefsChanged) && (nIter < fbIters))
-        beliefsChanged = false; 
-        [f, b, xi, ll, wML] = fbEdge(X, c2_E, DF, W, xi0, pW0);
-        disp(sprintf('fb-iteration: %d log likelihood: %g' , nIter,ll)); 
-        xiClass = getClassQfromEdgeQ(xi, c2_edges, Qprior, QclassGuess); 
-        QedgeGuess = getEdgeQfromClassQ(xiClass, c2_edges, Qprior, QedgeGuess); 
-        xi0 = QedgeGuess; 
-        QclassGuess = xiClass;
-        nIter = nIter + 1;
-        if(abs(ll - ll0) > 1e-2)
-            ll0 = ll;
-            beliefsChanged = true; 
+    for cs=1:2
+        %%% reinitialize the guess for classes.
+        QclassGuess = zeros(nW, nW, nH); 
+        for i=1:nH
+            for j=1:nW
+                QclassGuess(j, :, i) = dirichletrnd(Qprior(j, :) );
+            % QclassGuess(j, :, i) = Qprior(j, :) ;   
+            end     
         end
-        LL = [LL; ll];
-    end
-    nIter = nIter - 1; 
-%%% Look at some class Q's 
-    %     for i=1:10
-%         h = unidrnd(nH); 
-%         e = unidrnd(nE);
-%         disp(sprintf(' Q_class: %d\t\t\t\tQ_edge: %d', h, e)); 
-%         disp([QclassGuess(:, :, h) QedgeGuess(:, :, e)]); 
-%     end
+        QedgeGuess = getEdgeQfromClassQ(QclassGuess, c2_edges, Qprior);
+        pW0 = 1/nW*ones(nW, nE); % prior at time t=0
+        xiClass = QclassGuess;
+        xi0  = QedgeGuess;
+        %%% Run the forward-backward algorithm 
+        ll0 = 0.0;
+        beliefsChanged = true;
+        nIter = 1; 
+        LL= [];
+        strainNames = ['REF', 'MUT']; 
+        disp(sprintf(['\nStarting forward backward iterations for ' ...
+                      'strain %s\n'], char(strainNames(cs)) ));
 
-%%% Put out the output
-    G = struct('E', [], 'wML', [], 'genes', []);
-    H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
-    FB = struct('nIters', [], 'LL', []);
-    G.E = c2_E; G.wML = wML; G.genes = c2_names; 
-    H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 
-    FB.nIters = nIter; FB.LL = LL;
-    S = analyze1(G, H, FB); 
-    %    keyboard; 
-end
-    
+         while ((beliefsChanged) && (nIter < fbIters))
+            beliefsChanged = false; 
+            [f, b, xi, ll, wML] = fbEdge(X(:, :, cs), c2_E, DF(:, cs), W, xi0, pW0);
+            disp(sprintf('fb-iteration: %d log likelihood: %g' , nIter,ll)); 
+            xiClass = getClassQfromEdgeQ(xi, c2_edges, Qprior, QclassGuess); 
+            QedgeGuess = getEdgeQfromClassQ(xiClass, c2_edges, Qprior, QedgeGuess); 
+            xi0 = QedgeGuess; 
+            QclassGuess = xiClass;
+            nIter = nIter + 1;
+            if(abs(ll - ll0) > 1e-2)
+                ll0 = ll;
+                beliefsChanged = true; 
+            end
+            LL = [LL; ll];
+        end
+        nIter = nIter - 1; 
+        %%% Look at some class Q's 
+        %     for i=1:10
+        %         h = unidrnd(nH); 
+        %         e = unidrnd(nE);
+        %         disp(sprintf(' Q_class: %d\t\t\t\tQ_edge: %d', h, e)); 
+        %         disp([QclassGuess(:, :, h) QedgeGuess(:, :, e)]); 
+        %     end
+
+        %%% Put out the output
+        G = struct('E', [], 'wML', [], 'genes', []);
+        H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
+        FB = struct('nIters', [], 'LL', []);
+        G(cs).E = c2_E; 
+        G(cs).wML = wML; 
+        G(cs).genes = c2_names; 
+        H(cs).A = c2_edges; 
+        H(cs).Qest = QclassGuess; 
+        H(cs).classes = class_names; 
+        FB(cs).nIters = nIter; 
+        FB(cs).LL = LL;
+        S(cs) = analyze1(G(cs), H(cs), FB(cs) ); 
+        %    keyboard; 
+    end
+end    
 
     
     

@@ -1,4 +1,4 @@
-function [indices, missing, present] = remapGeneKeys(globalKeys, setToMap)
+function [indices, missing, present, failed_global] = remapGeneKeys(globalKeys, setToMap)
 % REMAPGENEKEYS maps the genes present in setToMap to the indices
 % at which they are found in the globalKeys set. It raises an error
 % in case of missing gene in the globalKeys.
@@ -69,9 +69,12 @@ function [indices, missing, present] = remapGeneKeys(globalKeys, setToMap)
     S = size(setToMap, 1);
     geneMap = containers.Map(); 
     for i=1:length(globalKeys) 
-        geneMap(upper(char(globalKeys(i)))) = i;
+        if(ischar(globalKeys(i) ) || iscellstr(globalKeys(i)) )
+            s = sprintf('%s', char(globalKeys(i))); 
+            geneMap(upper(char(s))) = i;
+        end
     end 
-    
+     
     for i =1:S
         if(S == 1)
             cgene = upper(char(setToMap));
