@@ -141,12 +141,16 @@ function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
     %    keyboard;
     nH = size(c2_classes, 2); 
     c2e = [];
+    c2hi = []; 
     for h=1:nH
         if(nnz(c2_edges(:, h)) > 0)
             c2e = [c2e c2_edges(:, h)]; 
+            c2hi  = [c2hi; h]; 
         end
     end
     c2_edges = c2e; 
+    class_names = class_names(c2hi);
+    
     nH = size(c2_edges, 2); 
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 

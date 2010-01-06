@@ -145,12 +145,16 @@ function [G, H, FB]=exp1_pp(tCluster, sparsityFactor, isAnaerobic, W)
 
     c2_edges = c2_classes(I, :) + c2_classes(J, :);  
     c2e = [];
+    c2i = []; 
     for h=1:nH
         if(nnz(c2_edges(:, h)) > 0)
             c2e = [c2e c2_edges(:, h)]; 
+            c2i = [c2i; h]; 
         end
     end
     c2_edges = c2e; 
+    %%% UPDATED FUNCTION TO KEEP NAMES CONSISTENT
+    class_names = class_names(c2i); 
     nH = size(c2_edges, 2); 
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 
