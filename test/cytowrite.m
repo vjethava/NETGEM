@@ -1,5 +1,5 @@
 function [status, errcode] = cytowrite(dname, S, G, score, expr_data, expr_genes, expr_legend)
-% CYTOWRITE1 converts the data and writes out the cytoscape compatible files. 
+% CYTOWRITE converts the data and writes out the cytoscape compatible files. 
 %
 % Usage: [status, errcode] = cytowrite(fileName, W, E, A, Hnames, ExprData, ExprGenes)
 % 

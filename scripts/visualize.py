@@ -6,9 +6,9 @@
 # Maintainer: 
 # Created: Wed Jan  6 14:50:27 2010 (+0530)
 # Version: 
-# Last-Updated: Wed Jan  6 20:16:09 2010 (+0530)
+# Last-Updated: Fri Jan  8 14:23:11 2010 (+0530)
 #           By: Vinay Jethava
-#     Update #: 99
+#     Update #: 131
 # URL: 
 # Keywords: 
 # Compatibility: 
@@ -62,39 +62,46 @@ import java.io.FileReader as FileReader
 import random
 import os
 
-mypath = '/home/vjethava/NETGEMM/results/AE1/'
-T = 6
-graphFile = mypath + 'graph.sif'
+mainpath = '/home/vjethava/NETGEMM/results/'
+# dnames = [ 'AE1', 'AE2', 'AE3', 'AE4', 'AE5', 'AE6', 'AE7', 'AE8', 'AN1', 'AN2', 'AN3', 'AN4', 'AN5', 'AN6', 'AN7', 'AN8']
+# T = 8
 
-graph = Cytoscape.createNetworkFromFile(graphFile, True)
-CyLayouts.getLayout("grid").doLayout()
-vs = VisualStyle('Solid') 
-Cytoscape.getCurrentNetworkView().applyVizmapper(vs)
-# Cytoscape.getCurrentNetworkView().redrawGraph(True)
 
-############################################################
-# Write out the edge color images
-############################################################
-for t in range(T):
-    s = t+1
-    colorFileName = mypath + 'edgeColor/' + 't' + str(s) + '.eda'
-    imageFileName = mypath + 't' + str(s) + '.png' 
-    nodeAttrFiles = []
-    edgeAttrFiles = [colorFileName]
-    Cytoscape.loadAttributes(nodeAttrFiles, edgeAttrFiles)
-    Cytoscape.getCurrentNetworkView().redrawGraph(True, False)
-    myExporter = BitmapExporter('png', 1.0)
-    myStream = FileOutputStream(File(imageFileName)) 
-    myExporter.export(Cytoscape.getCurrentNetworkView(), myStream)
-    myStream.close()
-############################################################
-# make a movie
-############################################################
-ipFile = mypath + 't' + '%d' + '.png'
-opFile = mypath + 'cytoscape_movie.avi'
-cmd = 'ffmpeg -y -r 0.5 -i ' + ipFile + ' ' + opFile
-print cmd
-os.system(cmd)
+dnames = ['AEJOINT'] #, 'REF', 'MUT']
+T = 8
+for l in range(len(dnames)):
+    mypath = mainpath + dnames[l] + '/' 
+    graphFile = mypath + 'graph.sif'
+    graph = Cytoscape.createNetworkFromFile(graphFile, True)
+    CyLayouts.getLayout("circular").doLayout()
+    vs = VisualStyle('Solid') 
+    Cytoscape.getCurrentNetworkView().applyVizmapper(vs)
+    # Cytoscape.getCurrentNetworkView().redrawGraph(True)
+
+    ############################################################
+    # Write out the edge color images
+    ############################################################
+    for t in range(T):
+        s = t+1
+        colorFileName = mypath + 'edgeColor/' + 't' + str(s) + '.eda'
+        imageFileName = mypath + 't' + str(s) + '.png' 
+        nodeAttrFiles = []
+        edgeAttrFiles = [colorFileName]
+        Cytoscape.loadAttributes(nodeAttrFiles, edgeAttrFiles)
+        Cytoscape.getCurrentNetworkView().redrawGraph(True, False)
+        myExporter = BitmapExporter('png', 1.0)
+        myStream = FileOutputStream(File(imageFileName)) 
+        myExporter.export(Cytoscape.getCurrentNetworkView(), myStream)
+        myStream.close()
+    Cytoscape.destroyNetwork(Cytoscape.getCurrentNetwork() ) 
+    ############################################################
+    # make a movie
+    ############################################################
+    ipFile = mypath + 't' + '%d' + '.png'
+    opFile = mypath + 'cytoscape_movie.avi'
+    cmd = 'ffmpeg -y -r 0.5 -i ' + ipFile + ' ' + opFile
+    print cmd
+    os.system(cmd)
 
 # CyNetwork.getIdentifier()
 # Cytoscape.getEdgeAttributes()

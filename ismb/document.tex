@@ -1,6 +1,8 @@
 \documentclass{bioinfo}
 \usepackage{appendix}
-\usepackage{fixltx2e}
+\usepackage{multirow}
+% \usepackage{algorithmic}
+% \usepackage{fixltx2e}
 % \usepackage{hyperref}
 \copyrightyear{2010}
 \pubyear{2010}
@@ -18,19 +20,21 @@
 \newenvironment{example}[1][Example]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
+\def\INDC{{\bf 1}}
 \newcommand{\update}[1]{\textcolor{blue}{#1}}
 \newcommand{\old}[1]{\textcolor{green}{#1}}
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
-\title[NETGEM]{NETGEM: Network Embedded analysis of Temporal Gene Expression using Mixtures}
+\title[NETGEM]{NETGEM: Network Embedded analysis of Temporal Gene Expression Model}
 %\title[short Title]{Analysis of temporal gene expression using mixture models}
-\author[Sample \textit{et~al}]{Vinay Jethava\,$^{1}$, Torbjorn Karfunkel$^{2}$, Chiranjib Bhattacharyya\,$^{1}$, Devdatt Dubhashi$^{2}$,Goutham N.
-  Vemuri$^{3}$\footnote{to whom correspondence should be addressed}}
+\author[Sample \textit{et~al}]{Vinay Jethava$^{1}$, Chiranjib
+  Bhattacharyya$^{1}$, Devdatt Dubhashi$^{2}$, Goutham N. 
+Vemuri$^{3}$\footnote{to whom correspondence should be addressed}}
 \address{$^{1}$Computer Science and Automation Department, Indian Institute of Science,
 Bangalore, INDIA\\
 $^{2}$Department of Computer Science, Chalmers University of
   Technology, G\"oteborg, SWEDEN\\
-$^{3}$Systems Biology, Department of Chemical and Biological Engineering, Chalmers University of
+$^{3}$Systems Biology Division, Department of Chemical and Biological Engineering, Chalmers University of
 Technology, G\"oteborg, SWEDEN\\
 }
 
@@ -41,229 +45,153 @@ Technology, G\"oteborg, SWEDEN\\
 
 \begin{abstract}
 \section{Motivation}
-
+Temporal analysis of gene expression data has been limited to identifying genes whose expression varies with time and/or correlation between genes what have similar temporal profiles. Often, the methods do not consider the underlying network constraints that connect the genes. In addition to identifying changes in the genes, it is becoming increasingly evident that interactions change substantially. Thus far, there is no systematic method to relate the temporal changes in gene expression to the dynamics of interactions between them in the context of a regulatory network. The availability of this data opens up possibilities for discovering new mechanisms of regulation and provides valuable insight into identifying time-sensitive interactions. Furthermore, such a framework would also allow for studies on the effect of a genetic perturbation on the dynamics of the interactions.
 \section{Results}
-
+We present NETGEM, a tractable model rooted in Markov dynamics,
+ for analyzing temporal profiles of genetic expressions arising 
+out of known protein interaction networks evolving with unknown dynamics. 
+The model treats the interaction strengths as random variables which
+are modulated by suitable priors. This approach is necessitated by the
+extremely small sample size of the available observations. The model
+is amenable to a linear time algorithm for efficient inference. 
+ When applied to real data
+ NETGEM was successful in  identifying (i) temporal interactions and determining their strength, (ii) functional categories of the actively interacting partners and (iii) dynamics of interactions in perturbed networks. 
 \section{Availability:}
-The source code for NETGEM is available from http://129.16.106.142/
+The source code for NETGEM is available from http://www.sysbio.se/BioMet
 
 \section{Contact:} goutham@chalmers.se 
 \end{abstract}
 
+
 \section{Introduction}
-% This paper studies problem of the temporal rewiring in a genetic
-% network based on the observed microarray expression data. 
+Gene expression microarrays are increasingly being used to determine transcriptional regulation  in response to a genetic or environmental perturbation. 
+This has generated a vast amount of quantitative data which have compelled the use of statistical methods to identify differentially expressed genes and 
+thereby, deduce transcriptional regulation. 
+The general theme of these methods is to cluster genes, assuming that co-expressed genes are co-regulated. Often the inference is presented as a static network of genes that are activated or repressed by relevant transcription factors. 
+This representation is similar to a wiring diagram of electrical circuits \citep{Stigler2007}. Important parameters of regulation such as amplitude of the 
+signal, time lag, etc in such networks can only be studied by explicitly 
+modelling the dynamics of such a system. This has spurred interest in 
+analyzing time series gene expression data.
 
-Microarrays have become a routine tool in biological enquiry, geared to measure 
-global gene expression in response to genetic or 
-environmental perturbations. Gene expression microarrays present a
-snapshot of the transcriptional profile of all the genes at the time
-of measurement. The outcome is a
-vast amount of data, which has been analyzed using several statistical
-methods including hierarchical clustering~\citep{Eisen98}, $k$-means
-clustering~\citep{Tavazoie99}, self organizing
-maps~\citep{Tomoya99som}, singular value decomposition~\citep{DBLP:journals/bioinformatics/RifkinK02}.  The key focus of the methods has 
-been clustering of genes that have similar expression profile, based
-on the assumption that co-expressed genes are likely to be regulated. 
-An inherent drawback of the clustering approaches is their
-unsuitability in the analysis of temporal expression data.  
+Conventional methods of time series analysis may not apply to this 
+problem as the data has many interesting properties e.g.  observations close together in time are more closely related \citep{Glass1993}. The analysis is 
+further complicated  by the fact that
+ extremely small number of observations from different time points are available relative to variables (genes). 
+There is the inherent risk of many genes having similar expression profile, just by random chance. Recognizing these problems, it is only recently that dedicated methods are being developed to infer temporal regulation of transcription \citep{Leek06EDGE, Ernst06STEM, Ramoni02cluster}, although temporal gene expression data are available much earlier. 
+These, and other methods reviewed recently \citep{Androulakis2007} do not consider any dependency of observations between time points and hence are not suitable for the problem at hand.
 
-% Time
-% course data on gene expression provides substantial insight into the
-% dynamics of transcriptional regulation, such as sequential events in
-% invoking transcriptional response, any time lag in the process and
-% relate the amplitude of the signal to different perturbations
-% \textcolor{red}{[general REF on time series]}. Since time series data
-% have a natural temporal ordering, using conventional methods to
-% analyze time series data will fail to capture the internal structure
-% of the data. Moreover, these methods also fail to consider that
-% observations closer in time are likely to be closer than temporally
-% distant observations. Unfortunately, the traditional framework of time
-% series analysis cannot be used to analyze temporal gene expression
-% data due to the small number of observations (time points), owing to
-% cost and/or biological limitations. 
 
-This has led to growing interest towards development of dedicated
-algorithms to handle the temporal data. One of the key challenges
-is the small number of observations~(time points), owing to cost
-and/or biological limitations.  Several methods have been
-investigated including significance
-analysis~\citep{Tusher01sam,Leek06EDGE}, autoregressive curves based
-model~\citep{Ramoni02cluster}, 
-hidden markov models (HMM)~\citep{DBLP:conf/ismb/SchliepSS03,citeulike:1069055}, mixture 
-models~\citep{DBLP:conf/ismb/SchliepSS04,DBLP:journals/bioinformatics/CostaSS05},
-clustering methods~\citep{Ernst06STEM}, association
-rules~\citep{Nam2009}. A review of the methods is available in
-\cite{Androulakis2007}. However, the previous methods 
-assume an time-invariant network topology, such as the protein-protein
-interaction network or the genetic network inferred from microarray
-data. 
 
-\cite{Song09KELLER} first investigated the problem of discovering the
-temporally-varying interaction networks based on local neighbourhood selection
-with $l1$-regularization to obtain sparse networks. The analysis assumes a
-smooth variation in the network interactions strengths to overcome the
-unreliability of results due to the small number of observations
-available in most biological experiments. 
+Previous methods which have focused on identifying temporal changes in the genes and/or identifying correlations in their temporal expression profiles 
+have ignored the dynamics of interactions between them. 
+In recent work \citep{Song09KELLER}, time-sensitive interactions were identified based on local neighbourhood selection with $L1$-regularization to obtain sparse networks. The analysis learns the topology of the network from the data, and assumes a
+smooth variation in the network interactions strengths to overcome the unreliability of results due to the small number of observations. 
+This approach is extremely insightful in cases where the topology of the underlying network is unknown. 
 
-This paper focusses on a different version of the rewiring problem. We
-assume that the interactions network is known with a high degree of
-confidence\todo{[BIOREF NEEDED]}.  The observed expression levels are
-controlled by a known network but  the interaction strengths are
-varying with time. The problem is to infer and characterize the
-time-varying interaction strengths given the limited number of
-observation points. Further, multiple measurements for the expression
-levels might be available, each of which corresponds to a slightly
-perturbed strain of the reference strain. Also, one might wish to
-investigate the relationship between the evolution of
-interaction-strengths and the functional hierarchy of the genes. The
-remainder of this section discusses each of these facets
-in greater detail as well as our approach to obtaining a coherent
-solution. 
+However, when network structure is known, as in the case of regulatory
+networks, there is an obvious benefit in incorporating this
+information into analyzing the dynamics of the
+interactions. Furthermore, it is of fundamental biological interest in
+determining time-sensitive components of the networks. Currently there are no models which can be used for this purpose.
 
-We investigate a markovian model for analyzing the rewiring
-problem when the underlying interactions network is known with a
-certain confidence. The dynamics of temporal evolution in a rewiring
-network is a matter of study, and is hypothesized to be stochastic in
-nature. In this work, we postulate that the evolution of the
-interaction strengths are markovian in nature. This means that the temporal evolution of
-the interactions strengths can be characterized in terms of a
-transition probability matrix.  Thus, the problem is one of learning
-the transition probability matrix characterizing for the temporal
-evolution of interaction strengths defined on edges in the network based on the observed
-expression data. Hidden markov models (HMM)~\citep{Rabiner89hmm,Cappe07hmm}
-provide a natural method for the study of such systems. However, a
-naive HMM implementation for this inference problem would have an
-exponentially large state space and is NP-hard. 
+% In this paper, we consider the problem of learning a model from 
+% temporal profiles of genetic expressions for a regulatory network 
+% with a known structure.
+% It is interesting to note that the dynamics has a direct bearing 
+% on the profiles but it is unobserved, and stochastic 
+% in nature.  This motivates a markovian approach for building such models.
+% However inferring a general model of the time-varying interactions turns out
+% to be an NP-hard problem. Learning of model parameters is further complicated by the
+% small number of observation points.  
 
-One of the contributions of this paper is a principled approach that
-performs approximate inference to estimate the transition probability
-matrix that best characterizates of the temporal evolution of the hidden
-interaction strengths. The main assumption is that the interaction
-strengths evolve \emph{independently} of each other. The analysis is closely
-related to the Factorial HMM~\citep{DBLP:journals/ml/GhahramaniJ97}
-and allows us to model the evolution characteristics of each
-interaction (edge) in the known network independently. Then, the
-problem is the learning of the transition probability matrix for each
-edge based on the observed gene expression levels. We employ a bayesian
-approach~\citep{Gelman03bayesian,Beal03},  which have often been used to
-solve inference problem where there are few observation samples
-available, to solve the problem  of learning the transition
-probability matrices for each interaction (edge) in the known network.
+The interaction networks of baker's
+yeast, {\it Saccharomyces cerevisiae} are arguably the most
+well-constructed with a high level of confidence
+\citep{Petranovic2009}. Therefore, we used this network 
+to study and validate our models. 
+The genes and proteins in yeast are classified according to their biological function \citep{Mewes2007} to a high degree of resolution. This allows the possibility to relate functional classification of the network components with the temporal interactions between them.
 
-There has been considerable effort in establishing a
-hierarchy of genes based on their 
-functionality~\citep{Bader:2003:Nucleic-Acids-Res:12519993, MIPS,
-  citeulike:814974, citeulike:226627, citeulike:3733950}. This poses 
-the natural question of the relationship between the functional classification of
-the genes and the temporal evolution of the interaction. Further, can
-we distill some observations about evolution characteristics of a
-group of functionally similar genes.  The second
-contribution of this paper is a novel method for incorporating the
-functional classifications in the analysis of temporal expression data. We
-  model the evolution of interaction strength for a gene pair as a
-  mixture of evolution characteristics of the functional
-  categories. The problem then becomes the learning of the evolution
-  characteristics for the functional categories as well as the mixing
-  proportions for each interaction edge in the known network. 
+This line of argumentation leads to two very fundamental questions: (i) can we distill observations about temporal characteristics of a group of functionally similar genes? (ii) would it be possible to model the effect of a genetic perturbation (gene deletion or addition) while comparing temporal interactions between the reference strain and its perturbed mutant? 
 
-\todo{BIO-REF NEEDED}
-Often, gene expression level measurements are available for multiple
-strains which are slightly different perturbed versions of the
-original version. For example, a perturbed strain might have a couple
-of genes deleted compared to the base strain. Traditional methods have treated each of the
-slightly perturbed strains separately. However, it might be expected
-that in the case that the perturbed strain only slightly varies from
-the original strain (i.e. only a few genes are knocked out), the
-interactions (edges) near the knocked out genes will show a
-significant change in their evolution characteristics 
-while interactions (edges) far from the knocked out genes would have
-the same evolution characteristics as in the reference strain. The
-third contribution of this paper is a simple damping model which
-allows systematic incorporation of the microarray data available across
-several slightly perturbed strains in the inference algorithm. 
+In this paper, we introduce NETGEM, which stands for ``Network Embedded
+  analysis of Temporal Gene Expression Model'',  a generative model for
+temporal expression data which is capable of 
+capturing the interaction dynamics in the network. Our approach
+incorporates network effects into a basic underlying Markovian dynamics, and
+also handles variation across closely related species.  A fundamental premise of
+the model is that the evolution of the interaction strengths can be
+modeled in terms of the functional categories of the interacting
+genes. To the best of our knowledge, this is the first time such a
+model has been investigated. Our case studies with synthetic and real
+data show promising results. 
 
-This leads to the approximate inference algorithm, NETGEM, which models the gene
-  interactions for a known network in terms of the functional
-  hierarchy of the genes using the expression data over multiple
-  strains. 
-We applied the algorithm to publicly available time-series gene expression
-data in Saccharomyces cerevisiae. The available of a highly curated
-interaction network for this organism makes it an ideal platform for
-testing the method. We selected two time-series datasets in which the
-nutritional environment changed with time, one without any genetic
-perturbations and one with a deletion in the $Sfp1$ transcription
-factor. The first dataset consists of expression of genes during the
-gradual transition from carbon starvation to nitrogen starvation in a
-D-stat under aerobic or anaerobic conditions \todo{(Farzadfard et al.,
-2010)}. Almost a fourth of the genome underwent transcriptional changes
-in response to the transition. The dominant transcription factor that
-brought about these changes was $Sfp1$, which is known to assimilate
-signals from the environment and coordinates growth with metabolism
-\todo{(Marion et al., 2004)}. The second dataset measures the temporal
-changes in gene expression upon sudden exposure of a strain of
-$S. cerevisiae$ in which $Sfp1$ was deleted to glucose \todo{(Cipollina et al.,
-2009)}.
+
+One could of course consider a simple Hidden Markov Model (HMM) for
+modeling the interaction dynamics. Unfortunately, such a model becomes
+intractable as the number of hidden states is exponential in the
+number of interactions in the network. The problem of learning such a
+model is further complicated by the small number of available
+observation samples. NETGEM addresses this problem by assuming that
+the interaction strengths evolve \emph{independently} of each other. 
+This assumption leads to a model where one can derive efficient inference 
+procedures which have linear time complexity 
+in number of temporal observations. To handle the problem of low
+sample size,  we adopt a Bayesian approach by introducing appropriate
+priors over the parameters 
+governing the evolution of the interactions.  Information from
+multiple strains which are slight perturbations of a reference strain
+are incorporated by effects determined by the underlying network. The
+basic assumption is that interactions near the point of perturbation
+(gene deletions) are affected more strongly than those far away from
+the point of intervention. 
 
 The remainder of this manuscript is organized as follows:
-Section~\ref{sec:methods} describes the overall model, including the construction of the high
-confidence network~(Section~\ref{sec:known-network}), the factorial
-approximation~(Section~\ref{sec:factorial-model}), the mixture
-model~(Section~\ref{sec:mixture-model}) and the strain damping
-model~(Section~\ref{sec:strain-damping-model}). We present the experiments on synthetic and
-real datasets in Section~\ref{sec:experiments} and conclude in
-Section~\ref{sec:conclusions}.
+Section~\ref{sec:known-network} describes the construction of the
+high confidence network. Section~\ref{sec:factorial-model} presents
+the independently evolving weights assumption for tractable inference.
+Section~\ref{sec:strain-damping-model} 
+presents the variant for handling multiple strains.  
+Section~\ref{sec:discussion-netgem} presents the main contribution of
+the paper, i.e., the generative model NETGEM. We present the
+experiments on synthetic and real datasets in
+Section~\ref{sec:experiments} and conclude in Section~\ref{sec:conclusions}.
 
-
-\todo{HARP ON THE EXPERIMENTS SECTION}
 
 \begin{methods}
 \section{Methods}
 \label{sec:methods}
-
-
-This section present the overall model description. We begin by
-describing the dataset and the construction of the high confidence
-network.
-\subsubsection{Dataset}
- Temporal gene expression datasets were downloaded from Gene
- Expression Omnibus using accession numbers \todo{XXXXX} and \todo{XXXXX}. The two
+\subsection{Datasets and Interaction network}
+\subsubsection{Gene expression Data}
+\label{sec:gene-expression-data}
+ Temporal gene expression datasets from {\it Saccharomyces cerevisiae} were downloaded from Gene
+ Expression Omnibus using accession numbers XXXXX and GSE9644 . The two
  datasets were obtained using Affymetrix platform. The first dataset
- contained the expression profiles of the genes in S. cerevisiae
- during the transition from carbon limitation to nitrogen limitation
- under aerobic or anaerobic conditions. The transition was achieved by
+ contained the expression profiles of the genes in {\it S. cerevisiae}
+ during the gradual increment in the availability of glucose. Therefore, the cells experience a nutrient transition from glucose starvation 
+ to nitrogen starvation. The transition was achieved by
  gradual increment of glucose availability in the feed to the cells,
  while keeping the nitrogen concentration constant in a D-stat
- \todo{(Farzadfard et al., 2010)}. Beyond a certain concentration of glucose,
+ \citep{Farzadfard2010}. The data was measured at eight time points. Beyond a certain concentration of glucose,
  nitrogen became the limiting nutrient. The cells underwent changes
- related to growth rate as well as metabolism. Analysis of genes whose
- expression significantly changed indicated that Sfp1 transcription
+ related to growth rate as well as metabolism. This dataset is referred to as EXP1 in this manuscript.
+ Analysis of genes whose  expression significantly changed indicated that Sfp1 transcription
  factor played a dominant role in the bringing out the response to
  transition. In the interest of coherence, we chose a dataset that
- contains the temporal gene expression profiles in sfp1 deletion
+ contains the temporal gene expression profiles in {\it sfp1} deletion
  mutant and its isogenic reference at different time points after
- pulsing steadily growing cells with glucose. The data was measured at
- six time points after the pulse. These data were analyzed using
- conventional methods, assuming that all time points are independent.
+ pulsing steadily growing cells with glucose \citep{Cipollina2008}. The reference strain is referred to as REF, the strain in which {\it sfp1} was deleted is referred to as MUT. The data was measured at
+ six time points after the pulse. This dataset is referred to as EXP2 in this manuscript. All raw data was normalized and preprocessed in R programming environment using BioConductor suite of tools \citep{Gentleman2004}.
 
 \subsubsection{Construction of the interaction network}
 \label{sec:known-network}
-The yeast interaction network was constructed using data from
-previously published datasets. Interactions between proteins that
-occurred in at least two independent datasets were considered. These
-interactions were downloaded from
-BIND~\citep{Bader:2003:Nucleic-Acids-Res:12519993}, MIPS~\citep{MIPS},
-MINT~\citep{citeulike:3733950}, DIP~\citep{citeulike:226627}  and
-BioGRID~\citep{citeulike:814974}  and literature data \todo{(5-6
-references)}. The construction of this high-confidence network was
-described in detail previously \todo{(Musigkain et al., 2010)}. The
-transcriptional regulatory network (interactions between transcription
-factors and genes) was downloaded directly from
-YEASTRACT~\citep{citeulike:473096}. The two networks were combined and
-the nature of  interactions was not distinguished for the analysis.
+The yeast interaction network was constructed using previously published data~\citep{Gavin2002,Ho2002,Gavin2006,Krogan2006,Ito2001,Uetz2000} as well as 
+data downloaded from BIND~\citep{Bader:2003:Nucleic-Acids-Res:12519993}, MIPS~\citep{MIPS},
+MINT~\citep{citeulike:3733950}, DIP~\citep{citeulike:226627} and
+BioGRID~\citep{citeulike:814974}. We used only those interactions that were backed by at least two independent sources, resulting in a high-confidence protein interaction network. 
+We excluded protein-DNA interactions since the result of this interaction is the gene expression and including these interactions would result in a cyclic relationship between the interactions and gene expression. We overlaid the gene expression data onto the protein interaction network. 
+Therefore, inherent in this is the assumption that gene expression is translated into protein abundance uniformly among all proteins.
 
-\subsection{Problem Definition}
-
+\subsection{Model description}
 This section presents the basic observation model which relates the
 observed gene expression data to the high confidence interactions
 network. We begin by defining the following notation, 
@@ -283,7 +211,9 @@ denotes the observations for gene expression levels for edge,
 $e=(i,j)$, over the set of strains, $\{1,\ldots, S\}$; for the time
 interval, $\{t_{a}, (t_{a}+1), \ldots, t_{b}\}$. 
 
-Then, the overall system model is specified as follows.
+In the following sections, we will describe the building blocks
+of our generative model, NETGEM. We begin by describing the overall
+process dynamics as follows. 
 
 \subsubsection{Observation model}
 \label{observation-model}
@@ -293,14 +223,14 @@ $s$ at time $t$ are modeled as an Ising system \citep{Song09KELLER}:
 \begin{equation}
 \label{eq:ising}
  P\left(\mathbf{x}^{s}(t) | \mathbf{w}^{s}(t)\right) = 
-      \frac{1}{Z(t)} \exp \left( - \sum_{(i,j) \in E} w^s_{e}(t)
+      \frac{1}{Z(t)} \exp \left( - \sum_{(i,j) \in E} w^s_{(i,j)}(t)
         x^{s}_i(t) x^{s}_j(t)\right)  
 \end{equation}
 where $Z(t)$ is the normalization constant. 
 
 \subsubsection{Evolution model }
 \label{sec:evolution-model}
-We assume that the weights evolve according to the markov chain, i.e.,
+We assume that the weights evolve according to the Markov chain, i.e.,
 \begin{equation}
   \label{eq:q-evol}
  P(\mathbf{w}(t+1) = \mathbf{w}_{t+1} |  \mathbf{w}(t) = \mathbf{w}_{t}) = \mathbf{Q}(\mathbf{w}_{t}, \mathbf{w}_{t+1})
@@ -316,162 +246,47 @@ The problem, then, is to estimate the transition probability matrix for
 strains, $\mathbf{Q}_{s}$, based on the observed gene expression values over
 multiple strains, $\mathbf{x}^{1:S}(t)$, are the observed variables
 and the strengths of the interaction network, $\mathbf{w}^{s}(t)$, is  the
-hidden variable at time $t$. This is an instance of a Hidden Markov
-Model~\citep{Rabiner89hmm},  and hence can be solved using the forward-backward algorithm.
-
-
-We note that an application of the standard forward-backward algorithm
-to compute the probability distribution over the weight states
-requires $O({\mathcal W}^{2 N_{e}}T)$ computations, where, ${\mathcal
-  W}$ is the number of possible discrete states for an edge activation
-strength, $N_{e}$ is the total number of edges, and $T$ is the time
+hidden variable at time $t$. A direct HMM based approach requires $O({\mathcal W}^{2
+  N_{e}}T)$ computations, where, ${\mathcal W}$ is the number of
+possible discrete states for an edge activation strength, $N_{e}$ is
+the total number of edges, and $T$ is the time 
 period for which observations are made.  This is prohibitively
-expensive for most practical problems. We present an approximation
-scheme in Section~\ref{sec:factorial-model} which solves this problem
-by approximating the transition probability matrix, $\mathbf{Q}$, by a rank-1
-tensor approximation in terms of transition probability matrices,
-$Q_{e}$, defined on the interaction edges, $e\in E$, of the network. 
+expensive for most practical problems. 
 
-\subsection{Independent weights model}
+% The following section presents a practical scheme which solves the
+% previous problem by  assuming that 
+% the interaction strengths evolve independent of each other. 
+
+\subsection{Independent weights dynamics}
 \label{sec:factorial-model}
 As noted in the previous section, applying the standard forward
 backward algorithm is prohibitively expensive for moderate sized
 graphs. So, we make the simplifying assumption that the weights are
-evolving \emph{independent} of each other. This leads to the factorial
-approximation~\citep{DBLP:journals/ml/GhahramaniJ97,Mclachlan97embook} for weight distribution, i.e.,  
+evolving \emph{independent} of each other. This allows the
+characterization of the overall probability distribution in terms of
+the interaction strengths,  
 \begin{eqnarray}
   \label{eq:q_mf}
   \hat{P}({\mathbf w}^{t}) &=& \prod_{e\in E} P_{e}(w_{e}^{t}) \\
-  \hat{P}(w_{e}^{t+1} = w_{l} | w_{e}^{t} = w_{m}) &=& q_{e}(l, m)
+  \hat{P}(w_{e}^{t+1} = w_{l} | w_{e}^{t} = w_{m}) &=& q_{e}(l, m) \label{eq:q-e-mf}
 \end{eqnarray}
 
-\begin{figure}[h]
-  \centering
-  \fbox{\includegraphics[scale=0.23]{images/factorial2}}
-  \caption{Single functional classification model. Here, the
-    edges $a, \,c$ belong to evolution class $1$, while edge $b$
-    belongs to evolution class $2$. $X_{t}$ is the observed gene
-    expression level at time $t$; $w_{e}(t)$ is the hidden variable
-    denoting interaction strength for edge $e$ at time $t$; $Q_{i}$
-    are the evolution characteristic for class $i$; and $\theta$ is
-    the prior based on domain knowledge.}
-  \label{fig:factorial}
-\end{figure}
+This allows us to model the evolution characteristics of each
+interaction (edge) in the known network independently. Then, the
+problem is the learning of the transition probability matrix for each
+edge based on the observed gene expression levels. % We present
+% theoritical justification for the assumption in
+% \ref{sec:validity-assumption} and present experimental verification in section~\ref{sec:validation}.
+% We employ a Bayesian
+% approach~\citep{Gelman03bayesian,Beal03},  which have often been used to
+% solve inference problem where there are few observation samples
+% available, to solve the problem  of learning the transition
+% probability matrices for each interaction (edge) in the known network.
 
-We use the factorial approximation where the parameter to be learnt is
-the transition matrix $Q_{e}$ for each edge, $e = (i, j) \in E$.  We solve the Expectation
-Maximization~(EM)\citep{Dempster77em} for MAP problem for each edge,
-$e$,
-\begin{equation}
-  \label{eq:q-edge_em_map}
-  \begin{array}[h]{llll}
-  \textrm{E-step:} & {\mathcal L}(Q_{e}; Q_{e}^{(n)}) &=&
-  E_{w_{e}^{|} }  [ \ln P(\mathbf{x}_{e}^{1:S}(1:T),
-  \mathbf{w}_{e}({1:T}) | Q_{e})] \\
-\vspace{2 mm}
-  \textrm{M-step:} & \hat{Q}_{e}^{(n+1)} &=& \arg\max_{Q_{e}} (\ln P(Q_{e}) +
-  {\mathcal L}(Q_{e}; Q_{e}^{(n)} ) ) 
-  \end{array}
-\end{equation}
-where $W^{|}_{e}$ is the conditioned variable, $w_{e}(1:T)|
-\mathbf{x}_{e}^{1:S}(1:T), Q_{e}^{(n)}$ and $Q_{e}^{(n)}$ is the
-MAP estimate for the transition probability, $Q_{e}$, at the $n^{th}$
-iteration of the algorithm. 
-
-%Often, there is domain knowledge available which can be incorporated
-%in the form of prior distribution. For example, one may know that most
-%of the edges are inactive about 50\% of the time.
-
-%\subsubsection{Dirichlet prior}
-\subsubsection{Bayesian Approach: } The small number of observation
-points poses an additional challenge in the inference of the
-transition probability, $Q_{e}$. We use a 
-bayesian approach to alleviate this problem.
-We model the transition probabilities matrices as dirichlet distributions,
-such that  the prior on the transition probabilities matrix, $Q$, 
-given the parameter, $\Theta$, is
-\begin{eqnarray}
-  \label{eq:q_prior}
-  P(\vec{q}_{l} | \vec{\theta}_{l}) &\sim& Dir(q_{l1}, \ldots, q_{l\mathcal{W}} ;
-  \theta_{l1},\ldots, \theta_{l\mathcal{W}}) \\
-&=& \frac{1}{B(\vec{\theta}_{l})} \prod_{m=1}^{\mathcal{W}} q_{lm}^{\theta_{lm}-1}
-\end{eqnarray}
-where $\vec{\theta}_{l}=[\theta_{l1},\ldots,\theta_{l\mathcal{W}}]$ and
-$B(\vec{\theta}_{l})$ is the multinomial beta
-function~\citep{Gelman03bayesian}.
-
-This leads to the update equation for the MAP estimate for transition
-probabilities, $q(l,m)$, obtained by the maximization step in (\ref{eq:q-edge_em_map}) as
-\begin{equation}
-  \label{eq:q-update}
-  q^{(n+1)}_{e}(l, m) = \frac{(\theta_{lm}-1) + \sum_{t=1}^{T-1} \xi^{t}_{e}(l,
-    m) }{\sum_{m} (\theta_{lm} -1) + \sum^{T-1}_{t=1} \sum^{\mathcal
-      W}_{m=1} \xi^{t}_{e}(l,m)}
-\end{equation}
-where $\xi^{t}_{e}(l,m)$ is defined in the appendix~\ref{sec:fact-model-deriv}.
-% \subsubsection{Cluster Similarity: } 
-% We can often group the network interactions into categories  based on
-% domain knowledge about the functional classification of genes.  For
-% example, one might model the genes that participate in sugar
-% metabolism as one 
-% component, while treating genes involved in DNA synthesis as another
-% component.  This allows us a
-% simplification that we need to  consider only evolution over the
-% \emph{components}(or \emph{clusters}), $A_k$ of edges,  which are parameterized by the
-% cluster transition, $Q_{k}$ for  cluster $A_k$. 
-
-% Then, the update equations for the transition probability matrix,
-% $Q_k$, for the cluster, $A_k$ are as follows,
-% \begin{eqnarray}
-%   \label{eq:cluster_update}
-%   q_{k}^{(n+1)}(l, m)   &=& \frac{(\theta^{(k)}_{lm} -1) + \sum_{e \in A_k} \sum_{t=1}^{T-1} \xi^{t}_{e}(l,m)}{ (\theta^{(k)}_{ij} -1) + \sum_{e \in A_k} \sum_{t=1}^{T-1}
-%    \sum_{m} \xi^{t}_{e}(l,m)} \nonumber \\
-% \end{eqnarray}
-% where $\theta^{(k)}$ is the dirichlet parameter matrix for cluster,
-% $A_{k}$.
-
-\subsubsection{Quality of approximation:} We now discuss the
-relationship between the factorial approximation and the original problem.  
-\begin{lemma}
-The factorial weights assumption gives a rank-1 tensor approximation~\citep{Horn90}  to the global weight
-transition probability.  
-\end{lemma}
-For example, if the interaction network consists of two edges having transition
-probabilities $A = \{a_{ij}\}$
- %$Q_{a}= \left\{\begin{array}{cc}   a_{11} & a_{12} \\     a_{21} &
- %a_{22} \end{array}\right\}$ 
-and $B$ respectively, the approximation to
-the original matrix, $\hat{Q}$ is given as the kronecker product
-\[ \hat{Q} = A \otimes B = \left[
-  \begin{array}{cc}
-    a_{11} B & a_{12} B \\
-    a_{21} B & a_{22} B
-  \end{array}
-\right]
-\]
-
-We note that if the weights indeed evolve independently of each other
-and we are given the edge transition probabilities
-$Q_{e}$, the overall system transition probability, $\mathbf{Q}$, is
-given as 
-\[
-\mathbf{Q} = Q_{1} \otimes Q_{2} \otimes \ldots \otimes Q_{E}
-\]
-In general, if there are $E$ edges with estimated transition
-probability matrices, $\hat{Q}_{1}, \ldots, \hat{Q}_{E}$, we obtain the approximation, $\hat{\mathbf{Q}}$
-\[
-\hat{\mathbf{Q}} \simeq Q_{1} \otimes Q_{2} \otimes \ldots \otimes Q_{E}
-\]
-We discuss the quality of approximation in case the original
-probability matrix $Q$ is a higher order tensor
-elsewhere. Section~\ref{sec:validation} presents a comparison of
-the results obtained using the factorial approximation 
-vs the results using a standard HMM implementation. 
-
-Figure~\ref{fig:factorial} shows the graphical model corresponding to
-the known network model with cluster similarity. We present a method
-of incorporating the information from multiple slightly perturbed
-strains into the inference algorithm in the following section. 
+% Figure~\ref{fig:factorial} shows the graphical model corresponding to
+% the known network model with cluster similarity. We present a method
+% of incorporating the information from multiple slightly perturbed
+% strains into the inference algorithm in the following section. 
  
 
 % $P(\mathbf{w}^{s}(t+1) = \mathbf{w}_{t+1} |  \mathbf{w}^{s}(t) =
@@ -486,20 +301,19 @@ strains into the inference algorithm in the following section.
 %   \mathbf{w}_{l})
 % \end{equation}
 
-\subsection{Strain Damping}
+\subsection{Analysis of Perturbed Networks}
 \label{sec:strain-damping-model} 
-We consider the problem of multiple strainds which are just slightly
+We consider the problem of multiple strains which are just slightly
 altered versions of the networks where a few genes have been knocked out of the
 network. Therefore, most of the network remains the same across
 strains with only the ``close'' neighbourhood of the knocked out genes
-being affected. Thus, if one looks at a ``far'' edge,
-$e_{far}$, the activation strength, $w_{e_{far}}(t)$, should be the
-same across strains  the gene expression data for the edge strains,
-$x^{1:S}_{e_{far}}(t)$, should be like i.i.d. samples, generated with
-the same activation strength, $w_{e_{far}}(t)$. In the following discussion, 
-we present a heuristic method which incorporates the ideas mentioned
-above into the inference problem. 
-
+being affected. % Thus, if one looks at a ``far'' edge,
+% $e_{far}$, the activation strength, $w_{e_{far}}(t)$, should be the
+% same across strains  the gene expression data for the edge strains,
+% $x^{1:S}_{e_{far}}(t)$, should be like i.i.d. samples, generated with
+% the same activation strength, $w_{e_{far}}(t)$. In the following discussion, 
+% we present a heuristic method which incorporates the ideas mentioned
+% above into the inference problem. 
 We assume that the weights corresponding to the reference strain
 $\mathbf{w}(t)$ evolve according to a Markov law given by a matrix $Q$,
 where $Q(l, m) = P(\mathbf{w}(t+1) = \mathbf{w}_{m} | {\mathbf w}(t)
@@ -531,30 +345,24 @@ graph  such that $\gamma^{s}_i = \frac{1}{d(i)} \beta
 \sum_{j\in N(i)} \gamma_j^s$, i.e., the damping factor at a node is
 the average of the damping factors at its neighbours.    
 
- Intutitively, while $\Gamma_e = 0$ for an edge 
+ Intuitively, while $\Gamma_e = 0$ for an edge 
 directly incident to one of the knocked out genes, the perturbation
 gradually damps out with distance from the knocked out gene and for
 an edge $e$ far away from one of the knocked out genes, $\Gamma_e
-\approx 1$. Sections~\ref{sec:validation} and
-\ref{sec:synthetic-dataset} present an experimental validation of the
-model.
+\approx 1$.%  Sections~\ref{sec:validation} and
+% \ref{sec:synthetic-dataset} present an experimental validation of the
+% model.
 
-The next section presents a model which incorporates the functional
-hierachy of genes in the inference procedure. 
+% The next section extends the model by incorporating the functional
+% hierachy of genes in the inference procedure. 
 
-\subsection{Mixture Model}
+\subsection{Incorporating functional categories via mixtures}
 \label{sec:mixture-model}
-% Significant progress has been
-% made towards identifying the functional roles of the genes, resulting
-% in a heirarchical classification of genomes based on their functional
-% roles~\citep{DBLP:journals/nar/MewesAHLP97}. 
-This section presents our approach to incorporating the
-  functional categories of genes in our analysis. Since, genes belong
+Since genes belong
   to multiple categories, a mixture model is a naturally suited model
   to handle the influence of multiple functional categories in the
   inference procedure. 
-%We seek to incorporate
-%this information in our inference algorithm. \textcolor{red}{EXPAND ON GENE CLUSTER}
+
 This allows us to explore  the relationship between functional
 categories and the temporal evolution characteristics of the genes
 which fall in the same functional category.
@@ -571,15 +379,131 @@ $e\in E$, is given as
 \end{equation}
 where $\alpha_{e,h}$ denotes the influence of hierarchical class
 $C_{h}$ in the edge, $e$, such that $\sum_{h} \alpha_{e, h} = 1$
-for all edges $e \in E$. We define the random variable
-$\mathbf{y}^{1:T} = \{y_e^t\}$ for all edges, $e \in E$,  and times,
-$t=\{1,\ldots, T\}$ where $y^t_e$
-denotes the component from which the evolution characteristics are
-chosen at time $t$ for edge $e$ such that the event $y_e^t = h$
-implies that $P(w_e^{t+1}= w_m | w^t_e =w_l, y_e^t = h) = q_h(l, m)$.
-% Let $\gamma_e^t(h)$ be the probability $P(y^t_e =h )$.
+for all edges $e \in E$. 
 
-We now outline the expectation maximization procedure~\citep{Bilmes98agentle,Mclachlan97embook} which
+
+\subsubsection{Prior on transition probabilities,  $(\Theta)$} 
+\label{sec:bayesian-approach}
+The learning of the model parameter is significantly difficult when
+there are few time points. To alleviate this, we propose a prior, $\Theta$, on
+the transition probabilities, $Q_{h}$.  % Often, when a point estimate is required, the
+% approach defines a suitable prior on the model parameter and performs
+% MAP estimation. In our case, the model parameters are the transition
+% probabilities,  $Q_{h}$, characterizing the temporal  evolution of the
+% interaction strengths, $w_{e}(t)$, defined on the edge, $e\in E$, in
+% the network. 
+The individual rows, $\vec{q}_{l}$, of the transition
+probability , $Q_{h}$, can be thought about as drawn from a multinomial
+distribution. The Dirichlet distribution is the conjugate 
+distribution~\citep{Gelman03bayesian}  of the multinomial distribution
+and hence naturally suited as a prior distribution. We model the
+transition probabilities matrices as Dirichlet distributions, 
+such that  the prior on the transition probabilities matrix, $Q$, 
+given the parameter, $\Theta$, is
+\begin{eqnarray}
+  \label{eq:q_prior}
+  P(\vec{q}_{l} | \vec{\theta}_{l}) &\sim& Dir(q_{l1}, \ldots, q_{l\mathcal{W}} ;
+  \theta_{l1},\ldots, \theta_{l\mathcal{W}}) \\
+&=& \frac{1}{B(\vec{\theta}_{l})} \prod_{m=1}^{\mathcal{W}} q_{lm}^{\theta_{lm}-1}
+\end{eqnarray}
+where $\vec{\theta}_{l}=[\theta_{l1},\ldots,\theta_{l\mathcal{W}}]$ and
+$B(\vec{\theta}_{l})$ is the multinomial beta
+function~\citep{Gelman03bayesian}.
+
+
+\subsubsection{Choice of prior parameters $(\Lambda)$}
+\label{sec:choice-prior-param}
+We incorporate the effect of the functional classification of
+genes on the mixture components,
+$\vec{\alpha}_e$, for an edge, $e$, by using a Dirichlet prior of the form:
+\begin{eqnarray}
+  \label{eq:hier-prior}
+  P(\vec{\alpha}_e) &\sim& Dir(\alpha_{e,1},\ldots, \alpha_{e,H};
+  \lambda_{e,1},\ldots, \lambda_{e,H}) 
+\end{eqnarray}
+with the prior parameter, $\lambda_{e,h}$, for the edge, $e=(i,j)$, of the
+form 
+\begin{equation}
+  \label{eq:mixture-prior}
+  \lambda_{e,h} = \Big\{ \begin{array}{ll}
+                       \lambda_p & \textrm{if genes }  i \textrm{ or } j
+                       \textrm{ in class } h \\
+                       \lambda_o & \textrm{otherwise}
+                       \end{array}
+\end{equation}
+
+% Joint estimation of the parameters $\alpha_{e,h}$ and  $Q_{h}$ is
+% not possible due to the dependence relationship given in
+% (\ref{eq:q-mixture})~\citep{Dempster77em}.We use a standard technique and define the random variable
+% $\mathbf{y}^{1:T} = \{y_e^t\}$ for all edges, $e \in E$,  and times,
+% $t=\{1,\ldots, T\}$ where $y^t_e$ denotes the component from which
+\subsubsection{Functional Category $(Y)$}   We define the random
+variable $Y_{e}(t)$ which denotes the functional category 
+chosen at time $t$ for edge $e$; such that the event $Y_e^t = h$
+implies that $P(w_e^{t+1}= w_m | w^t_e =w_l, y_e^t = h) = q_h(l,
+m)$. 
+% This allows us to decouple the two estimation of $\alpha_{e,h}$
+% and $Q_{h}$. 
+
+\subsection{NETGEM: a generative model}
+\label{sec:discussion-netgem}
+\begin{figure}[htp]
+  \centering
+  \fbox{\includegraphics[scale=0.075,angle=90]{images/netgem}}
+  \caption{Graphical model corresponding to the NETGEM generative
+    model. The shaded nodes are known/observed. The inference is done
+    over the hidden variables $\Omega = \{y_{e}(t), w_{e}(t)\}$; and the parameters to be learnt
+    are $\Psi = \{Q_{h}, \alpha_{e,h}\}$ }
+  \label{fig:netgem}
+\end{figure}
+
+We now present a unifying view of the NETGEM model as a generative
+probabilistic model for gene expression data,
+${\mathbf X}^{1:S}(1:T)$, for multiple strains $\{1,\ldots,S\}$ and
+observation time points $\{1, \ldots, T\}$.  The quantities known
+apriori are the number of classes, $H$; the set of edges, $E$; the
+number of strains, $S$, and the number of observation points $T$. 
+
+Figure~\ref{fig:netgem} shows the graphical model corresponding to the
+NETGEM model. The inference is done over the hidden variables $\Omega
+= \{y_{e}(t), w_{e}(t)\}$; and the parameters to be learnt are $\Psi = \{Q_{h}, \alpha_{e,h}\}$.
+
+In addition, the hyper-parameters, $\Theta$ and $\Lambda$ need to be
+specified which are described in Sections~\ref{sec:bayesian-approach}
+and \ref{sec:choice-prior-param} respectively. Then, NETGEM models the
+following generative process:
+% \fbox{
+\begin{enumerate}
+\item Initialization 
+  \begin{enumerate}
+  \item For each functional category $h \in H$; Choose $Q_{h} | \Theta$,  s.t. each row, $\vec{q}_{i} \sim   Dir(\vec{\theta}_{i})$ 
+  \item For each edge $e\in E$;  Choose mixture components, $\alpha | \Lambda$ s.t. $\vec{\alpha}_{e} \sim Dir(\vec{\lambda}_{e})$
+  \end{enumerate}
+\item For each time, $t \in \{1,\ldots, T\}$
+  \begin{enumerate}
+  \item For each edge $e \in E$
+  \begin{enumerate}
+  \item Choose $Y_{e}(t) \sim P(Y_{e}(t) = h) = \alpha_{e,h}$, The
+    choice of $Y_{e}(t)$ fixes $Q_{e}(t)$ as $Q_{e}(t) | \{Y_{e}(t) = h\}  = Q_{h}$
+  \item Choose $w_{e}(t) \sim P(w_{e}(t) | w_{e}(t-1), Q_{e}(t-1))$ as
+    in (\ref{eq:q-e-mf})
+  \item Compute $w_{e}^{s}(t) = \Gamma^{s}_{e} w_{e}(t)$
+  \end{enumerate}
+    \item Choose $X^{s}(t) | W^{s}(t) $ as in (\ref{eq:ising})
+ \end{enumerate} 
+\end{enumerate}
+% }
+The key principle underlying the model is that the interaction dynamics are
+governed by the functional categories. In particular, for each edge $e$ and time
+$t$, we generate a functional category, $Y_{e}(t)$. This functional
+category is \emph{solely} responsible for the change of interaction strength
+from $w_{e}(t)$ to $w_{e}(t+1)$. The interaction strengths affect the
+observed gene expression data, through the strain damping model and
+the Ising probability distribution~(\ref{eq:ising}). On the whole, this is equivalent to a
+mixture of the corresponding functional categories with appropriate
+mixing proportions. 
+
+We now outline the expectation maximization procedure~\citep{Dempster77em} which
 iteratively learns the unknown quantity, $\Psi = \{Q_{h},
 \alpha_{e,h}\}$, for $h \in {\mathcal H} = \{1,\ldots, H\}$ and $e \in
 E$ where  $Q_{h}$ is the class evolution
@@ -600,74 +524,161 @@ Q^{(n)}_h\}$ be the estimates at the $n^{th}$ iteration. Then,
 \end{equation}
 where $\Omega^{|}$ is the conditioned variable $(\mathbf{w}^{1:T},
 \mathbf{y}^{1:T} | \mathbf{x}^{1:S}(1:T),  \Psi^{(n)})$.
-\subsubsection{Domain knowledge:}
-We incorporate the effect of the functional classification of
-genes on the mixture components,
-$\vec{\alpha}_e$, for an edge, $e$, by using a dirichlet prior of the form:
-\begin{eqnarray}
-  \label{eq:hier-prior}
-  P(\vec{\alpha}_e) &\sim& Dir(\alpha_{e,1},\ldots, \alpha_{e,H};
-  \gamma_{e,1},\ldots, \gamma_{e,H}) 
-\end{eqnarray}
-with the prior parameter, $\gamma_{e,h}$, for the edge, $e=(i,j)$, of the
-form 
-\begin{equation}
-  \label{eq:mixture-prior}
-  \gamma_{e,h} = \Big\{ \begin{array}{ll}
-                       \gamma_p & \textrm{if genes }  i \textrm{ or } j
-                       \textrm{ in class } h \\
-                       \gamma_o & \textrm{otherwise}
-                       \end{array}
-\end{equation}
+
 The maximization step in (\ref{eq:q-edge-mixture-em}) can  be done
 separately for $q_h(l,m)$ and $\alpha_{e,h'}$ independently. We use
 the priors in (\ref{eq:q_prior}) and
-(\ref{eq:hier-prior})-(\ref{eq:mixture-prior}), and the constraints in
-(\ref{eq:mixture-q-constraint})-(\ref{eq:mixture-alpha-constraint}) to
-obtain the following update equations:%\footnote{\textcolor{red}{can be expanded lagrangian partial derivative}}
+(\ref{eq:hier-prior})-(\ref{eq:mixture-prior}), and the constraints
+\begin{eqnarray}
+  \label{eq:mixture-q-constraint-0} \sum_{m} q_h(l,m) &=& 1 \quad\forall h \\
+   \label{eq:mixture-alpha-constraint-0} \sum_{h} \alpha_{e,h} &=& 1 \quad\forall e
+\end{eqnarray}
+to obtain the following update equations:
 \begin{eqnarray}
   \label{eq:mixture-alpha-update}
-  \alpha_{e,h'}^{(n+1)} =&  \frac{(\gamma_{e,h'}-1) + \sum_{t=1}^{T-1} \sum_{l,m,h}\xi^{t}_{e}(l,
-    m,h,h') }{\sum_{h'} (\gamma_{e,h'} -1) + \sum^{T-1}_{t=1}
+  \alpha_{e,h'}^{(n+1)} =&  \frac{(\lambda_{e,h'}-1) + \sum_{t=1}^{T-1} \sum_{l,m,h}\xi^{t}_{e}(l,
+    m,h,h') }{\sum_{h'} (\lambda_{e,h'} -1) + \sum^{T-1}_{t=1}
     \sum_{l,m,h,h'} \xi^{t}_{e}(l,m,h,h')} & \\
 \label{eq:mixture-q-update} 
 q^{(n+1)}_h(l,m) =&  \frac{(\theta_{lm}-1) + \sum_e \sum_{t=1}^{T-1}\sum_{h'}\xi^{t}_{e}(l,
     m,h,h') }{\sum_{m} (\theta_{lm} -1) + \sum_e \sum^{T-1}_{t=1}
     \sum_{m,h'} \xi^{t}_{e}(l,m,h,h')} &
 \end{eqnarray}
-where $\xi^{t}_{e}(l,m,h,h')$ is defined in appendix~\ref{sec:mixt-model-deriv}.
-% The expectation step requires computation of the likelihood term
-% ${\mathcal L}(\Psi;\Psi^{(n)})$ which involves expectation over terms
-% $\log (\sum_h \alpha_{e,h}q_{h}(l, m) )$. Following standard mixture
-% model techniques~\citep{Bilmes98agentle},
-% \begin{equation}
-%   \label{eq:em-mixture-exp1}
-%    A
-% \end{equation}
+where $\xi^{t}_{e}(l,m,h,h')$ is defined in
+appendix~$1$.% \ref{sec:mixt-model-deriv}.
 
-% We define a random variable, $Y^t_e(l,m)$, such that if $Y^t_e(l,m) = h$
-% then the probability $P(w^{t+1}_e = w_m | w^{t}_e = w_l) = q_h(l,
-% m)$, i.e., the $h^{th}$ mixing component is active. Let
-% $\beta^{t}_{e,h}(l,m)$ denote the probability of the event $Y^t_e(l,m)
-% = h$, i.e., $\beta^{t}_{e,h}(l,m)=P(Y^t_e(l,m)= h)$ and $\sum_h
-% \beta^t_{e,h}(l,m)=1$.
+\subsubsection{Simplification: Independent weights dynamics model}
+\label{sec:relat-indep-weights}
+We now consider the simplification that each edge has its own
+evolution characterization. In other words, suppose there are $H=E$
+functional classes with corresponding priors $\Lambda$ defined such
+that each row $\vec{\lambda}_{e}$ corresponding to edge $e$ has only
+one zero entry. The inference in such a model is considerably simpler
+since there is no learning of mixture components, $\alpha_{e,h}$. 
 
-% \subsection{Model 2: Regularization for unknown network}
-% % We consider the exponential random graph model proposed by 
+We call this model the independent weights dynamic, (IWD), model and
+present the derivation for the inference and parameter learning in
+appendix~$2$. %\ref{sec:fact-model-deriv}.
 
-% We use the laplacian prior for the weights as follows $P(w) =\frac{\beta}{2} \exp(-\beta
-% ||w||_{1})$. We 
+\subsubsection{Relation to the multiple strains}
+The multiple strains in section \ref{sec:strain-damping-model} effect the probability $P(X^{s} | W^{0})$. If the strains are all identical (Section~\ref{sec:factorial-model}),
+then, the observations $x^{s}_{i}(t)$ can be considered as
+i.i.d. samples, i.e., the damping factor $\Gamma^{s}(i,j) = 1$ for all
+$i, j$. 
+
 \end{methods}
-\section{Experiments}
+
+\section{Implementation}
 \label{sec:experiments}
 We present the experiments performed on synthetic and actual datasets
 in this section. We compare the factorial weights and the mixture
 model against a standard implementation of HMM which learn
 the evolution characteristic for the system jointly in
-\ref{sec:validation} and present the results on a synthetic dataset in
-\ref{sec:synthetic-dataset}.
+\ref{sec:validation}. We present the results on two genetic
+expressions datasets in~\ref{sec:real-world-datasets}.
+  
+\subsection{Validation of the models on synthetic datasets}
+\label{sec:validation}
 
-We apply our algorithm to infer the interaction strengths for two
+We consider a model, $M$, which provides estimates $\{\hat{\mathbf Q}^{M}\}$ and
+  $\{\hat{{\mathbf w}}_{e}^{M}(t)\}$  for the true transition probabilities
+  $\mathbf{Q} $ and the actual interaction strengths $\{w_{e}(t)\}$ for the
+  edges $e\in E$ for the time period $t \in T$. Then, a standard
+  hidden Markov model attempts to estimate $\hat{\mathbf Q}^{HMM}$
+  directly. Our methods, respectively, the independent weights dynamics (IWE)
+  model and the generative model (NETGEM), estimate the transition
+  probabilities, $\hat{Q}_{e}$ defined over the edges $e\in E$ and
+  then construct a rank-1 approximation, $\hat{\mathbf Q}^{IWE}$ and
+  $\hat{\mathbf Q}^{NETGEM}$\footnote{Supplemental material}.
+
+We choose a synthetic graph with $N=5$ nodes (genes) and $H=10$ functional
+classes. The small value of $N$ allows direct estimation of the
+transition probability matrix, $\hat{\mathbf Q}^{HMM}$,  of size ${\mathcal W}^{N} \times {\mathcal W}^{N}$,
+using an standard implementation of HMM. %\footnote{http://people.cs.ubc.ca/~murphyk/Software/HMM/hmm.html}.
+The genes are randomly assigned classes  such that each
+node is a member of $N_{av}=1.5$ classes on average. The weights take
+possible values in ${\mathcal W} = \{-1, 1\}$, and the evolution characteristic, $Q_{e}$ for
+each weight is a mixture based on the interacting genes.  We compare
+our the quality of the results obtained by our models against the
+results obtained by the HMM for $N=20$ random trials. 
+
+
+We use two metrics to compare our results with respect to the standard
+hidden Markov model implementation over the large state space, namely, 
+\begin{enumerate}
+\item \emph{F1-score:} F1-score is the harmonic mean of the precision, $P$,
+   and recall, $R$ , i.e., $F1 =\frac{2 P R}{(P + R)}$
+    . In the context of our problem, the precision, $P_{M}$, and
+  recall, $R_{M}$,  for a model, $M$, are defined as
+  \begin{eqnarray}
+    \label{eq:f-score}
+    P_{M} &=& \frac{\sum_{e
+  \in E} \sum_{t=1}^{T} \INDC_{\hat{w}^{M}_{e}(t) = 1 } \INDC_{w_{e}(t) = 1 } } {\sum_{e
+  \in E} \sum_{t=1}^{T} \INDC_{w_{e}(t) = 1 }} \\
+R_{M} &=&  \frac{\sum_{e
+  \in E} \sum_{t=1}^{T} \INDC_{\hat{w}^{M}_{e}(t) = 1 } \INDC_{w_{e}(t) = 1 } } {\sum_{e
+  \in E} \sum_{t=1}^{T} \INDC_{\hat{w}^{M}_{e}(t) = 1 }}
+  \end{eqnarray}
+ where $\INDC_{\{\cdot\}}$ is the indicator function. Thus, F-score measures the accuracy of the predictions about strengths of
+ interactions made by the model.
+\item \emph{Frobenius norm:} We measure the Frobenius norm between the
+  estimated (by model $M$) transition probability, $\hat{\mathbf
+    Q}^{M}$ and the true transition probability, $\mathbf Q$ used to
+  generate the data, as
+  \begin{equation}
+    \label{eq:f-norm}
+    || \hat{\mathbf Q}^{M} - {\mathbf Q} ||_{F} = \sum_{i, j} |q_{ij}^{M} - q_{ij}|^{2}
+  \end{equation}
+ where $q_{ij}$ denotes the $(i,j)^{th}$ element of the matrix
+ $\mathbf Q$. Thus, this measures the accuracy with which we can estimate the
+ transition probability, $Q$. 
+\end{enumerate}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[scale=0.55]{results/mm_tvar}
+  \caption{This figure compare the results obtained using the Independent weights dynamics model (IWE)
+    and the generative model (NETGEM) with result of an standard HMM  implementation with
+    increasing number of observations (time points), $T$,
+    available for $20$ random trials. The colors denote HMM (blue), IWE (green),
+    NETGEM (red)   (a) F-score for the estimated weight evolution {\it versus} the true
+    weight evolution sequence (b) Frobenius norm of the difference between the true
+    evolution characteristics for the system and the estimated characteristics. }
+  \label{fig:validation-t}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.55]{results/mm_strain}
+  \caption{This figure compare the results obtained using the Independent weights dynamics model (IWE)
+    and the Mixture Model (NETGEM) with result of an standard HMM  implementation with
+    increasing number of strains, $S$, available for $20$ random trials. The colors denote  HMM (blue), IWD (green),
+    NETGEM (red). (a) F-score for the estimated weight evolution vs the true
+    weight evolution sequence (b)
+    Frobenius norm of the difference between the true evolution
+    characteristics for the system and the estimated characteristics. } 
+  \label{fig:validation-s}
+\end{figure}
+
+
+Figure~\ref{fig:validation-t} shows the comparison between different
+methods with increasing length of the sequence, $T$. The results indicate that the
+standard HMM requires longer sequences to get comparable results with
+the IWD and NETGEM approach. 
+
+Figure~\ref{fig:validation-s} compares the
+methods with increasing number of strains present (with at most 1 gene
+knocked out). We note that the performance of the models improves
+slightly with additional number of strains. 
+
+\subsection{Inferring interaction dynamics from gene expression data}
+\label{sec:real-world-datasets}
+This section  presents the experiments on real genetic expression
+datasets. We begin by describing a procedure for identifying the interactions
+which show a high degree of temporal variation in their strengths.  
+
+\subsubsection{Identifying time-sensitive interactions}
+\label{sec:ident-crit-inter}
+ We apply our algorithm to infer the interaction strengths for two
 genetic network scenarios. We are interested in the edges which show
 considerable change during the measured time points. Towards this end,
 we compute the change score, $s(e)$, of an interaction strength $w_{e}(1:T)$ as follows
@@ -675,271 +686,492 @@ we compute the change score, $s(e)$, of an interaction strength $w_{e}(1:T)$ as 
   \label{eq:change-score}
   s(e) = \frac{1}{T} \sum_{t=1}^{T-1} (w_{e}(t+1) - w_{e}(t))^{2} 
 \end{equation}
-We fit an exponential distribution to it and look at the weights
-falling in the top-$5 \%$ tail of the distribution.  
-\subsection{Validation}
-\label{sec:validation}
-We choose a synthetic graph with $N=5$ nodes (genes) and $H=10$ functional
-classes. The small value of $N$ allows direct estimation of the
-transition probability matrix, $Q$,  of size ${\mathcal W}^{N} \times {\mathcal W}^{N}$,
-using an standard implementation of
-HMM\footnote{http://people.cs.ubc.ca/~murphyk/Software/HMM/hmm.html}.
+We fit an exponential distribution to it and consider the weights
+falling in the top-$5 \%$ ($p=0.05$) tail of the
+distribution. The interaction between the nodes was visualized as a
+graph in the Cytoscape environment~\citep{Shannon2003}.
 
-The genes are randomly assigned classes  such that each
-node is a member of $N_{av}=1.5$ classes on average. The weights take
-possible values in ${\mathcal W} = \{-1, 1\}$, and the evolution characteristic, $Q_{e}$ for
-each weight is a mixture based on the interacting genes.  We compare
-the rank-1 approximations to the transition probability matrix of the
-original HMM, $\hat{Q}_{large}$,  obtained by our methods to the
-estimated transition probability matrix obtained from standard implementation of 
-HMM for $N=20$ random trials. 
-
-Figure~\ref{fig:validation-t} shows the comparison between different
-methods with increasing length of the sequence, $T$. We note that the
-standard HMM requires longer sequences to get comparable results with
-factorial and mixture model approach. Figure~\ref{fig:validation-s} compares the
-methods with increasing number of strains present (with at most 1 gene
-knocked out). We note that the performance of the factorial weights
-assumption shows a slight improvement with increasing number of
-strains. 
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.6]{results/mm_tvar}
-  \caption{(a) F-score for the estimated weight evolution vs the true
-    weight evolution sequence with increasing length of sequence, $T$. (b) Frobenius norm of the difference between the true
-    evolution characteristics for the system and the estimated characteristics. }
-  \label{fig:validation-t}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.6]{results/mm_strain}
-  \caption{(a) F-score for the estimated weight evolution vs the true
-    weight evolution sequence with increasing number of strains. (b)
-    Frobenius norm of the difference between the true evolution
-    characteristics for the system and the estimated characteristics. } 
-  \label{fig:validation-s}
-\end{figure}
-
-
-\subsection{Synthetic dataset}
-\label{sec:synthetic-dataset}
-% We consider a stochastic process $X(t) = \{x^1(t), \ldots, x^n(t)\}$
-We generate a ``random'' graph $G=(V, E)$ with $C$ major components,
-$\{A_1,\ldots, A_C\}$ with input parameters $p_{i}$ and $p_{c}$,
-where $p_{i}$ is the probability, of an edge between two vertices in
-the same component,  and $p_c$ is the probability of an edge between
-two vertices in different components.  
-%Each component has a transition probability matrix, $Q_c$, such that 
-
-The activation level, $w_e(t)$ defined on an edge, $e$, belonging to
-component, $A_k$, is a markov chain with transition probability matrix
-$Q_{k}$. The problem is the estimation of the unknown transition probability
-matrices $Q_k$ for each component, $A_k$. 
-
-We use a noisy dirichlet prior for the estimation as follows: 
-\begin{equation}
-  \label{eq:exp1_prior}
-\Theta^{(k)}  = Q_{k} + {\mathcal N}(0, \sigma^{2} I)   
-\end{equation}
-The experiment is conducted for $20$ trials with a graph of size
-$N=50$ and number of components, $C$ chosen randomly between $2$ and
-$10$. Figure~\ref{fig:exp1_fig} shows the F-scores for the
-experiments done with multiple number of strains. 
-% Figures~\ref{fig:exp1_fig} (b) shows the F-scores for the
-% experiments with 2 strains with increasing number of missing gene.
- \begin{figure}[h]
-   \centering
-     \includegraphics[scale=0.75]{results/Fig1_2}
-%     & \includegraphics[scale=0.25]{results/f_score} \\
-%     (a) & (b) 
-%   \end{tabular}
-   \caption{F-score for the synthetic dataset for multiple strains. We
-     observe that increase in the number of strains provides more
-     information about the activation strengths in the original
-     network, which is visible in the slight increase in the
-     F1-scores. However, since genes are being knocked out in each of
-     the strains, the expression levels over multiple strains  are not equivalent to i.i.d. samples.  
-   }
-   \label{fig:exp1_fig}
- \end{figure}
-\todo{BETTER NAMES NEEDED FOR EXPERIMENTS}
-\subsection{Experiment 1}
+\subsubsection{Interaction dynamics in response to nutrient availability (Experiment 1):}
 \label{sec:experiment-1}
+The data in this experiment captures the changes in gene expression
+during the gradual transition from glucose to ammonia as the
+growth-limiting nutrient. Genes that have already been grouped into
+eight clusters \citep{Farzadfard2010} were connected according to the
+protein interaction network and the interaction strength between them
+determined from gene expression using the model
+(Figure~\ref{fig:exp-1-time-evol}).  The data in this experiment
+captures the changes in gene expression during the gradual transition
+from glucose to ammonia as the growth-limiting nutrient. Genes that
+have already been grouped into eight clusters \citep{Farzadfard2010}
+were connected according to the protein interaction network and the
+interaction strength between them determined from gene expression
+using the model. At the beginning of the experiment (t = 0), the cells
+were starved for glucose and were progressively exposed to increased
+glucose availability. After time t = 9.6, ammonia became the limiting
+nutrient. Subsequent time points capture the changes that occur in the
+presence of excess glucose. In response to this transition, we
+observed corresponding changes in glucose and ammonia metabolism,
+which are reflected in the interactions between the genes responsible
+for the synthesis of proteins and lipids. For example, we observed a
+strong positive (inductive) interaction between the genes of
+carbohydrate metabolism and protein synthesis (top left corner of the
+network) during glucose starvation. The interaction strength gradually
+decreased until t = 9.6 hours and subsequently turned negative
+(repressive). Since the genes in this cluster predominantly belong to
+amino acid synthesis, our results indicate a gradual repression in
+amino acid and protein synthesis upon the onset of ammonia starvation.
 
-\subsection{Experiment 2}
-\label{sec:experiment-2}
-We run an experiment on \todo{[BIO EXPLANATION]}.  There are $S=2$
-strains and $6$ time points $T=\{0, 5, 10, 30, 60, 120\}$ at which
-expression level measurements were made. We analyze the the two
-strains separately and then do a interaction network recovery for both
-the strains using the strain damping model.
+The transition in the growth-limiting nutrient also brought about an
+abrupt change in the interactions between genes responsible for
+ribosome biosynthesis (cluster of genes on the extreme right of each
+network). Our model identified a momentary repression in the synthesis
+of ribosomes at t = 9.6 hours, when the growth limitation was exerted
+by ammonia. These genes were constitutively active during all other
+time points, as is expected because ribosome biosynthesis is an
+essential cellular process. The temporary arrest in ribosome
+biosynthesis was attributed to the control exerted by Sfp1
+transcription factor \citep{Farzadfard2010}. Our model also identified
+positive interactions between amino acid metabolism and cell cycle and
+negative interactions between genes of storage carbohydrates and lipid
+metabolism (Figure~\ref{fig:exp-1-time-evol}). These interactions are
+available as supplementary files. 
 
+
+\begin{figure*}[htp]
+  \centering
+  \begin{tabular}{cccc}
+  \includegraphics[scale=0.3]{results/aejoint/t1.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t2.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t3.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t4.png}  \\
+   t=0.0 & t=4.1 & t=6.8 & t=9.6 \\ 
+  \includegraphics[scale=0.3]{results/aejoint/t5.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t6.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t7.png}
+  &   \includegraphics[scale=0.3]{results/aejoint/t8.png}  \\
+  t=14.5 & t=27.3 & t=42.7 & t=53.9 \\ 
+  \end{tabular}
+  \caption{Time varying interaction strengths between the genes from Experiment 1. Each network is composed of all the genes from the eight clusters previously identified \citep{Farzadfard2010}, and is shown for the eight time points for which gene expression was measured. The time stamps (in hours) are indicated below each network. 
+The edge colors denote their interaction strength, which was classified as strong repressing (red), low repressing (pink), no effect (yellow), low inducing (light blue) and strong inducing (dark blue).}
+  \label{fig:exp-1-time-evol}
+\end{figure*}
  
+\subsubsection{Interaction dynamics in response to network perturbation (Experiment 2):}
+\label{sec:experiment-2}
+In order to test the utility of incorporating the damping our model in
+capturing the impact of perturbations in the network, we used the
+dataset in which the key transcription factor Sfp1 was deleted
+\citep{Cipollina2008}. We chose this dataset since Sfp1 was previously
+identified to be one of the most important transcription factors that
+governed the response to nutrient availability in yeast
+\citep{Farzadfard2010}. We first identified the interactions that are
+sensitive to time and perturbation, as described in
+\ref{sec:ident-crit-inter}. 
+The histogram of the number of
+edges was fit to an exponential distribution
+(Figure~\ref{fig:hist-score}) and only those interactions that passed
+the threshold cutoff of $p <= 0.05$ were considered for
+subsequent analysis. In this manner, we identified 171 interactions
+among the genes that were already identified to have differentially
+expressed between REF and MUT (see
+section~\ref{sec:gene-expression-data} for strain nomenclature). An
+important aspect of novelty in our model is the incorporation of the
+damping effect in the model. This model ensures that interactions
+further from the point of perturbation in the network are affected to
+a lesser degree than those closer to it. The effect of damping is very
+sensitive to the network and in the network we considered in this
+study, a majority of the edges appear to be relatively unaffected by
+the perturbation (Figure~6).
+
+
+After assessing the effect of perturbation for our network, we
+identified temporal changes in the interactions in the REF strain as
+well as the MUT strain independently (Figure~6). We observed
+some overlap in the actively interacting genes between REF and
+MUT. Many of these genes were hexose transporters and those
+responsible for pH homeostasis. The genes (and the functional
+categories) that are common to the strain indicate that they are not
+responsive to the mutations. The utility of NETGEM in identifying the
+temporal interactions that are different between REF and MUT is
+indicated by the identification of many genes that are responsible for
+ribosome biosynthesis and amino acid metabolism (Figure~6). The results concur with the known role of Sfp1 in
+coordinating metabolism with ribosome biosynthesis. These interactions
+were identified by considering gene expression profiles in REF and
+MUT, using the damping model. Indeed the functional classification of
+the genes between which interactions change significantly indicate
+that Sfp1 transcription factor has widespread control over
+coordinating ribosome biosynthesis, pH homeostasis, transport of
+proteins and drugs, etc (Table~\ref{tab:exp2-cat}).
+
+In Table~\ref{tab:exp2-cat}, the list of 20 topmost functional
+categories whose transitional probabilities exhibit the maximum degree
+of change in interaction strengths out of 260 possible functional
+categories are shown. This is obtained by considering the total
+probability of change in the transition probability matrix, $Q_{h}$,
+i.e., $\sum_{i\ne j} Q_{h}(i, j)$. The fact that many of these
+functional categories have already been identified
+\citep{Cipollina2008} to be sensitive to the perturbation gives
+substantial credibility to our findings.
+
+
+\begin{figure}[htp]
+  \centering
+  \begin{tabular}{cc}
+a. &\includegraphics[scale=0.5]{results/change_hist} \\
+b. &\includegraphics[scale=0.5]{results/strain_hist}  
+  \end{tabular}
+  \caption{This figure presents  histograms characterizing the change
+    in the interaction strengths over all edges when the inference is
+    done over JOINT (both strain) in Experiment~2 (a). We also show
+    the histogram of the damping coefficients for the edges in the
+    perturbed strain in Experiment 2 (b). It is important to note that the damping
+    coefficients are dependent on the network topology.}
+  \label{fig:hist-score}
+\end{figure}
+
+
+%Figure~\ref{fig:hist-score} (a) shows the histogram for the
+%change score and the fitted exponential distribution. This is used to
+%identify the interactions which have a high degree of change as
+%described in \ref{sec:ident-crit-inter}. Figure~\ref{fig:hist-score}
+%(b) shows the histogram of the strain damping coefficients obtained
+%for the MUT strain which has the gene, YLR403W, deleted to
+%glucose. 
+
+%Figure~\ref{fig:plot-evol-1} shows the critical iteractions identified
+%as described in \ref{sec:ident-crit-inter}, for the REF and MUT
+%strains separately and then JOINT which does inference by combining
+%the expression levels for both strains using the strain damping
+%model. 
+
+\begin{table}[htp]
+  \centering
+  \begin{tabular}{|l|l|}
+\hline 
+\textbf{MIPS ID} & \textbf{Description of functional categories} \\
+\hline
+\update{01.03.01} & purin nucleotide/nucleoside/nucleobase metabolism \\
+10 & cell cycle and DNA processing \\
+10.01.09 & DNA restriction or modification \\
+10.03.01 & mitotic cell cycle and cell cycle control \\
+\update{11.04.02} & tRNA processing \\
+\update{12} & protein synthesis \\
+\update{12.01.01} & ribosomal proteins \\
+14.13.01 & cytoplasmic and nuclear protein degradation \\
+\multirow{2}{*}{16} & protein with binding function or cofactor
+ \\
+& requirement (structural or catalytic) \\
+16.02 & peptide binding \\
+16.03.03&  RNA binding \\
+16.21 & complex cofactor/cosubstrate/vitamine binding \\
+\update{20.01.10} & protein transport \\
+\update{20.01.15} & electron transport \\
+\update{20.01.27} & drug/toxin transport \\
+\update{20.09.03} & peroxisomal transport \\
+\update{20.09.07} & vesicular transport (Golgi network, etc.) \\
+\update{30} & cellular communication/signal transduction mechanism \\
+\update{32.01.04} & pH stress response \\
+32.05.05 & virulence, disease factors \\
+32.07 & detoxification \\
+32.07.07 & oxygen and radical detoxification \\
+34.07.02 & cell-matrix adhesion \\
+40.01.03 & directional cell growth (morphogenesis) \\
+40.01.05 & growth regulators / regulation of cell size \\
+42.04.03 & actin cytoskeleton \\
+\hline
+  \end{tabular}
+ \caption{Description of the functional categories corresponding to the MIPS IDs identified in Table~\ref{tab:exp2-cat}.}
+  \label{tab:exp2-list}
+\end{table}
+ 
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{REF} & \textbf{MUT} & \textbf{JOINT} \\
+\hline
+\update{32.01.04} & \update{32.01.04} & \update{32.01.04} \\ 
+\update{20.09.03} & \update{20.09.03} & \update{20.09.03} \\ 
+10 &  16.21 & 16.21 \\ 
+16.21 & 32.05.05 & \update{11.04.02} \\ 
+\update{11.04.02} & 10 & 10 \\ 
+32.05.05 & \update{11.04.02} & \update{12} \\ 
+\update{20.01.27} & 40.01.05 & 32.05.05 \\ 
+\update{30} & \update{30} & \update{30} \\ 
+16.03.03 & 10.01.09 & 16.03.03 \\ 
+\update{20.09.07} & 10.03.01 & 32.07 \\ 
+\update{12} & 14.13.01 & \update{20.09.07} \\ 
+32.07 & \update{20.01.10} & 40.01.03 \\ 
+\update{20.01.15} & 16.03.03 & \update{20.01.27} \\ 
+42.04.05 & \update{20.09.07} & 10.01.09 \\ 
+34.07.02 & 42.04.03 & 34.07.02 \\ 
+10.03.01 & 16 & 32.07.07 \\ 
+40.01.03 & 34.07.02 & 16.02 \\ 
+10.01.09 & \update{12.01.01} & 42.04.05 \\ 
+42.29 & \update{01.03.01} & 42.29 \\ 
+\hline  
+\end{tabular}
+  \caption{This table shows the list of functional categories which show
+    the maximum amount of variation in time for the strains: (a) REF
+    (b) MUT and (c) in both strains combined, using the damping model. The description for the categories can be found
+  in Table~\ref{tab:exp2-list}. The categories indicated in blue are
+  those which are known to have been enriched in the original
+  dataset~\citep{Cipollina2008}.}
+  \label{tab:exp2-cat}
+\end{table}
+
+
+% \begin{figure*}
+%   \centering
+%  \label{fig:plot-evol-1}
+%   \begin{tabular}{lccc}
+% T &  a.  & b. & c. \\
+% t=0& \includegraphics[scale=0.28]{results/ref/t1.png}
+% & \includegraphics[scale=0.28]{results/mut/t1.png} & 
+% \includegraphics[scale=0.28]{results/joint/t1.png} \\
+%  t=5  &   \includegraphics[scale=0.28]{results/ref/t2.png}
+%   &     \includegraphics[scale=0.28]{results/mut/t2.png}
+%  &     \includegraphics[scale=0.28]{results/joint/t2.png} \\
+%  t=10 &       \includegraphics[scale=0.28]{results/ref/t3.png}
+%        &     \includegraphics[scale=0.28]{results/mut/t3.png}
+%        &     \includegraphics[scale=0.28]{results/joint/t3.png}  \\ 
+%   t=30 &  \includegraphics[scale=0.28]{results/ref/t4.png}
+%      &      \includegraphics[scale=0.28]{results/mut/t4.png}
+%      &  \includegraphics[scale=0.28]{results/joint/t4.png} \\
+%  t=60 &   \includegraphics[scale=0.28]{results/ref/t5.png}
+% &     \includegraphics[scale=0.28]{results/mut/t5.png}
+% &     \includegraphics[scale=0.28]{results/joint/t5.png} \\
+% t=120 &    \includegraphics[scale=0.28]{results/ref/t6.png} 
+% &     \includegraphics[scale=0.28]{results/mut/t6.png} 
+% &     \includegraphics[scale=0.28]{results/joint/t6.png} 
+%   \end{tabular}
+%   \caption{Dynamics of temporal interactions between genes in REF (a),
+%     MUT (b) and in both strains combined, using the damping model (c)
+%     for Experiment 2. All the genes identified to be significantly
+%     changed \citep{Cipollina2008} were combined into one network. The
+%     color of the edges in the network indicates the interaction
+%     strength, which was classified as strong repressing (red), low
+%     repressing (pink), no effect (yellow), low inducing (light blue)
+%     and strong inducing (dark blue). The time stamps (in minutes) are
+%     indicated below each network. }
+% \end{figure*}
+
+\begin{figure*}
+  \centering
+ \label{fig:plot-evol-1}
+  \begin{tabular}{lcccccc}
+  a.  & \includegraphics[scale=0.15]{results/ref/t1.png}
+    &     \includegraphics[scale=0.15]{results/ref/t2.png}
+    &     \includegraphics[scale=0.15]{results/ref/t3.png} 
+&     \includegraphics[scale=0.15]{results/ref/t4.png}
+&     \includegraphics[scale=0.15]{results/ref/t5.png}
+&     \includegraphics[scale=0.15]{results/ref/t6.png} \\
+  b.  &\includegraphics[scale=0.16]{results/mut/t1.png}
+    &     \includegraphics[scale=0.16]{results/mut/t2.png}
+    &     \includegraphics[scale=0.16]{results/mut/t3.png} 
+&     \includegraphics[scale=0.16]{results/mut/t4.png}
+&     \includegraphics[scale=0.16]{results/mut/t5.png}
+&     \includegraphics[scale=0.16]{results/mut/t6.png} \\
+ c.   & \includegraphics[scale=0.15]{results/joint/t1.png}
+    &     \includegraphics[scale=0.15]{results/joint/t2.png}
+    &     \includegraphics[scale=0.15]{results/joint/t3.png} 
+&     \includegraphics[scale=0.15]{results/joint/t4.png}
+&     \includegraphics[scale=0.15]{results/joint/t5.png}
+&     \includegraphics[scale=0.15]{results/joint/t6.png} \\
+&  t=0 & t=5 & t=10 & t=30 & t=60 & t=120
+  \end{tabular}
+  \caption{Dynamics of temporal interactions between genes in REF (a), MUT (b) and in both strains combined, using the damping model (c) for Experiment 2. All the genes identified to be significantly changed \citep{Cipollina2008} were combined into one network. The color of the edges in the network indicates the interaction strength, which was classified as strong repressing (red), low repressing (pink), no effect (yellow), low inducing (light blue) and strong inducing (dark blue). The time stamps (in minutes) are indicated below each network.}
+\end{figure*}
+
 \section{Conclusion}
 \label{sec:conclusions}
+There is a trade off between using more sophisticated conditional probability models $p(\mathbf{w}^{s}(t) |\mathbf{w}^{0}(t))$ involving more parameters to be learnt and the limited amount of experimental data. NETGEM is a systematic model that relates temporal changes in gene expression data to the dynamics of interactions in the context of a regulatory network. We believe that NETGEM achieves an optimal balance between model complexity and the data requirement, while allowing ample flexibility to adjust the parameters. The framework of the model will also inherently facilitate analyzing the effect of a perturbation in the network. For a given regulatory network and a gene expression data, NETGEM was able to identify time-sensitive interactions in the network and determine their strength. It was able to deduce most active functional categories that interacted. In addition to these, the NETGEM uses a damping feature that models the effect of a network perturbation by localizing more activity around the point of perturbation. These three novel features that NETGEM offers reflect its advantage over many other time-series models that have been developed recently. Of particular interest is its ability to capture abrupt changes in the interaction patterns. For example, NETGEM identified momentary arrest in ribosome biosynthesis during the transition in the nutrient that limits growth from glucose to ammonia (Experiment 1). We identified many actively interacting genes that were implicated to play an important role in the biological conditions from which we obtained the data. This lends the promise that new insights obtained from using NETGEM are also physiologically relevant. Given that the inputs to NETGEM are the topology of the network and temporal variation of the nodes, it is evident that this methodology has widespread applications in analyzing network dynamics, beyond biological systems.
+\section{Acknowledgements}
+GNV acknowledges funding from Chalmers Research Foundation and
+  salary  from EC-funded project, UNICELLSYS. The authors also acknowledge Torbj\"orn Karfunkel for assistance with constructing the protein interaction network and discussion on the method.
 
-There is a tradeoff between using more sophisticated conditional
-probability models $p(\mathbf{w}^{s}(t) |\mathbf{w}^{0}(t))$ involving more
-parameters to be learnt and the limited amount of experimental
-data. 
+%\bibliographystyle{bioinformatics}
+%\bibliography{default}
+\begin{thebibliography}{}
 
+\bibitem[Androulakis {\em et~al.}, 2007]{Androulakis2007}
+Androulakis, I.~P., Yang, E.  \& Almon, R.~R. (2007{\em{}}) Analysis of
+  time-series gene expression data: methods, challenges, and opportunities.
+\newblock {\em Annual Review of Biomedical Engineering, } {\bf 9} (1),
+  205--228.
 
-\bibliographystyle{bioinformatics}
-\bibliography{default}
-\appendix
-% \section{Appendix}
-% \subsection{Edge HMM}
-% This section presents the derivation for the forward backward
-% algorithm~\citep{Rabiner89hmm} under the factorial assumption for weights. 
-% % We need to compute ${\mathcal L}(Q_{e};
-% % Q_{e}^{n})$ in (\ref{eq:q-edge_em_map}), independently for each edge,
-% % $e=(i,j)\in E$. This requires computing the conditional probability,
-% % $P(\mathbf{w}_{e}^{1:T}| \mathbf{x}_{e}^{1:T}, Q_{e}^{(n)})$. 
-% % We now outline the standard technique for parameter estimation in the
-% % HMM~\citep{Rabiner89hmm} for the edge transition probabilities. 
-%  The forward and the backward variables are defined as:
-% \begin{eqnarray}
-%   \label{eq:fwd}
-%   f^{t}_{e}(l) &=& P(x_{e}^{1:S}(1:t) , w_{e}(t) = w_{l} | Q^{(n)}_{e}) \\
-%   b^{t}_{e}(l) &=& P(x^{1:S}_{e}((t+1):T) | w_{e}(t) = w_{l}, Q^{(n)}_{e}) 
-% \end{eqnarray}
-% We assume that the data for strain, $s$, is independently generated based on the
-% Ising model in (\ref{eq:ising}) with the weights that are damped
-% versions (\ref{eq:edge-damping}) of the weights in the original
-% strain. This leads to the observation model specified as:
-% \begin{eqnarray}
-%   \label{eq:obs}
-%   o^{t}_{e}(l) &=& P(x_{e}^{1:S}(t) | w_{e}(t) = w_{l}) \\
-% & = & \frac{1}{Z} \prod_{s=1}^{S} P(x_{e}^{s}(t) | w_{e}(t) = w_{l}) \\
-% & = & \frac{\exp\left\{ - w_{l}\big(\sum_{s=1}^{S}
-%       x^{s}_{i}(t)x^{s}_{j}(t) \Gamma^{s}(i,j)\big)
-%   \right\}}{\sum^{\mathcal W}_{l=1}\exp\left\{ - w_{l}\big(\sum_{s=1}^{S}  x^{s}_{i}(t)x^{s}_{j}(t) \Gamma^{s}(i,j)\big) \right\}}
-% \end{eqnarray}
-% The update equations for computing the forward and backward variables
-% are given as:
-% \begin{eqnarray}
-%   \label{eq:update}
-%   f^{t+1}_{e}(m) &=& P(x_{e}^{1:S}(1:t) , w_{e}(t) = w_{l} | Q^{(n)}_{e}) \\
-% o^{t+1}_{e}(m) \sum_{l=1}^{{\mathcal W}} f_{e}^{t}(l) q_{e}^{(n)}(l, m) \\
-%   b^{t}_{e}(l) &=& P(x^{1:S}_{e}((t+1):T) | w_{e}(t) = w_{l}, Q^{(n)}_{e}) 
-% \sum_{m=1}^{{\mathcal W}} q_{e}^{(n)}(l, m) o^{t+1}_{e}(m) b^{t+1}_{e}(m)
-% \end{eqnarray}
-% and the joint probability, $\xi_{e}^{t}(l,m)=P(w_{e}(t) =
-% w_{l}, w_{e}(t+1) = w_{m} | x^{1:S}_{e}(1:T), Q^{(n)}_{e})$, is given as follows:
-% \begin{eqnarray}
-%   \label{eq:p-joint}
-%   \xi_{e}^{t}(l,m) &=& \frac{f_{e}^{t}(l) q_{e}^{(n)}(l, m)
-%     o_{e}^{t+1}(m) b^{t+1}(m)}{P(x^{1:S}(1:T) | Q^{(n)}_{e})} \\
-% &=& \frac{f_{e}^{t}(l) q_{e}^{(n)}(l, m)
-%     o_{e}^{t+1}(m) b^{t+1}(m)}{
-%     \sum_{l, m} f_{e}^{t}(l) q_{e}^{(n)}(l, m)
-%     o_{e}^{t+1}(m) b^{t+1}(m) }
-% \end{eqnarray}
+\bibitem[Bader {\em et~al.}, 2003]{Bader:2003:Nucleic-Acids-Res:12519993}
+Bader, G.~D., Betel, D.  \& Hogue, C.~W. (2003{\em{}}) Bind: the biomolecular
+  interaction network database.
+\newblock {\em Nucleic acids research, } {\bf 31} (1), 248--250.
 
-\appendix
-\section{Factorial model derivation}
-\label{sec:fact-model-deriv}
-This section presents a derivation of the forward and backward
-probabilities with the strain damping model. We assume that the data
-for strain, $s$, is independently generated 
-based on the Ising model in (\ref{eq:ising}) with the weights that are
-damped versions (\ref{eq:damping}) of the weights in the original 
-strain. This leads to the observation model specified as:
-\begin{eqnarray}
-  \label{eq:obs}
-  o^{t}_{e}(l) &=& P(x_{e}^{1:S}(t) | w_{e}(t) = w_{l}) \\
-\label{eq:obs2}
-& = & \frac{1}{Z} \prod_{s=1}^{S} P(x_{e}^{s}(t) | w_{e}(t) = w_{l})
-\\
-\label{eq:obs3}
-& = & \frac{\exp\left\{ - w_{l}\big(\sum_{s=1}^{S}
-      x^{s}_{i}(t)x^{s}_{j}(t) \Gamma^{s}(i,j)\big)
-  \right\}}{\sum^{\mathcal W}_{l=1}\exp\left\{ - w_{l}\big(\sum_{s=1}^{S}  x^{s}_{i}(t)x^{s}_{j}(t) \Gamma^{s}(i,j)\big) \right\}}
-\end{eqnarray}
-If the strains are all identical (Section~\ref{sec:factorial-model}),
-then, the observations $x^{s}_{i}(t)$ can be considered as
-i.i.d. samples, i.e., the damping factor $\Gamma^{s}(i,j) = 1$ for all
-$i, j$. 
-The update equations for computing the forward and backward
-probability distributions are given as:
-\begin{eqnarray}
-  \label{eq:update}
-  f^{t+1}_{e}(m) &=& P(x_{e}^{1:S}(1:t) , w_{e}(t+1) = w_{m} | Q^{(n)}_{e}) \\
-&=& o^{t+1}_{e}(m) \sum_{l=1}^{{\mathcal W}} f_{e}^{t}(l) q_{e}^{(n)}(l, m) \\
-  b^{t}_{e}(l) &=& P(x^{1:S}_{e}((t+1):T) | w_{e}(t) = w_{l},
-  Q^{(n)}_{e})  \\
-\label{eq:update-1}
-&=& \sum_{m=1}^{{\mathcal W}} q_{e}^{(n)}(l, m) o^{t+1}_{e}(m) b^{t+1}_{e}(m)
-\end{eqnarray}
-and the joint probability as
-\begin{eqnarray}
-  \label{eq:p-joint}
-  \xi_{e}^{t}(l,m) &=& P(w_{e}(t,t+1) =(w_{l}, w_{m}) |
-  x^{1:S}_{e}(1:T), Q^{(n)}_{e}) \\
-&\propto& f_{e}^{t}(l) q_{e}^{(n)}(l, m) o_{e}^{t+1}(m) b^{t+1}(m) 
-\end{eqnarray}
+% \bibitem[Beal, 2003]{Beal03}
+% Beal, M.~J. (2003{\em{}}).
+% \newblock {\em Variational Algorithms for Approximate Bayesian Inference}.
+% \newblock PhD thesis, Gatsby Computational Neuroscience Unit, University
+%   College London.
 
-\section{Mixture model derivation}
-\label{sec:mixt-model-deriv}
-%The factorial approximation in the previous section allows us to
-%compute the probability distribution over the edges independently.
-% The edge evolution matrix, $Q^{(n)}_e$ is given as: 
-% \begin{equation}
-%   \label{eq:q-e-mixture}
-%   q_e^{(n)}(l,m) = \sum_{h=1}^H \alpha^{(n)}_{e,h} Q^{(n)}_h(l,m)
-% \end{equation}
-% \begin{remark}[VJ: ]
-% \end{remark}
-This section presents the derivation for the forward and backward
-probability distributions in the mixture model. The observation model, $o^t_e(l)=P(x^{1:S}_e(t) | w^t_e=w_l)$ , remains unchanged as in
-(\ref{eq:obs})-(\ref{eq:obs3}). 
-%The forward iterates, $f_e^{t}(m)$, and the backward iterates,
-%$b^t_e(m)$, remain unchanged as in (\ref{eq:update})-(\ref{eq:update-1}). 
-The forward iterates, $f_e^t(l, h)$ and backward iterates, $b_e^t(l,
-h)$ can  be computed as follows: 
-\begin{eqnarray}
-  \label{eq:mixture-update}
-  f^{t}_{e}(m, h) &=& P(x_{e}^{1:S}(1:t) , w_{e}^{t} = w_{m},
-  y_e^t = h | \Psi^{(n)}_{e}) \\
-&=& P(x^{1:S}_e(t) | w_m) \sum_{w_l} \sum_{h'}
-\Big[ P(y^t_e=h | \alpha^{(n)})  \nonumber \\
-&\times& P(w_m | w^{t-1}_e = w_l, y^{t-1}_e = h')  \times f_e^{t-1}(l, h')
-\Big]\\
-%% final forward equation
-&=& o^{t}_{e}(m) \sum_{l=1}^{{\mathcal W}} \sum_{h'=1}^H
-f_{e}^{t-1}(l, h') \alpha_h^{(n)} q_{h'}^{(n)}(l, m) \\
-%% backward equations
-  b^{t}_{e}(m, h) &=& P(x^{1:S}_{e}((t+1):T) | w_{e}(t) = w_{m}, y_e^{t}=h,
-  \Psi^{(n)}_{e})  \\
-&=&  \sum_{w_l} \sum_{h'} \Big[ P(x^{1:S}_e(t+1) | w^{t+1}_e = w_l)
-  b_e^{t+1}(l, h')\nonumber \\
-&\times& P(w^{t+1}_e = w_l | w_m, y^{t}_e = h)   P(y^{t+1}_e=h' | \alpha^{(n)}) 
-\Big]\\
-%% final backward equation
-\label{eq:mixture-update-1}
-&=& \sum_{m=1}^{{\mathcal W}}\sum_{h'=1}^H q_{h}^{(n)}(m, l) o^{t+1}_{e}(l) \alpha^{(n)}_{h'}b^{t+1}_{e}(l,h')
-\end{eqnarray}
-The conditional probability $P(\Omega_e^{t}=(w_l, h), \Omega_e^{t+1}
-=(w_m, h') | \mathbf{x}_e^{1:S}(1:T) , \Psi^{(n)})$ denoted by $\xi^t_e(l,m,h,h') $ can be computed as
-\begin{equation}
-  \label{eq:mixture-p-cond}
-  \xi^t_e(l,m,h,h') \propto f^t_e(l,h)\alpha_{h'}^{(n)} q^{(n)}_h(l,m)
-  o^{t+1}_e(m) b_e^{t+1}(m, h')
-\end{equation}
-The likelihood term, $ {\mathcal L}(\Psi; \Psi^{(n)})$, in (\ref{eq:q-edge-mixture-em}) can be expressed
-in terms of the conditioned edge probabilities, $\xi^t_e$, in
-(\ref{eq:mixture-p-cond}) as 
-\begin{eqnarray}
-  \label{eq:mixture-L-edge}
-  {\mathcal L}(\Psi; \Psi^{(n)}) &=& \sum_{e\in E}\sum_{t=1}^{T-1}
-  \mathbf{E}_{\xi^t_e}[\ln q_h(l, m) + \ln \alpha_{e,h'}]
-\end{eqnarray}
-subject to the constraints
-\begin{eqnarray}
-  \label{eq:mixture-q-constraint} \sum_{m} q_h(l,m) &=& 1 \quad\forall h \\
-   \label{eq:mixture-alpha-constraint} \sum_{h} \alpha_{e,h} &=& 1 \quad\forall e
-\end{eqnarray}
+\bibitem[Cipollina {\em et~al.}, 2008]{Cipollina2008}
+Cipollina, C. {\em et~al.}  (2008{\em{}}) Saccharomyces cerevisiae SFP1: at the crossroads of central metabolism and ribosome biogenesis
+\newblock {\em Microbiology, } {\bf 154} , 1686--1699.
 
+\bibitem[Coughlan \& Shen, 2004]{Coughlan04}
+James~M. Coughlan and Huiying Shen.
+\newblock Shape matching with belief propagation: Using dynamic quantization to
+  accommodate occlusion and clutter.
+\newblock In {\em Generative-Model Based Vision workshop at CVPR}, 2004.
+
+\bibitem[Dempster {\em et~al.}, 1977]{Dempster77em}
+Dempster, A.~P., Laird, N.~M.  \& Rubin, D.~B. (1977{\em{}}) Maximum likelihood
+  from incomplete data via the em algorithm.
+\newblock {\em Journal of the Royal Statistical Society. Series B
+  (Methodological), } {\bf 39} (1), 1--38.
+
+\bibitem[Ernst \& Joseph, 2006]{Ernst06STEM}
+Ernst, J. \& Joseph, Z.~B. (2006{\em{}}) Stem: a tool for the analysis of short
+  time series gene expression data.
+\newblock {\em BMC Bioinformatics, } {\bf 7} (1).
+
+\bibitem[Farzadfard {\em et~al.}, 2010]{Farzadfard2010}
+Farzadfard, F. {\em et~al.} (2010{\em{}})
+  Metabolic and transcriptional dynamics during the transition from carbon
+  limitation to nitrogen limitation in Saccharomyces cerevisiae.
+\newblock {\em Genome Biology (in review)}.
+
+\bibitem[Gavin {\em et~al.}, 2006]{Gavin2006}
+Gavin, A.~C., {\em et~al.} (2006{\em{}}) Proteome survey reveals
+  modularity of the yeast cell machinery.
+\newblock {\em Nature, } {\bf 440}, 631--636.
+
+\bibitem[Gavin {\em et~al.}, 2002]{Gavin2002}
+Gavin, A.~C., {\em et~al.} (2002{\em{}}) Functional
+  organization of the yeast proteome by systematic analysis of protein
+  complexes.
+\newblock {\em Nature, } {\bf 415}, 141--147.
+
+\bibitem[Gelman {\em et~al.}, 2003]{Gelman03bayesian}
+Gelman, A. {\em et~al.} (2003{\em{}}) {\em
+  Bayesian Data Analysis, Second Edition (Texts in Statistical Science)}.
+\newblock 2 edition,, Chapman \& Hall/CRC.
+
+\bibitem[Gentleman {\em et~al.}, 2004]{Gentleman2004}
+Gentleman, R.~C. {\em et~al.} (2004{\em{}}) Bioconductor: open software development for
+  computational biology and bioinformatics.
+\newblock {\em Genome Biology, } {\bf 5} (10), R80.
+
+%\bibitem[Ghahramani \& Jordan, 1997]{DBLP:journals/ml/GhahramaniJ97}
+%Ghahramani, Z. \& Jordan, M.~I. (1997{\em{}}) Factorial hidden markov models.
+%\newblock {\em Machine Learning, } {\bf 29} (2-3), 245--273.
+
+\bibitem[Glass \& Kaplan., 1993]{Glass1993}
+Glass, L. \& Kaplan., D. (1993{\em{}}) Time series analysis of complex dynamics
+  in physiology and medicine.
+\newblock {\em Med Prog Technol, } {\bf 19}, 115--128.
+
+\bibitem[Ho {\em et~al.}, 2002]{Ho2002}
+Ho, Y. {\em et~al.} (2002{\em{}}) Systematic
+  identification of protein complexes in saccharomyces cerevisiae by mass
+  spectrometry.
+\newblock {\em Nature, } {\bf 415}, 180--3.
+
+\bibitem[Horn \& Johnson, 1990]{Horn90}
+Horn, R.~A. \& Johnson, C.~R. (1990{\em{}}) {\em Matrix Analysis}.
+\newblock {Cambridge University Press}.
+
+\bibitem[Ito {\em et~al.}, 2001]{Ito2001}
+Ito, T. {\em et~al.}
+  (2001{\em{}}) A comprehensive two-hybrid analysis to explore the yeast
+  protein interactome.
+\newblock {\em PNAS, } {\bf 98}, 4569--74.
+
+\bibitem[Krogan {\em et~al.}, 2006]{Krogan2006}
+Krogan, N.~J. {\em et~al.} (2006{\em{}}) Global landscape of protein
+  complexes in the yeast saccharomyces cerevisiae.
+\newblock {\em Nature, } {\bf 440}, 637--43.
+
+\bibitem[Leek {\em et~al.}, 2006]{Leek06EDGE}
+Leek, J.~T. {\em et~al.} (2006{\em{}}) {EDGE:
+  extraction and analysis of differential gene expression}.
+\newblock {\em Bioinformatics, } {\bf 22} (4), 507--508.
+
+% \bibitem[MacDonald \& Zucchini, 1997]{MacDonald1997}
+% MacDonald, I.~L. \& Zucchini, W. (1997{\em{}}) {\em Hidden Markov and other
+%   models for discrete-valued time series}.
+% \newblock 1 edition,, Chapman \& Hall, London; New York.
+
+% \bibitem[Mclachlan \& Krishnan, 1996]{Mclachlan97embook}
+% Mclachlan, G.~J. \& Krishnan, T. (1996{\em{}}) {\em The EM Algorithm and
+%   Extensions}.
+% \newblock 1 edition,, Wiley-Interscience.
+
+\bibitem[Mewes {\em et~al.}, 2007]{Mewes2007}
+Mewes, H.~W. {\em et~al.} (2007{\em{}}) {MIPS: analysis and annotation of genome information in
+  2007}.
+\newblock {\em Nucleic Acids Res, } {\bf 36}.
+
+\bibitem[Mewes {\em et~al.}, 2002]{MIPS}
+Mewes, H.~W. {\em et~al.} (2002{\em{}}) Mips: a database for genomes and protein sequences.
+\newblock {\em Nucleic acids research, } {\bf 30} (1), 31--34.
+
+\bibitem[Petranovic \& Vemuri, 2009]{Petranovic2009}
+Petranovic, D. \& Vemuri, G.~N. (2009{\em{}}) Impact of yeast systems biology
+  on industrial biotechnology.
+\newblock {\em J Biotechnol, } {\bf 144} (3), 204--11.
+
+\bibitem[Rabiner, 1989]{Rabiner89hmm}
+Rabiner, L.~R. (1989{\em{}}) A tutorial on hidden markov models and selected
+  applications in speech recognition.
+\newblock {\em Proceedings of the IEEE, } {\bf 77} (2), 257--286.
+
+\bibitem[Ramoni {\em et~al.}, 2002]{Ramoni02cluster}
+Ramoni, M.~F. {\em et~al.} (2002{\em{}}) Cluster analysis
+  of gene expression dynamics.
+\newblock {\em Proc Natl Acad Sci U S A, } {\bf 99} (14), 9121--9126.
+
+\bibitem[Schliep {\em et~al.}, 2003]{DBLP:conf/ismb/SchliepSS03}
+Schliep, A. {\em et~al.} (2003{\em{}}) Using hidden
+  markov models to analyze gene expression time course data.
+\newblock In {\em ISMB (Supplement of Bioinformatics)} pp. 255--263.
+
+\bibitem[Shannon {\em et~al.}, 2003]{Shannon2003}
+Shannon, P. {\em et~al.} (2003{\em{}}) Cytoscape: a software
+environment for integrated models of biomolecular interaction networks 
+\newblock In {\em Genome Research}  {\bf 13} (11), pp. 2498 --2504.
+
+\bibitem[Song {\em et~al.}, 2009]{Song09KELLER}
+Song, L., Kolar, M.  \& Xing, E.~P. (2009{\em{}}) Keller: estimating
+  time-varying interactions between genes.
+\newblock {\em Bioinformatics, } {\bf 25} (12).
+
+\bibitem[Stark {\em et~al.}, 2006]{citeulike:814974}
+Stark, C. {\em et~al.} (2006{\em{}}) Biogrid: a general repository for interaction
+  datasets.
+\newblock {\em Nucleic Acids Res, } {\bf 34} (Database issue).
+
+\bibitem[Stigler {\em et~al.}, 2007]{Stigler2007}
+Stigler, B. {\em et~al.} (2007{\em{}})
+  Reverse engineering of dynamic networks.
+\newblock {\em Ann N Y Acad Sci, } {\bf 1115}, 168--77.
+
+\bibitem[Uetz {\em et~al.}, 2000]{Uetz2000}
+Uetz, P. {\em et~al.} (2000{\em{}}) A
+  comprehensive analysis of protein-protein interactions in saccharomyces
+  cerevisiae. :.
+\newblock {\em Nature, } {\bf 403}, 623--7.
+
+\bibitem[Xenarios {\em et~al.}, 2000]{citeulike:226627}
+Xenarios, I. {\em et~al.} (2000{\em{}}) Dip: the database of interacting proteins.
+\newblock {\em Nucl. Acids Res., } {\bf 28} (1), 289--291.
+
+\bibitem[Yoneya \& Mamitsuka, 2007]{Yoneya2007}
+Yoneya, T. \& Mamitsuka, H. (2007{\em{}}) A hidden markov model-based approach
+  for identifying timing differences in gene expression under different
+  experimental factors.
+\newblock {\em Bioinformatics, } {\bf 23} (7).
+
+\bibitem[Zanzoni, 2002]{citeulike:3733950}
+Zanzoni, A. (2002{\em{}}) Mint: a molecular interaction database.
+\newblock {\em FEBS Letters, } {\bf 513} (1), 135--140.
+\end{thebibliography}
 
 \end{document}

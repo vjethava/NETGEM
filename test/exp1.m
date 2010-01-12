@@ -145,11 +145,14 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
 
     c2_edges = c2_classes(I, :) + c2_classes(J, :);  
     c2e = [];
+    c2i = []; 
     for h=1:nH
         if(nnz(c2_edges(:, h)) > 0)
             c2e = [c2e c2_edges(:, h)]; 
+            c2i = [c2i; h]; 
         end
     end
+    class_names = class_names(c2i); 
     c2_edges = c2e; 
     nH = size(c2_edges, 2); 
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
@@ -182,8 +185,9 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
     beliefsChanged = true;
     nIter = 1; 
     LL= [];
+    minIter = 5;
     disp(sprintf('\nStarting forward backward iterations\n'));
-    while ((beliefsChanged) && (nIter < fbIters))
+    while ((beliefsChanged) && (nIter < fbIters) )
         beliefsChanged = false; 
         [f, b, xi, ll, wML] = fbEdge(X, c2_E, DF, W, xi0, pW0);
         disp(sprintf('fb-iteration: %d log likelihood: %g' , nIter,ll)); 
@@ -192,7 +196,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
         xi0 = QedgeGuess; 
         QclassGuess = xiClass;
         nIter = nIter + 1;
-        if(abs(ll - ll0) > 1e-2)
+        if( (abs(ll - ll0) > 1e-2) || (nIter < minIter) )
             ll0 = ll;
             beliefsChanged = true; 
         end

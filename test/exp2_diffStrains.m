@@ -155,7 +155,7 @@ function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 
   
-    Qprior = ones(nW, 1)*exp(-3.*abs(W).^sparsityFactor).*ones(nW, nW);
+    Qprior = ones(nW, 1)*exp(-abs(W).^sparsityFactor).*ones(nW, nW);
     Qprior = mk_stochastic(Qprior); 
     QclassGuess = zeros(nW, nW, nH); 
 
@@ -165,6 +165,9 @@ function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
             % QclassGuess(j, :, i) = Qprior(j, :) ;   
         end
     end
+        G = struct('E', [], 'wML', [], 'genes', []);
+        H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
+        FB = struct('nIters', [], 'LL', []);
     for cs=1:2
         %%% reinitialize the guess for classes.
         QclassGuess = zeros(nW, nW, nH); 
@@ -183,7 +186,7 @@ function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
         beliefsChanged = true;
         nIter = 1; 
         LL= [];
-        strainNames = ['REF', 'MUT']; 
+        strainNames = {'REF'; 'MUT'}; 
         disp(sprintf(['\nStarting forward backward iterations for ' ...
                       'strain %s\n'], char(strainNames(cs)) ));
 
@@ -212,19 +215,18 @@ function [G, H, FB, S] = exp2_diffStrains(sparsityFactor, W)
         %     end
 
         %%% Put out the output
-        G = struct('E', [], 'wML', [], 'genes', []);
-        H = struct('A', [], 'Qest', [], 'classes', [], 'W', []);  
-        FB = struct('nIters', [], 'LL', []);
+
         G(cs).E = c2_E; 
         G(cs).wML = wML; 
         G(cs).genes = c2_names; 
         H(cs).A = c2_edges; 
         H(cs).Qest = QclassGuess; 
         H(cs).classes = class_names; 
+        %        H(cs) = sortH(H(cs)); 
         FB(cs).nIters = nIter; 
         FB(cs).LL = LL;
         S(cs) = analyze1(G(cs), H(cs), FB(cs) ); 
-        %    keyboard; 
+        % keyboard; 
     end
 end    
 

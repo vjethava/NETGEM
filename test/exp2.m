@@ -154,7 +154,7 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
     c2_edgesNoisy = mk_stochastic(c2_edges + interClassNoise*rand(nE, nH) ) ; 
     c2_edges2 = mk_stochastic(c2_edges); 
   
-    Qprior = ones(nW, 1)*exp(-3.*abs(W).^sparsityFactor).*ones(nW, nW);
+    Qprior = ones(nW, 1)*exp(-abs(W).^sparsityFactor).*ones(nW, nW);
     Qprior = mk_stochastic(Qprior); 
     QclassGuess = zeros(nW, nW, nH); 
 
