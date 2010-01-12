@@ -18,7 +18,7 @@ expression. Furthermore, many of these methods do not consider the
 underlying interaction network of genes or proteins they encode for,
 that plays a key role in the expression of the genes.
 
-This code is available at http://www.github.com/vjethava/NETGEMM. 
+This complete code along with the data is available at http://www.github.com/vjethava/NETGEMM. 
 It can be downloaded in linux by using the command: $ git clone git@github.com:vjethava/NETGEMM.git
 
 * Files
