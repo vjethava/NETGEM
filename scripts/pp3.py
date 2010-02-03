@@ -7,9 +7,9 @@
 # Maintainer: 
 # Created: Thu Nov 19 11:15:43 2009 (+0100)
 # Version: 
-# Last-Updated: Sat Jan  2 11:41:46 2010 (+0530)
+# Last-Updated: Wed Feb  3 15:46:25 2010 (+0530)
 #           By: Vinay Jethava
-#     Update #: 31
+#     Update #: 32
 # URL: 
 # Keywords: 
 # Compatibility: 
@@ -52,7 +52,7 @@ counter = 0
 numE = 0
 genes = dict()
 # the original p-p interactions file.
-f = open('../data/pp_interaction_network.txt', 'r')
+f = open('../data/current/network.txt', 'r')
 # the list of genes present.
 g = open('./gene_names_pp.txt', 'w')
 # the interactions graph in edge adjacency format.

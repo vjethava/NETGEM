@@ -77,14 +77,16 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
     %%% update the classification graph explicitly
     gc_graph2 = sparse(gc_adj(:, 1), gc_adj(:, 2), ones(length(gc_adj), 1), 4715, 260);   
     gc_graph3 = gc_graph2(gc_gid_v, gc_cid_v);
+        
     
+    keyboard;     
     %%% find sub graph for sig_genes
     disp(sprintf('\nC0: Select subgraph for sig_genes'));
     disp(sprintf('*********************************************************')); 
     [i0, m0, p0] = remapGeneKeys(gene_names, sig_genes); 
     c0_graph = gene_graph(i0, i0); 
     c0_names = sig_genes(p0); 
-    %    keyboard; 
+
     %%% find genes which have expression data. 
     disp(sprintf('\nC1: Select C0 genes with expr_data'));
     disp(sprintf('*********************************************************')); 

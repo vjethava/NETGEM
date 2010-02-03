@@ -18,7 +18,7 @@ function [status, errcode] = cytowrite(dname, S, G, score, expr_data, expr_genes
     num_genes = 0;
     last_index = 0; 
     i = 1; 
-    while ( (i <size(E, 1)) && (S.vW(i) > score))
+    while ( (i <size(E, 1)) && (S.vW(i) >= score))
         disp(sprintf(['cytowrite1(): Write Graph Structure edge: %d ' ...
                       'of %d'], i, size(E, 1))); 
         %%% if we want common names
@@ -50,7 +50,7 @@ function [status, errcode] = cytowrite(dname, S, G, score, expr_data, expr_genes
     [nid] = fopen(nfname, 'w');  
     fprintf(nid, 'ExpressionLevel');
     for j=1:length(expr_legend)
-        fprintf(nid, '%s', char(expr_legend(j))) ;
+        fprintf(nid, '%s ', char(expr_legend(j))) ;
     end
     fprintf(nid, '\n'); 
     curr_genes = geneExprMap.keys()' ; 
@@ -72,7 +72,7 @@ function [status, errcode] = cytowrite(dname, S, G, score, expr_data, expr_genes
     [eid] = fopen(efname, 'w'); 
     fprintf(eid, 'InteractionStrength');
     for j=1:length(expr_legend)
-        fprintf(eid, '%s', char(expr_legend(j))) ;
+        fprintf(eid, '%s ', char(expr_legend(j))) ;
     end 
     fprintf(eid, '\n'); 
      %    fprintf(cid, 'edge.color\n');
@@ -102,7 +102,7 @@ function [status, errcode] = cytowrite(dname, S, G, score, expr_data, expr_genes
          [cfname, msg] = sprintf('../results/%s/edgeColor/t%d.eda', dname, t); 
          [cid] = fopen(cfname, 'w'); 
          fprintf(cid, 'edge.color\n'); 
-         disp(sprintf('Hi there t: %d', t));  
+         disp(sprintf('cytowrite() writing color file for  t: %d', t));  
          for i=1:last_index
              gi = char(G.genes(G.E(i, 1)));
              gj = char(G.genes(G.E(i, 2))); 

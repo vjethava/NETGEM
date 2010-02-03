@@ -7,9 +7,9 @@ function [R] = exp_mm(nT, S)
 %% Maintainer: 
 %% Created: Thu Dec 24 17:45:07 2009 (+0530)
 %% Version: 
-%% Last-Updated: Tue Dec 29 20:02:42 2009 (+0530)
+%% Last-Updated: Sun Jan 24 12:17:59 2010 (+0530)
 %%           By: Vinay Jethava
-%%     Update #: 13
+%%     Update #: 14
 %% URL: http://www.github.com/vjethava
 %% Keywords: 
 %% Compatibility: 
@@ -79,9 +79,9 @@ nS = length(S); % number of iid samples
 E = [I J]; 
 nE = size(E, 1); 
 
-disp(sprintf('\n**********************************************************************************************'));
+disp(sprintf('\n******************************************************************'));
 disp(sprintf('* exp_mm: synthetic data comparisons N: %d T: %d nE: %d', N, nT, nE ));
-disp(sprintf('**********************************************************************************************\n'));
+disp(sprintf('********************************************************************\n'));
  
 A = rand(N, nH) < (nHav)/nH; % gene-class membership matrix 
 Aedge = A(I, :) + A(J, :);

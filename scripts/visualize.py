@@ -6,9 +6,9 @@
 # Maintainer: 
 # Created: Wed Jan  6 14:50:27 2010 (+0530)
 # Version: 
-# Last-Updated: Fri Jan  8 14:23:11 2010 (+0530)
+# Last-Updated: Wed Feb  3 20:47:56 2010 (+0530)
 #           By: Vinay Jethava
-#     Update #: 131
+#     Update #: 138
 # URL: 
 # Keywords: 
 # Compatibility: 
@@ -62,18 +62,14 @@ import java.io.FileReader as FileReader
 import random
 import os
 
-mainpath = '/home/vjethava/NETGEMM/results/'
-# dnames = [ 'AE1', 'AE2', 'AE3', 'AE4', 'AE5', 'AE6', 'AE7', 'AE8', 'AN1', 'AN2', 'AN3', 'AN4', 'AN5', 'AN6', 'AN7', 'AN8']
-# T = 8
-
-
-dnames = ['AEJOINT'] #, 'REF', 'MUT']
-T = 8
+mainpath = '/home/vjethava/remote/NETGEMM/results/'
+dnames = ['top1'] #, 'REF', 'MUT']
+T = 6
 for l in range(len(dnames)):
     mypath = mainpath + dnames[l] + '/' 
     graphFile = mypath + 'graph.sif'
     graph = Cytoscape.createNetworkFromFile(graphFile, True)
-    CyLayouts.getLayout("circular").doLayout()
+   # CyLayouts.getLayout("").doLayout()
     vs = VisualStyle('Solid') 
     Cytoscape.getCurrentNetworkView().applyVizmapper(vs)
     # Cytoscape.getCurrentNetworkView().redrawGraph(True)
