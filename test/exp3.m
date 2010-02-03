@@ -28,24 +28,24 @@ nW = length(W);
 
 load cats.mat;
 load graph.mat;
-load expression.mat;
-
-expr_genes = genes;
-expr_cond = {'elm'; 'ref'; 'reg'; 'sak'; 't210a'; 'tos'};
-expr_data = zeros(5545, 6, 6);
-expr_data(: , :, 1) = elm;
-expr_data(: , :, 2) = ref;
-expr_data(: , :, 3) = reg;
-expr_data(: , :, 4) = sak;
-expr_data(: , :, 5) = t210a;
-expr_data(: , :, 6) = tos;
-expr_deletions{1} = {'YER129W'; 'YGL179C'};
-expr_deletions{2} ={};
-expr_deletions{3} = {'YDR028C'};
-expr_deletions{4} = {'YKL048C'; 'YGL179C'};
-expr_deletions{5} = {'YDR477W'};
-expr_deletions{6} = {'YKL048C'; 'YER129W'};
+% load expression.mat;
+% expr_genes = genes;
+% expr_cond = {'elm'; 'ref'; 'reg'; 'sak'; 't210a'; 'tos'};
+% expr_data = zeros(5545, 6, 6);
+% expr_data(:, :, 1) = elm;
+% expr_data(:, :, 2) = ref;
+% expr_data(:, :, 3) = reg;
+% expr_data(:, :, 4) = sak;
+% expr_data(:, :, 5) = t210a;
+% expr_data(:, :, 6) = tos;
+% expr_deletions{1} = {'YER129W'; 'YGL179C'};
+% expr_deletions{2} ={};
+% expr_deletions{3} = {'YDR028C'};
+% expr_deletions{4} = {'YKL048C'; 'YGL179C'};
+% expr_deletions{5} = {'YDR477W'};
+% expr_deletions{6} = {'YKL048C'; 'YER129W'};
 % save expr.mat expr_cond expr_genes expr_data expr_deletions;
+load expr.mat; 
 
 %%% Load the relevant list of genes that you want to look at.
 %%%
