@@ -11,3 +11,5 @@ ismb/*.blg
 *tmp*
 *.aux*
 *.zip
+*#*
+test/*#*
