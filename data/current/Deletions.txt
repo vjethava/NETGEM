@@ -1,0 +1,37 @@
+Elm1, 2 deletions:
+
+YER129W
+
+YGL179C
+
+
+
+Ref, no deletions.
+
+
+
+Reg1, 1 deletion:
+
+YDR028C
+
+
+
+Sak1, 2 deletions:
+
+YKL048C
+
+YGL179C
+
+
+
+T210A, 1 deletion:
+
+YDR477W
+
+
+
+Tos3, 2 deletions:
+
+YKL048C
+
+YER129W
