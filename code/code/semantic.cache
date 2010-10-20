@@ -1,0 +1,21 @@
+;; Object code/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "code/"
+  :tables (list 
+   (semanticdb-table "sortH.m"
+    :major-mode 'matlab-mode
+    :tags '(("sortH" function (:return ("sorted" "changeProb" "ha" "hi") :arguments ("H")) nil [1 633]))
+    :file "sortH.m"
+    :pointmax 633
+    )
+   (semanticdb-table "getExpFitScore.m"
+    :major-mode 'matlab-mode
+    :tags '(("getExpFitScore" function (:return ("changeScore" "freqC" "binC") :arguments ("vW" "nBins" "fractionToSee")) nil [1 765]))
+    :file "getExpFitScore.m"
+    :pointmax 765
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

@@ -1,0 +1,50 @@
+32.01.04 & 32.01.04 & 32.01.04 \\ 
+20.09.03 & 20.09.03 & 20.09.03 \\ 
+10 & 02.45.11 & 02.45.11 \\ 
+16.21 & 16.21 & 16.21 \\ 
+02.45.11 & 32.05.05 & 11.04.02 \\ 
+11.04.02 & 10 & 10 \\ 
+32.05.05 & 11.04.02 & 12 \\ 
+20.01.27 & 40.01.05 & 32.05.05 \\ 
+30 & 30 & 30 \\ 
+16.03.03 & 10.01.09 & 16.03.03 \\ 
+20.09.07 & 10.03.01 & 32.07 \\ 
+12 & 14.13.01 & 20.09.07 \\ 
+32.07 & 20.01.10 & 40.01.03 \\ 
+20.01.15 & 16.03.03 & 20.01.27 \\ 
+42.04.05 & 20.09.07 & 10.01.09 \\ 
+34.07.02 & 42.04.03 & 34.07.02 \\ 
+10.03.01 & 16 & 32.07.07 \\ 
+40.01.03 & 34.07.02 & 16.02 \\ 
+10.01.09 & 12.01.01 & 42.04.05 \\ 
+42.29 & 01.03.01 & 42.29 \\ 
+
+01.03.01 purin nucleotide/nucleoside/nucleobase metabolism \\
+02.45.11 conversion to kinetic energy (e.g. movement) \\
+10 CELL CYCLE AND DNA PROCESSING \\
+10.01.09 DNA restriction or modification \\
+10.03.01 mitotic cell cycle and cell cycle control \\
+11.04.02 tRNA processing \\
+12 PROTEIN SYNTHESIS \\
+12.01.01 ribosomal proteins \\
+14.13.01 cytoplasmic and nuclear protein degradation \\
+16 PROTEIN WITH BINDING FUNCTION OR COFACTOR REQUIREMENT (structural or catalytic) \\
+16.02 peptide binding \\
+16.03.03 RNA binding \\
+16.21 complex cofactor/cosubstrate/vitamine binding \\
+20.01.10 protein transport \\
+20.01.15 electron transport \\
+20.01.27 drug/toxin transport \\
+20.09.03 peroxisomal transport \\
+20.09.07 vesicular transport (Golgi network, etc.) \\
+30 CELLULAR COMMUNICATION/SIGNAL TRANSDUCTION MECHANISM \\
+32.01.04 pH stress response \\
+32.05.05 virulence, disease factors \\
+32.07 detoxification \\
+32.07.07 oxygen and radical detoxification \\
+34.07.02 cell-matrix adhesion \\
+40.01.03 directional cell growth (morphogenesis) \\
+40.01.05 growth regulators / regulation of cell size \\
+42.04.03 actin cytoskeleton \\
+42.04.05 microtubule cytoskeleton \\
+42.29 bud / growth tip \\
