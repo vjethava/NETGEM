@@ -1,9 +1,0 @@
-	digraph netgem
-{
-    rankdir=TB;
-    h
-    W0 [label="W(t)"];
-    W1  [label="W(t+1)"];
-    
-};
-    

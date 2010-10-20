@@ -1,48 +1,18 @@
+#!/usr/bin/env python 
 # visualize.py --- 
 # 
 # Filename: visualize.py
-# Description: 
+# Description:  Script to convert the files to the required cytoscape format and# get the results out. 
 # Author: Vinay Jethava
 # Maintainer: 
 # Created: Wed Jan  6 14:50:27 2010 (+0530)
 # Version: 
-# Last-Updated: Wed Feb  3 20:47:56 2010 (+0530)
+# Last-Updated: Thu Mar 25 17:27:05 2010 (+0100)
 #           By: Vinay Jethava
-#     Update #: 138
+#     Update #: 132
 # URL: 
-# Keywords: 
-# Compatibility: 
-# 
-# 
-
-# Commentary: 
-# 
-# Script to convert the files to the required cytoscape format and# get the results out. 
-# 
-# 
-
-# Change log:
-# 
-# 
-# 
-# 
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License as
-# published by the Free Software Foundation; either version 3, or
-# (at your option) any later version.
-# 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program; see the file COPYING.  If not, write to
-# the Free Software Foundation, Inc., 51 Franklin Street, Fifth
-# Floor, Boston, MA 02110-1301, USA.
-# 
-# 
-
+# Keywords:
+#
 # Code:
 
 from cytoscape import Cytoscape
@@ -62,14 +32,18 @@ import java.io.FileReader as FileReader
 import random
 import os
 
-mainpath = '/home/vjethava/remote/NETGEMM/results/'
-dnames = ['top1'] #, 'REF', 'MUT']
-T = 6
+mainpath = '/home/vjethava/NETGEMM/results/'
+# dnames = [ 'AE1', 'AE2', 'AE3', 'AE4', 'AE5', 'AE6', 'AE7', 'AE8', 'AN1', 'AN2', 'AN3', 'AN4', 'AN5', 'AN6', 'AN7', 'AN8']
+# T = 8
+
+
+dnames = ['AEJOINT'] #, 'REF', 'MUT']
+T = 8
 for l in range(len(dnames)):
     mypath = mainpath + dnames[l] + '/' 
     graphFile = mypath + 'graph.sif'
     graph = Cytoscape.createNetworkFromFile(graphFile, True)
-   # CyLayouts.getLayout("").doLayout()
+    CyLayouts.getLayout("circular").doLayout()
     vs = VisualStyle('Solid') 
     Cytoscape.getCurrentNetworkView().applyVizmapper(vs)
     # Cytoscape.getCurrentNetworkView().redrawGraph(True)

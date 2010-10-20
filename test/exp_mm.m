@@ -7,43 +7,13 @@ function [R] = exp_mm(nT, S)
 %% Maintainer: 
 %% Created: Thu Dec 24 17:45:07 2009 (+0530)
 %% Version: 
-%% Last-Updated: Sun Jan 24 12:17:59 2010 (+0530)
+%% Last-Updated: Mon Mar 22 11:53:17 2010 (+0100)
 %%           By: Vinay Jethava
-%%     Update #: 14
+%%     Update #: 16
 %% URL: http://www.github.com/vjethava
 %% Keywords: 
 %% Compatibility: 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Commentary: 
-%%  
-%% This file is the top-level script for comparison of the mixture
-%% model with unmodified HMM. 
-%% 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%%% Change log:
-%% 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
-%% This program is free software; you can redistribute it and/or
-%% modify it under the terms of the GNU General Public License as
-%% published by the Free Software Foundation; either version 3, or
-%% (at your option) any later version.
-%% 
-%% This program is distributed in the hope that it will be useful,
-%% but WITHOUT ANY WARRANTY; without even the implied warranty of
-%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-%% General Public License for more details.
-%% 
-%% You should have received a copy of the GNU General Public License
-%% along with this program; see the file COPYING.  If not, write to
-%% the Free Software Foundation, Inc., 51 Franklin Street, Fifth
-%% Floor, Boston, MA 02110-1301, USA.
-%% 
+%%
 %%%%%%%%%%%%%%%% Code:
 
 %%% PreSetup 
@@ -54,6 +24,10 @@ addpath ../lib/KPMstats;
 addpath ../netlab3.3;
 addpath ../code;
 
+if nargin < 1
+    nT = 10; 
+end
+
 if nargin < 2
     S = [0]; 
 end
@@ -62,7 +36,7 @@ R = struct('fscore', [], 'fdiff', [], 'n', [], 'LL', []);
 N = 5; 
 G = [0 0 1 0 0;0 0 0 1 0; 0 0 0 1 0; 1 0 0 0 0;  0 1 0 0 0]; 
 p = 0.2; 
-W = [0 1];
+W = [-2 -1 0 1 2 ];
 nW = length(W);  
 nH = 6; % total number of classes
 nHav = 2.0; % av number of classes per component
@@ -144,6 +118,7 @@ for wl=1:(nW^nE)
     end
 end
 largeE = mk_stochastic(largeE); 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Data generation complete. Here we have generated the 
 %%% following: We, E, X, DF, G, Q based on strains S,
@@ -278,6 +253,7 @@ while(notStable2 && (nIters2 < maxIters2))
     F2 = [F2 fscore2]; 
     D2 = [D2 fdiff2]; 
 end
+keyboard; 
 R(3).fdiff = D2;
 R(3).fscore = F2; 
 R(3).n = nIters2; 

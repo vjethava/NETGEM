@@ -201,6 +201,7 @@ function [G, H, FB]=exp1(tCluster, sparsityFactor, isAnaerobic, W)
             beliefsChanged = true; 
         end
         LL = [LL; ll];
+        keyboard; 
     end
     nIter = nIter - 1; 
 %%% Look at some class Q's 

@@ -1,5 +1,6 @@
 %%% variation wrt number of strains
-S = [1 2 3 4 5];
+% S = [1 2 3 4 5];
+S = [2];
 nS = length(S); 
 nT = 10; 
 RT  = [];
@@ -8,8 +9,10 @@ F = zeros(NUM, nS, 3);
 D = zeros(NUM, nS, 3); 
 for s=1:nS
     for j=1:NUM
+        fprintf(2, 'mm_svar(): s: %d of %d num: %d of %d\n', s, nS, ...
+                j, NUM);
         cS = unidrnd(2, 1, S(s)) - 1; 
-        R = exp_mm(nT, cS); 
+        R = exp_mm_v1(nT, cS); 
         for k=1:3
             n = R(k).n; 
             F(j, s, k) = R(k).fscore(n); 

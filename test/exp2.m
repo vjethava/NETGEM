@@ -79,7 +79,7 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
     gc_graph3 = gc_graph2(gc_gid_v, gc_cid_v);
         
     
-    keyboard;     
+    
     %%% find sub graph for sig_genes
     disp(sprintf('\nC0: Select subgraph for sig_genes'));
     disp(sprintf('*********************************************************')); 
@@ -208,7 +208,7 @@ function [G, H, FB, S] = exp2(sparsityFactor, W)
     H.A = c2_edges; H.Qest = QclassGuess; H.classes = class_names; 
     FB.nIters = nIter; FB.LL = LL;
     S = analyze1(G, H, FB); 
-    %    keyboard; 
+    
 end
     
 

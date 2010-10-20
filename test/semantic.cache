@@ -1,0 +1,16 @@
+;; Object test/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "test/"
+  :tables (list 
+   (semanticdb-table "exp4x2.m"
+    :major-mode 'matlab-mode
+    :tags '(("inner4x2_1x0" function (:return ("trueClass") :arguments ("synthRes" "tLowPct" "nW")) nil [2593 2869]) ("inner4x2_3x0" function (:return ("sortedScore") :arguments ("synthRes" "trueClass")) nil [3121 3717]) ("inner4x2_2x0" function (:return ("histData" "figHandle") :arguments ("score" "nc" "ne")) nil [3760 4813]) ("inner4x2_4x0" function (:return ("figHandle")) nil [4842 4905]))
+    :file "exp4x2.m"
+    :pointmax 5002
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

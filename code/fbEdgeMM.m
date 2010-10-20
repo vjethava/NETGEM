@@ -65,7 +65,7 @@ for e=1:nE;
     
     ci = E(e, 1); 
     cj = E(e, 2); 
-    disp(sprintf(' Computing f-b for edge (%d, %d) number: %d of %d', ci, cj, e, nE));
+    fprintf(2, ' Computing f-b for edge (%d, %d) number: %d of %d\n', ci, cj, e, nE);
     xe = X([ci cj], :, :);
     de = D([ci cj], :);
     p0e = Pw0(:, e); 
