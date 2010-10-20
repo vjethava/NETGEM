@@ -19,7 +19,7 @@ underlying interaction network of genes or proteins they encode for,
 that plays a key role in the expression of the genes.
 
 This complete code along with the data is available at http://www.github.com/vjethava/NETGEMM. 
-It can be downloaded in linux by using the command: $ git clone git@github.com:vjethava/NETGEMM.git
+It can be downloaded in linux by using the command: \$ git clone git@github.com:vjethava/NETGEMM.git
 
 * Files
 
@@ -32,7 +32,20 @@ The top-level directory structure is as follows:
 - test: the files which run the main experiments. 
 - data: the original data in txt and mat formats
 - scripts: the conversion scripts between txt-mat 
+** data
+The raw data can be found in the following files: 
+
+- aean_expr.txt: Gene expression data corresponding to experiment 1
+  (Aerobic and Anaerobic setting)
+- exp2: This directory has the complete processed data (in matlab
+  format) for Experiment 2, i.e., graph_pp.mat (Graph), graph.mat
+  (Graph if taking both P-P and P-D) interactions, gene_names.txt,
+  expr.mat (gene expression data)
+
+The original raw data provided by biologists is given as xls and xml
+format. 
  
+
 ** test
 This directory contains the following files:
 - mm_svar.m : generates the comparison for multiple strains over synthetic dataset
