@@ -1,0 +1,18 @@
+Dummy configuration file
+Uses dummy_* input files and standard components
+
+edges_file = dummy_edge
+expressions_file = dummy_expr
+category_map_file = dummy_cmap
+
+timesteps = 3
+max_damp_dist = 0
+weights = -1,0,1
+sparsities = 1,1,1
+iterations = 5
+
+results_by_name_file = dummy_result_byname
+results_by_score_file = dummy_result_byscore
+result_statistics_file = dummy_result_stats
+result_nodes_file = dummy_result_nodes
+result_edges_file = dummy_result_edges
