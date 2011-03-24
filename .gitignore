@@ -1,0 +1,16 @@
+code/*
+netgem/lib/*
+netgem/build/*
+netgem/build.xml
+netgem/manifest.mf
+netgem/nbproject/*
+netgem/scala/lib/*
+netgem/scala/lib_managed/*
+netgem/scala/project/*
+netgem/scala/target/*
+*.class
+.svn
+*.jar
+*.zip
+log
+
