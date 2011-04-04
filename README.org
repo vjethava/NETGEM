@@ -1,10 +1,9 @@
+* Summary 
+This code does inference of dynamic interactions in a graph based on
+node observations with applications to gene interaction networks. See
+NETGEM manuscript for more details.  
 
-This is the supplemental software for the ISMB 2010 submission,
-"Network Embedded analysis of Temporal Gene Expression using Mixed
-Models". 
-
-* Abstract 
-
+* Background 
 Microarrays have become a routine tool in many biological labs,
 resulting in large amounts of datasets containing transcription
 information in different mutants grown under many conditions. The data
@@ -27,7 +26,6 @@ The top-level directory structure is as follows:
 
 - code: contains the matlab functions specific to the paper.
 - lib: publicly available code which is used.
-- ismb: conference submission files. 
 - lib: additional libraries.
 - test: the files which run the main experiments. 
 - data: the original data in txt and mat formats
@@ -41,10 +39,3 @@ This directory contains the following files:
 - run1.m : runs the experiment 1 for gene expression dataset 1 
 - run2.m runs the experiment 2 for gene expression dataset 2
 
-** results: 
-This directory contains the plots for the synthetic dataset as well as
-the generated movies for each of the experiments based on real
-datasets.     
-
-** ismb:
-This directory contains the draft of the final submission.
