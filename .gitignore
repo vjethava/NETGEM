@@ -8,6 +8,9 @@ ismb/*.aux
 ismb/*.out
 ismb/*.log
 ismb/*.blg
+results/*
+*.asv
+*.mat
 *tmp*
 *.aux*
 *.zip
