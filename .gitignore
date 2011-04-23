@@ -1,5 +1,6 @@
 *.*~
 *.log
+api/sig_genes.mat
 tests/*.*~
 scripts/*.*~
 code/*.*~
