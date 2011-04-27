@@ -4,6 +4,7 @@ api/sig_genes.mat
 tests/*.*~
 scripts/*.*~
 sbm/*
+results/*
 code/*.*~
 ismb/*.*~
 ismb/*.aux
