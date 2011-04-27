@@ -3,6 +3,7 @@
 api/sig_genes.mat
 tests/*.*~
 scripts/*.*~
+sbm/*
 code/*.*~
 ismb/*.*~
 ismb/*.aux

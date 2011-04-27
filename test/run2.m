@@ -50,7 +50,7 @@ sf = 2.0;
 %%% Code generation for the joint case
 [gj, hj, bj, sj] = exp2(sf); 
 [score, freqC, binsC] = getExpFitScore(sj.vW, 6, 0.05); 
-keyboard; 
+
 dname = 'JOINT';
 mkdir(sprintf('../results/%s',dname)); 
 mkdir(sprintf('../results/%s/edgeColor', dname)); 
@@ -77,7 +77,6 @@ for i = 1:2
         elegend = expr_legend(7:12); 
     end
     sScore(i) = getExpFitScore(ss(i).vW, 6); 
-    keyboard; 
     cytowrite(dname, ss(i), gs(i), sScore(i), edata, egenes, elegend); 
 end
 save ../results/result2s_sf2.mat;

@@ -7,9 +7,9 @@
 # Maintainer: 
 # Created: Wed Jan  6 14:50:27 2010 (+0530)
 # Version: 
-# Last-Updated: Thu Mar 25 17:27:05 2010 (+0100)
+# Last-Updated: Wed Apr 27 18:57:02 2011 (+0200)
 #           By: Vinay Jethava
-#     Update #: 132
+#     Update #: 169
 # URL: 
 # Keywords:
 #
@@ -18,6 +18,9 @@
 from cytoscape import Cytoscape
 from cytoscape.view import CyNetworkView
 from cytoscape.util.export import BitmapExporter
+from cytoscape.util.export import PDFExporter
+from cytoscape.util.export import SVGExporter
+from cytoscape.util.export import PSExporter
 import cytoscape.layout.CyLayouts as CyLayouts
 import cytoscape.data.readers.CyAttributesReader as CyAttributesReader
 import cytoscape.visual.VisualMappingManager as VisualMappingManager
@@ -31,19 +34,21 @@ import java.io.FileReader as FileReader
 
 import random
 import os
-
-mainpath = '/home/vjethava/NETGEMM/results/'
+mainpath = '/Users/vjethava/Etc/NETGEM/results/'
 # dnames = [ 'AE1', 'AE2', 'AE3', 'AE4', 'AE5', 'AE6', 'AE7', 'AE8', 'AN1', 'AN2', 'AN3', 'AN4', 'AN5', 'AN6', 'AN7', 'AN8']
 # T = 8
 
 
-dnames = ['AEJOINT'] #, 'REF', 'MUT']
-T = 8
+dnames = ['JOINT'] #, 'REF', 'MUT']
+T = 6
 for l in range(len(dnames)):
     mypath = mainpath + dnames[l] + '/' 
     graphFile = mypath + 'graph.sif'
     graph = Cytoscape.createNetworkFromFile(graphFile, True)
-    CyLayouts.getLayout("circular").doLayout()
+    possibleLayouts = CyLayouts.getAllLayouts()
+    # layout = CyLayouts.getDefaultLayout()
+    # layout.doLayout()
+    CyLayouts.getLayout("circular").doLayout() 
     vs = VisualStyle('Solid') 
     Cytoscape.getCurrentNetworkView().applyVizmapper(vs)
     # Cytoscape.getCurrentNetworkView().redrawGraph(True)
@@ -54,24 +59,27 @@ for l in range(len(dnames)):
     for t in range(T):
         s = t+1
         colorFileName = mypath + 'edgeColor/' + 't' + str(s) + '.eda'
-        imageFileName = mypath + 't' + str(s) + '.png' 
+        imageFileName = mypath + 't' + str(s) + '.pdf' 
         nodeAttrFiles = []
         edgeAttrFiles = [colorFileName]
         Cytoscape.loadAttributes(nodeAttrFiles, edgeAttrFiles)
         Cytoscape.getCurrentNetworkView().redrawGraph(True, False)
-        myExporter = BitmapExporter('png', 1.0)
+        Cytoscape.getCurrentNetworkView().redrawGraph(True, False)
+        myExporter = PDFExporter() # 'pdf', 1.0)
+        myExporter.setExportTextAsFont(False) 
         myStream = FileOutputStream(File(imageFileName)) 
         myExporter.export(Cytoscape.getCurrentNetworkView(), myStream)
         myStream.close()
-    Cytoscape.destroyNetwork(Cytoscape.getCurrentNetwork() ) 
+        print "Exported ", t
+    # Cytoscape.destroyNetwork(Cytoscape.getCurrentNetwork() ) 
     ############################################################
     # make a movie
     ############################################################
-    ipFile = mypath + 't' + '%d' + '.png'
-    opFile = mypath + 'cytoscape_movie.avi'
-    cmd = 'ffmpeg -y -r 0.5 -i ' + ipFile + ' ' + opFile
-    print cmd
-    os.system(cmd)
+    # ipFile = mypath + 't' + '%d' + '.pdf'
+    # opFile = mypath + 'cytoscape_movie.avi'
+    # cmd = 'ffmpeg -y -r 0.5 -i ' + ipFile + ' ' + opFile
+    # print cmd
+    # os.system(cmd)
 
 # CyNetwork.getIdentifier()
 # Cytoscape.getEdgeAttributes()
