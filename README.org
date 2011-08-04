@@ -1,7 +1,6 @@
-
-This is the supplemental software for the ISMB 2010 submission,
+This is the supplemental software for the BMC Bioinformatics article
 "Network Embedded analysis of Temporal Gene Expression using Mixed
-Models". 
+Models".
 
 * Abstract 
 
