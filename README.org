@@ -57,5 +57,3 @@ This directory contains the plots for the synthetic dataset as well as
 the generated movies for each of the experiments based on real
 datasets.     
 
-** ismb:
-This directory contains the draft of the final submission.
