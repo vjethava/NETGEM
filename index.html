@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="NETGEM : &quot;Network Embedded analysis of Temporal Gene Expression using Mixture Models&quot;" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>NETGEM</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/vjethava/NETGEM">View on GitHub</a>
+
+          <h1 id="project_title">NETGEM</h1>
+          <h2 id="project_tagline">&quot;Network Embedded analysis of Temporal Gene Expression using Mixture Models&quot;</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/vjethava/NETGEM/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/vjethava/NETGEM/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>This is the supplemental software for the BMC Bioinformatics article
+"Network Embedded analysis of Temporal Gene Expression using Mixture
+Models". The original article is available at <a href="http://www.biomedcentral.com/1471-2105/12/327">http://www.biomedcentral.com/1471-2105/12/327</a></p>
+
+<p><img src="http://www.biomedcentral.com/content/figures/1471-2105-12-327-3-l.jpg" alt=""></p>
+
+<p>This complete code along with the data is available at <a href="http://www.github.com/vjethava/NETGEM">http://www.github.com/vjethava/NETGEM</a>. It can be downloaded in linux by using the command: </p>
+
+<p><code>$ git clone git@github.com:vjethava/NETGEM.git</code></p>
+
+<h2>Files</h2>
+
+<p>The top-level directory structure is as follows: </p>
+
+<ul>
+<li>code: contains the matlab functions specific to the paper.</li>
+<li>lib: publicly available code which is used.</li>
+<li>lib: additional libraries.</li>
+<li>test: the files which run the main experiments. </li>
+<li>data: the original data in txt and mat formats</li>
+<li>scripts: the conversion scripts between txt-mat </li>
+</ul><h3>data</h3>
+
+<p>The raw data can be found in the following files: </p>
+
+<ul>
+<li>aean_expr.txt: Gene expression data corresponding to experiment 1
+(Aerobic and Anaerobic setting)</li>
+<li>exp2: This directory has the complete processed data (in matlab
+format) for Experiment 2, i.e., graph_pp.mat (Graph), graph.mat
+(Graph if taking both P-P and P-D) interactions, gene_names.txt,
+expr.mat (gene expression data)</li>
+</ul><p>The original raw data provided by biologists is given as xls and xml
+format. </p>
+
+<h3>test</h3>
+
+<p>This directory contains the following files:</p>
+
+<ul>
+<li>mm_svar.m : generates the comparison for multiple strains over synthetic dataset</li>
+<li>mm_tvar.m : generates the comparison for different number of
+observation time periods available for synthetic dataset</li>
+<li>run1.m : runs the experiment 1 for gene expression dataset 1 </li>
+<li>run2.m runs the experiment 2 for gene expression dataset 2</li>
+</ul><h3>results:</h3>
+
+<p>This directory contains the plots for the synthetic dataset as well as
+the generated movies for each of the experiments based on real
+datasets.     </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">NETGEM maintained by <a href="https://github.com/vjethava">vjethava</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-25386203-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
